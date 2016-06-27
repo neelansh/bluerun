@@ -1,0 +1,186 @@
+{% extends 'common/base.html' %}
+{% block content %}
+<div class = "container">
+	<ul class="nav nav-tabs" role="tablist">
+		<li role="presentation" class="active"><a href="#cashintra" aria-controls="cashintra" role="tab" data-toggle="tab">Cash intra</a></li>
+		<li role="presentation"><a href="#cashpositional" aria-controls="cashpositional" role="tab" data-toggle="tab">Cash positional</a></li>
+		<li role="presentation"><a href="#stockfuture" aria-controls="stcokfuture" role="tab" data-toggle="tab">Stock future</a></li>
+		<li role="presentation"><a href="#niftyfuture" aria-controls="niftyfuture" role="tab" data-toggle="tab">Nifty future</a></li>
+		<li role="presentation"><a href="#optioncallscovered" aria-controls="optioncallscovered" role="tab" data-toggle="tab">Option calls covered</a></li>
+		<li role="presentation"><a href="#optioncallsuncovered" aria-controls="optioncallsuncovered" role="tab" data-toggle="tab">Option calls uncovered</a></li>
+		<li role="presentation"><a href="#multibeggar" aria-controls="multibeggar" role="tab" data-toggle="tab">Multi beggar</a></li>
+	</ul>
+
+	<div class="tab-content">
+		
+		<div role="tabpanel" class="tab-pane active" id="cashintra">
+			{% if cash_intra != 'not_subscribed' %}
+			{% for call in cash_intra %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				</div>
+				<div class="panel-body">
+					date: {{ call.created_on }}<br>
+					entry price: {{ call.entry_price }}<br>
+					target: {{ call.target }}<br>
+					stop loss: {{ call.stop_loss }}<br>
+				</div>
+			</div>
+			{% endfor %}
+			{% elif cash_intra == None %}
+			<h1>no calls in this section</h1>
+			{% else %}
+			<div>
+				<h1>you are not subscribed to this feature</h1>
+			</div>
+			{% endif %}
+		</div>
+		
+		<div role="tabpanel" class="tab-pane" id="cashpositional">
+			{% if cash_positional != 'not_subscribed' %}
+			{% for call in cash_positional %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				</div>
+				<div class="panel-body">
+					date: {{ call.created_on }}<br>
+					entry price: {{ call.entry_price }}<br>
+					target: {{ call.target }}<br>
+					stop loss: {{ call.stop_loss }}<br>
+				</div>
+			</div>
+			{% endfor %}
+			{% elif not cash_positional %}
+			<h1>no calls in this section</h1>
+			{% else %}
+			<div>
+				<h1>you are not subscribed to this feature</h1>
+			</div>
+			{% endif %}
+		</div>
+
+		<div role="tabpanel" class="tab-pane" id="stockfuture">
+			{% if stock_future != 'not_subscribed' %}
+			{% for call in stock_future %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				</div>
+				<div class="panel-body">
+					date: {{ call.created_on }}<br>
+					entry price: {{ call.entry_price }}<br>
+					target: {{ call.target }}<br>
+					stop loss: {{ call.stop_loss }}<br>
+				</div>
+			</div>
+			{% endfor %}
+			{% elif stock_future == None %}
+			<h1>no calls in this section</h1>
+			{% else %}
+			<div>
+				<h1>you are not subscribed to this feature</h1>
+			</div>
+			{% endif %}
+		</div>
+
+		<div role="tabpanel" class="tab-pane" id="niftyfuture">
+			{% if nifty_future != 'not_subscribed' %}
+			{% for call in nifty_future %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				</div>
+				<div class="panel-body">
+					date: {{ call.created_on }}<br>
+					entry price: {{ call.entry_price }}<br>
+					target: {{ call.target }}<br>
+					stop loss: {{ call.stop_loss }}<br>
+				</div>
+			</div>
+			{% endfor %}
+			{% elif nifty_future == None %}
+			<h1>no calls in this section</h1>
+			{% else %}
+			<div>
+				<h1>you are not subscribed to this feature</h1>
+			</div>
+			{% endif %}
+		</div>
+
+		<div role="tabpanel" class="tab-pane" id="optioncallscovered">
+			{% if option_calls_covered != 'not_subscribed' %}
+			{% for call in option_calls_covered %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				</div>
+				<div class="panel-body">
+					date: {{ call.created_on }}<br>
+					entry price: {{ call.entry_price }}<br>
+					target: {{ call.target }}<br>
+					stop loss: {{ call.stop_loss }}<br>
+				</div>
+			</div>
+			{% endfor %}
+			{% elif option_calls_covered == None %}
+			<h1>no calls in this section</h1>
+			{% else %}
+			<div>
+				<h1>you are not subscribed to this feature</h1>
+			</div>
+			{% endif %}
+		</div>
+
+		<div role="tabpanel" class="tab-pane" id="optioncallsuncovered">
+			{% if option_calls_uncovered != 'not_subscribed' %}
+			{% for call in option_calls_uncovered %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				</div>
+				<div class="panel-body">
+					date: {{ call.created_on }}<br>
+					entry price: {{ call.entry_price }}<br>
+					target: {{ call.target }}<br>
+					stop loss: {{ call.stop_loss }}<br>
+				</div>
+			</div>
+			{% endfor %}
+			{% elif option_calls_uncovered == None %}
+			<h1>no calls in this section</h1>
+			{% else %}
+			<div>
+				<h1>you are not subscribed to this feature</h1>
+			</div>
+			{% endif %}
+		</div>
+
+		<div role="tabpanel" class="tab-pane" id="multibeggar">
+			{% if multi_beggar != 'not_subscribed' %}
+			{% for call in multi_beggar %}
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				</div>
+				<div class="panel-body">
+					date: {{ call.created_on }}<br>
+					entry price: {{ call.entry_price }}<br>
+					target: {{ call.target }}<br>
+					stop loss: {{ call.stop_loss }}<br>
+				</div>
+			</div>
+			{% endfor %}
+			{% elif multi_beggar == None %}
+			<h1>no calls in this section</h1>
+			{% else %}
+			<div>
+				<h1>you are not subscribed to this feature</h1>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</div>
+
+{% endblock %}
