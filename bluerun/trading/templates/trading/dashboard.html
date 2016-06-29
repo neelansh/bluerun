@@ -1,5 +1,16 @@
 {% extends 'common/base.html' %}
 {% block content %}
+<div class="page-banner" style="padding:40px 0; background: url(images/slide-02-bg.jpg) center #f9f9f9;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Dashboard</h2>
+				<p>Hello {{ user.username }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class = "container">
 	<ul class="nav nav-tabs" role="tablist">
 		<li role="presentation" class="active"><a href="#cashintra" aria-controls="cashintra" role="tab" data-toggle="tab">Cash intra</a></li>
@@ -8,7 +19,7 @@
 		<li role="presentation"><a href="#niftyfuture" aria-controls="niftyfuture" role="tab" data-toggle="tab">Nifty future</a></li>
 		<li role="presentation"><a href="#optioncallscovered" aria-controls="optioncallscovered" role="tab" data-toggle="tab">Option calls covered</a></li>
 		<li role="presentation"><a href="#optioncallsuncovered" aria-controls="optioncallsuncovered" role="tab" data-toggle="tab">Option calls uncovered</a></li>
-		<li role="presentation"><a href="#multibeggar" aria-controls="multibeggar" role="tab" data-toggle="tab">Multi beggar</a></li>
+		<li role="presentation"><a href="#multibagger" aria-controls="multibagger" role="tab" data-toggle="tab">Multi bagger</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -157,9 +168,9 @@
 			{% endif %}
 		</div>
 
-		<div role="tabpanel" class="tab-pane" id="multibeggar">
-			{% if multi_beggar != 'not_subscribed' %}
-			{% for call in multi_beggar %}
+		<div role="tabpanel" class="tab-pane" id="multibagger">
+			{% if multi_bagger != 'not_subscribed' %}
+			{% for call in multi_bagger %}
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
@@ -172,7 +183,7 @@
 				</div>
 			</div>
 			{% endfor %}
-			{% elif multi_beggar == None %}
+			{% elif multi_bagger == None %}
 			<h1>no calls in this section</h1>
 			{% else %}
 			<div>

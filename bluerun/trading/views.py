@@ -69,14 +69,14 @@ def dashboard(request , id):
 	else:
 		context['option_calls_uncovered'] = "not_subscribed"
 
-	if(user.multi_beggar):
-		context['multi_beggar'] = None
+	if(user.multi_bagger):
+		context['multi_bagger'] = None
 		try:
-			context['multi_beggar'] = calls_obj.filter(multi_beggar = True)
+			context['multi_bagger'] = calls_obj.filter(multi_bagger = True)
 		except ObjectDoesNotExist:
 			print(ObjectDoesNotExist)
 	else:
-		context['multi_beggar'] = "not_subscribed"
+		context['multi_bagger'] = "not_subscribed"
 
 	return render(request , 'trading/dashboard.html' , context)
 	# create context

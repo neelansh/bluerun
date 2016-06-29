@@ -15,7 +15,8 @@ class calls(models.Model):
 	nifty_future = models.BooleanField(default = False)
 	option_calls_covered = models.BooleanField(default = False)
 	option_calls_uncovered = models.BooleanField(default = False)
-	multi_beggar = models.BooleanField(default = False)
+	multi_bagger = models.BooleanField(default = False)
+	achived = models.BooleanField(default = False)
 
 	def __str__(self):
 		return self.stock_name

@@ -138,14 +138,14 @@
               <i class="fa fa-bars"></i>
             </button>
             <!-- End Toggle Nav Link For Mobiles -->
-            <a class="navbar-brand" href="{% url 'index' %}"><img height = "80" width = "115" alt="" src="{% static 'common/images/logo.jpg' %}"></a>
+            <a class="navbar-brand" href="{% url 'index' %}"><img height = "80" width = "115" alt="" src="{% static 'common/images/logo.png' %}"></a>
           </div>
           <div class="navbar-collapse collapse">
             
             <!-- Start Navigation List -->
             <ul class="nav navbar-nav navbar-right">
               <li>
-                <a class="active" href="{% url 'index' %}">Home</a>
+                <a href="{% url 'index' %}">Home</a>
               </li>
               <li>
                 <a href="{% url 'aboutus' %}">About Us</a>
@@ -167,7 +167,6 @@
                   <li><a href="{% url 'dashboard' id=user.id %}">Dashboard</a></li>
                   <li><a href="#">Profile</a></li>
                   <li><a href="#">Subscription plan</a></li>
-                  <li><a href="#">account setting</a></li>
                   <li><a href="{% url 'logout' id=user.id %}">logout</a></li>
                   <li><a href="{% url 'reset_password' id=user.id %}">Reset password</a></li>
                 </ul>
