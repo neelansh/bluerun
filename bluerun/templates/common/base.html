@@ -153,8 +153,13 @@
               <li>
                 <a href="{% url 'pricing' %}">Pricing</a>
               </li>
-              <li><a href="{% url 'contactus' %}">Contact Us</a></li>
-              <li><a href="{% url 'careers' %}">Careers</a></li>
+              <li>
+                <a href="{% url 'contactus' %}">Contact Us</a>
+              </li>
+              <li>
+                <a href="{% url 'careers' %}">Careers</a>
+              </li>
+
               {% if user.is_authenticated %}
               <li>
                 <a href="{% url 'dashboard' id=user.id %}">{{ user.username }} <i class="fa fa-angle-down"></i></a>
@@ -177,7 +182,7 @@
         <!-- Mobile Menu Start -->
         <ul class="wpb-mobile-menu">
           <li>
-                <a class="active" href="{% url 'index' %}">Home</a>
+                <a href="{% url 'index' %}">Home</a>
               </li>
               <li>
                 <a href="{% url 'aboutus' %}">About Us</a>
@@ -191,8 +196,12 @@
               <li>
                 <a href="{% url 'pricing' %}">Pricing</a>
               </li>
-              <li><a href="{% url 'contactus' %}">Contact Us</a></li>
-              <li><a href="{% url 'careers' %}">Careers</a></li>
+              <li>
+                <a href="{% url 'contactus' %}">Contact Us</a>
+              </li>
+              <li>
+                <a href="{% url 'careers' %}">Careers</a>
+              </li>
               {% if user.is_authenticated %}
               <li>
                 <a href="{% url 'dashboard' id=user.id %}">{{ user.username }} <i class="fa fa-angle-down"></i></a>

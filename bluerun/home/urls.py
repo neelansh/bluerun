@@ -19,9 +19,9 @@ from .views import *
 urlpatterns = [
     url(r'^$', index , name  = 'index'),
     url(r'^aboutus/$', aboutus , name  = 'aboutus'),
+    url(r'^careers/$', careers , name  = 'careers'),
     url(r'^services/$', services , name  = 'services'),
     url(r'^portfolio/$', portfolio , name  = 'portfolio'),
     url(r'^pricing/$', pricing , name  = 'pricing'),
     url(r'^contactus/$', contactus , name  = 'contactus'),
-    url(r'^careers/$', careers , name  = 'careers'),
 ]
