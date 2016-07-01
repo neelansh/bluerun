@@ -1683,7 +1683,9 @@ input[type="submit"] {
 }
 
 .pricing-table .plan-price {
-	padding: 25px 0;
+	padding-top: 25px;
+	padding-bottom: 150px;
+	
 }
 
 .pricing-table .plan-price .price-value {
@@ -1714,7 +1716,11 @@ input[type="submit"] {
 }
 
 .pricing-table .plan-signup {
-	padding: 25px 0;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right:5px;
+	box-sizing: border-box;
 	box-shadow: 0 0 20px rgba(0,0,0,.06) inset;
 	-o-box-shadow: 0 0 20px rgba(0,0,0,.06) inset;
 	-moz-box-shadow: 0 0 20px rgba(0,0,0,.06) inset;
