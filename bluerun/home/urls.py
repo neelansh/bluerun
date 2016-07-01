@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^portfolio/$', portfolio , name  = 'portfolio'),
     url(r'^pricing/$', pricing , name  = 'pricing'),
     url(r'^contactus/$', contactus , name  = 'contactus'),
+    url(r'^careers/$', careers , name  = 'careers'),
 ]

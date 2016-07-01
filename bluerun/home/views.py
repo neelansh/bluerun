@@ -19,3 +19,6 @@ def pricing(request):
 
 def contactus(request):
 	return render(request , 'home/contact-us.html')
+
+def careers(request):
+	return render(request , 'home/careers.html')
