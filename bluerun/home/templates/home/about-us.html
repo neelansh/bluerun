@@ -1,18 +1,13 @@
 {% extends 'common/base.html' %}
+{% load staticfiles %}
 {% block content %}
     <!-- Start Page Banner -->
-    <div class="page-banner" style="padding:40px 0; background: url(images/slide-02-bg.jpg) center #f9f9f9;">
+    <div class="page-banner" style="padding:40px 0; background: url({% static 'margo/images/slide-02-bg.jpg' %}) center #f9f9f9;">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <h2>About Us</h2>
-            <p>Blue Run Financial Services is an integrated firm involved in financial markets and providing diverse financial products and services. . We at blue run believe in commitment to the markets and strive towards achieving the goals of our clients by following disciplined investing and informed trading. We have a strong distribution and support network which aims to ensure the best returns possible in stock markets for our clients.</p>
-          </div>
-          <div class="col-md-6">
-            <ul class="breadcrumbs">
-              <li><a href="#">Home</a></li>
-              <li>About Us</li>
-            </ul>
+            <p>We are professionals</p>
           </div>
         </div>
       </div>
@@ -34,6 +29,9 @@
               <h4 class="classic-title"><span>Welcome To Our Agency</span></h4>
 
               <!-- Some Text -->
+              <p>
+                Blue Run Financial Services is an integrated firm involved in financial markets and providing diverse financial products and services. . We at blue run believe in commitment to the markets and strive towards achieving the goals of our clients by following disciplined investing and informed trading. We have a strong distribution and support network which aims to ensure the best returns possible in stock markets for our clients.
+              </p>
               <p>Blue Run is a leading stock advisory company that has been rated as a top performer by many renowned independent researchers and investors. Blue Run provides multitude of product to suit all kind of players in Indian Stock Market namely Stock Futures, Stock Options, Nifty Bank, Nifty and Positional and intraday cash calls . Privilege calls are Blue Run’ trademark which aids traders to trade in specified stocks.</p>
               <p>We have an unbeaten track record of giving accurate calls. More and more traders are getting attracted to Intraday and Short term delivery-trading to make quick money but often make huge losses in absence of any knowledge, strategy or discipline required for Day or Short Term trading. Only handful smart traders are able to make money in both Rising as well as Falling Market. We, at Blue Run are committed in helping our traders to benefit from Indian Stock Market by adopting a reasonably correct strategy with discipline.</p>
 

@@ -40,6 +40,9 @@
   <!-- Color CSS Styles  -->
   <link rel="stylesheet" type="text/css" href="{% static 'margo/css/colors/red.css' %}" title="red" media="screen" />
 
+  <!-- Our css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/base.css' %}">
+
   <!-- Margo JS  -->
   <script type="text/javascript" src="{% static 'margo/js/jquery-2.1.4.min.js' %}"></script>
   <script type="text/javascript" src="{% static 'margo/js/jquery.migrate.js' %}"></script>
@@ -226,14 +229,6 @@
 
           <!-- Start Subscribe & Social Links Widget -->
           <div class="col-md-3">
-            <div class="footer-widget mail-subscribe-widget">
-              <h4>Get in touch<span class="head-line"></span></h4>
-              <p>Join our mailing list to stay up to date and get notices about our new releases!</p>
-              <form class="subscribe">
-                <input type="text" placeholder="mail@example.com">
-                <input type="submit" class="btn-system" value="Send">
-              </form>
-            </div>
             <div class="footer-widget social-widget">
               <h4>Follow Us<span class="head-line"></span></h4>
               <ul class="social-icons">
@@ -276,14 +271,19 @@
           <!-- Start Contact Widget -->
           <div class="col-md-5">
             <div class="footer-widget contact-widget">
-              <h4><img src="images/footer-margo.png" class="img-responsive" alt="Footer Logo" /></h4>
+              <h4><img width = 120 height = 80 src="{% static 'common/images/logo.png' %}" class="img-responsive" alt="Footer Logo" /></h4>
               <p>What started out as a small group of finance enthusiasts has now become a leading destination for traders and investors for expert advice and stratergies essential to 'winning' in the dynamic markets of today.</p>
               <ul>
-                <li><span>Phone Number:</span>+919911565612, +918879001300, +919891104002</li>
-                <li><span>Email:</span>bluerunfinancial@gmail.com</li>
-                <li><span>Website:</span>http://bluerunfinancial.com/</li>
+                <li><span>Phone Number: </span>+919911565612, +918879001300, +919891104002</li>
+                <li><span>Email: </span>bluerunfinancial@gmail.com</li>
+                <li><span>Website: </span><a href="http://www.bluerunfinancial.com/">http://www.bluerunfinancial.com/</a></li>
               </ul>
             </div>
+          </div>
+          <div class="col-md-4 text-white" >
+            <h4 style = "color: white">LINKS</h4><br>
+            <a href="#"><h6 style = "color: white">Meet our technical team</h6></a><br>
+            <a href="#"><h6 style = "color: white">careers with us</h6></a><br>
           </div>
           <!-- .col-md-3 -->
           <!-- End Contact Widget -->
@@ -296,14 +296,7 @@
         <div class="copyright-section">
           <div class="row">
             <div class="col-md-4">
-              <p>&copy; 2014 Margo - All Rights Reserved <a href="http://graygrids.com">GrayGrids</a> </p>
-            </div>
-            <div class="col-md-8">
-              <ul class="footer-nav">
-                <li><a href="#">Sitemap</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
+              <p>&copy; 2016 Bluerun - All Rights Reserved</p>
             </div>
           </div>
         </div>
