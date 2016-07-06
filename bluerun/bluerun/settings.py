@@ -84,7 +84,7 @@ DATABASES = {
         'NAME': 'bluerun',
         'HOST': 'localhost',
         'PORT': 3306,
-        'PASSWORD': 'akshita',
+        'PASSWORD': 'neelansh5',
         'USER': 'root',
     }
 }
