@@ -1,19 +1,48 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
 {% block content %}
+  <!-- Carousel -->
+  <div id="main-slide" class="carousel slide" data-ride="carousel" style="padding :0; margin:0 ;">
+
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+      
+    </ol>
+    <!--/ Indicators end-->
+		    <div class="carousel-inner">
+      <div class="item active">
+      <div class="col-md-12 ">
+      <img src="{% static 'margo/images/slider/bg1.jpg' %}" alt="slider" id="dashboard">
+		<div class="slider-content">
+		<h2 class="animated2">
+              <span>Welcome to <strong>Bluerun</strong></span>
+            </h2>
+			</div>
+            <h2 class="dash">
+              <span>Hello {{ user.username }}</span>
+			  
+            </h2>  
+			</div>
+          </div>
+		 </div>
+       
+	
+     
+	 <!--
 <div class="page-banner" style="padding:40px 0;">
-	<div class="container">
+	<div class="container" id="dashboard">
 		<div class="row">
 			<div class="col-md-6">
 				<h2>Dashboard</h2>
-				<p>Hello {{ user.username }}</p>
+				<p></p>
 			</div>
 		</div>
 	</div>
-</div>
+</div>-->
 
-<div class = "container">
-	<ul class="nav nav-tabs" role="tablist">
+<div class = "container-fluid" >
+	<ul class="nav nav-tabs nav-justified" role="tablist">
 		<li role="presentation" class="active"><a href="#cashintra" aria-controls="cashintra" role="tab" data-toggle="tab">Cash intra</a></li>
 		<li role="presentation"><a href="#cashpositional" aria-controls="cashpositional" role="tab" data-toggle="tab">Cash positional</a></li>
 		<li role="presentation"><a href="#stockfuture" aria-controls="stcokfuture" role="tab" data-toggle="tab">Stock future</a></li>
@@ -30,21 +59,41 @@
 			{% for call in cash_intra %}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				
+				 {% if call.achived %}
+					 <div class="col-md-4" style= "background-color:#32CD32">
+					 
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</br></h3>
+					</div>
+					
+					
+					{%else%}
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					{%endif%}
+					<!--{% if call.achived%}
+					<i class="fa fa-dollar "></i>
+					{%endif%} -->
+					
 				</div>
-				<div class="panel-body">
-					date: {{ call.created_on }}<br>
-					entry price: {{ call.entry_price }}<br>
-					target: {{ call.target }}<br>
-					stop loss: {{ call.stop_loss }}<br>
+				
+				<div class="panel-body pan-body-custom">
+			</br>
+					<strong class="pbody">Date:</strong> {{ call.created_on }}<br>
+					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</br> </strong>
+					
 				</div>
 			</div>
 			{% endfor %}
 			{% elif cash_intra == None %}
-			<h1>no calls in this section</h1>
+			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>you are not subscribed to this feature</h1>
+				<h1>You are not subscribed to this feature.</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -54,21 +103,36 @@
 			{% for call in cash_positional %}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				
+				 {% if call.achived %}
+					 <div class="col-md-4" style= "background-color:#32CD32">
+					 
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%else%}
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%endif%}					
 				</div>
-				<div class="panel-body">
-					date: {{ call.created_on }}<br>
-					entry price: {{ call.entry_price }}<br>
-					target: {{ call.target }}<br>
-					stop loss: {{ call.stop_loss }}<br>
+				
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date: </strong>{{ call.created_on }}<br>
+					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved: </strong>{{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
 			{% elif not cash_positional %}
-			<h1>no calls in this section</h1>
+			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>you are not subscribed to this feature</h1>
+				<h1>You are not subscribed to this feature</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -78,21 +142,37 @@
 			{% for call in stock_future %}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
-				</div>
-				<div class="panel-body">
-					date: {{ call.created_on }}<br>
-					entry price: {{ call.entry_price }}<br>
-					target: {{ call.target }}<br>
-					stop loss: {{ call.stop_loss }}<br>
+				
+				 {% if call.achived %}
+					 <div class="col-md-4" style= "background-color:#32CD32">
+					 
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%else%}
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%endif%}
+					</div>
+				
+				<div class="panel-body pan-body-custom">
+				
+				</br>
+					<strong class="pbody">Date: </strong>{{ call.created_on }}<br>
+					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved: </strong>{{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
 			{% elif stock_future == None %}
-			<h1>no calls in this section</h1>
+			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>you are not subscribed to this feature</h1>
+				<h1>You are not subscribed to this feature.</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -102,21 +182,36 @@
 			{% for call in nifty_future %}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				
+				 {% if call.achived %}
+					 <div class="col-md-4" style= "background-color:#32CD32">
+					 
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%else%}
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%endif%}
+					</div>
+				
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date: </strong>{{ call.created_on }}<br>
+					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved: </strong>{{call.achived}}
 				</div>
-				<div class="panel-body">
-					date: {{ call.created_on }}<br>
-					entry price: {{ call.entry_price }}<br>
-					target: {{ call.target }}<br>
-					stop loss: {{ call.stop_loss }}<br>
 				</div>
-			</div>
 			{% endfor %}
 			{% elif nifty_future == None %}
-			<h1>no calls in this section</h1>
+			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>you are not subscribed to this feature</h1>
+				<h1>You are not subscribed to this feature.</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -126,21 +221,36 @@
 			{% for call in option_calls_covered %}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				
+				 {% if call.achived %}
+					 <div class="col-md-4" style= "background-color:#32CD32">
+					 
+					<h3 class="panel-title"id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%else%}
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%endif%}				
 				</div>
-				<div class="panel-body">
-					date: {{ call.created_on }}<br>
-					entry price: {{ call.entry_price }}<br>
-					target: {{ call.target }}<br>
-					stop loss: {{ call.stop_loss }}<br>
+				
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date: </strong>{{ call.created_on }}<br>
+					<strong class="pbody">Entry Price:</strong> {{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss:</strong> {{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved:</strong> {{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
 			{% elif option_calls_covered == None %}
-			<h1>no calls in this section</h1>
+			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>you are not subscribed to this feature</h1>
+				<h1>You are not subscribed to this feature</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -150,21 +260,36 @@
 			{% for call in option_calls_uncovered %}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				
+				 {% if call.achived %}
+					 <div class="col-md-4" style= "background-color:#32CD32">
+					 
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%else%}
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%endif%}			
 				</div>
-				<div class="panel-body">
-					date: {{ call.created_on }}<br>
-					entry price: {{ call.entry_price }}<br>
-					target: {{ call.target }}<br>
-					stop loss: {{ call.stop_loss }}<br>
+				
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date:</strong> {{ call.created_on }}<br>
+					<strong class="pbody">Entry Price:</strong> {{ call.entry_price }}<br>
+					<strong class="pbody">Target:</strong> {{ call.target }}<br>
+					<strong class="pbody">Stop Loss:</strong> {{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved:</strong> {{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
 			{% elif option_calls_uncovered == None %}
-			<h1>no calls in this section</h1>
+			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>you are not subscribed to this feature</h1>
+				<h1>You are not subscribed to this feature</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -174,21 +299,36 @@
 			{% for call in multi_bagger %}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">stock name: {{ call.stock_name }}</h3>
+				
+				 {% if call.achived %}
+					 <div class="col-md-4" style= "background-color:#32CD32">
+					 
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%else%}
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
+					
+					{%endif%}				
 				</div>
-				<div class="panel-body">
-					date: {{ call.created_on }}<br>
-					entry price: {{ call.entry_price }}<br>
-					target: {{ call.target }}<br>
-					stop loss: {{ call.stop_loss }}<br>
+				
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date:</strong> {{ call.created_on }}<br>
+					<strong class="pbody">Entry Price:</strong> {{ call.entry_price }}<br>
+					<strong class="pbody">Target:</strong> {{ call.target }}<br>
+					<strong class="pbody">Stop Loss:</strong> {{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved:</strong> {{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
 			{% elif multi_bagger == None %}
-			<h1>no calls in this section</h1>
+			<h1>No calls in this Section.</h1>
 			{% else %}
 			<div>
-				<h1>you are not subscribed to this feature</h1>
+				<h1>You are not subscribed to this feature.</h1>
 			</div>
 			{% endif %}
 		</div>
