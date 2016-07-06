@@ -3,6 +3,7 @@ from django.views.decorators.http import require_GET, require_POST,require_http_
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
 from django.core.urlresolvers import reverse
+from django.template import RequestContext
 from account.forms import *
 from .models import *
 from django.template import loader
