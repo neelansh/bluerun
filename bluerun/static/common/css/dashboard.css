@@ -1,0 +1,19 @@
+#dashboard
+{
+   position: relative; 
+ 
+background-size: cover;
+    height: 200px; 
+    width: 100%; 
+}
+
+h2.dash { 
+position:absolute;
+
+color: #ee3733;
+font-size: 50px;
+ top: 150px; 
+   left: 55px; 
+   width: 100%; 
+}
+
