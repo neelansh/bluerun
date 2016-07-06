@@ -16,4 +16,22 @@ font-size: 50px;
    left: 55px; 
    width: 100%; 
 }
-
+#panel
+{
+	font-size: 18px;
+}
+.pan-body-custom
+{
+	line-height: 200%;
+	font-size:12px;
+	color:black;
+	font-family:Arial;
+}
+.pbody
+{
+	font-family:Verdana;
+	line-height: 150%;
+	color: #3333ff;
+	font-size:13px;
+	font-weight: bold;
+}
