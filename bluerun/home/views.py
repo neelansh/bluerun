@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .models import Contact,ContactForm
+from django import forms
 
 # Create your views here.
 
@@ -18,7 +20,21 @@ def pricing(request):
 	return render(request , 'home/pricing.html')
 
 def contactus(request):
-	return render(request , 'home/contact-us.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            subject = request.POST.get('subject')
+            message = request.POST.get('message', '')
+            forminstance = Contact(name = name,email = email,subject = subject,message = message)
+            forminstance.save()  
+        else:
+            raise forms.ValidationError('Invalid/Missing fields')             
+    else:
+        form = ContactForm()
+    
+    return render(request , 'home/contact-us.html')
 
 def careers(request):
 	return render(request , 'home/careers.html')
