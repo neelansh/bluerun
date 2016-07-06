@@ -63,12 +63,14 @@
 				 {% if call.achived %}
 					 <div class="col-md-4" style= "background-color:#32CD32">
 					 
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</br></h3>
 					</div>
 					
-					{%else%}
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
 					
+					{%else%}
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
 					{%endif%}
 					<!--{% if call.achived%}
 					<i class="fa fa-dollar "></i>
@@ -76,13 +78,13 @@
 					
 				</div>
 				
-				<div class="panel-body">
-			
-					Date: {{ call.created_on }}<br>
-					Entry Price: {{ call.entry_price }}<br>
-					Target: {{ call.target }}<br>
-					Stop Loss: {{ call.stop_loss }}<br>
-					Call Achieved: {{call.achived}}</br>
+				<div class="panel-body pan-body-custom">
+			</br>
+					<strong class="pbody">Date:</strong> {{ call.created_on }}<br>
+					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</br> </strong>
 					
 				</div>
 			</div>
@@ -105,21 +107,24 @@
 				 {% if call.achived %}
 					 <div class="col-md-4" style= "background-color:#32CD32">
 					 
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
 					</div>
 					
 					{%else%}
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
 					
 					{%endif%}					
 				</div>
 				
-				<div class="panel-body">
-					Date: {{ call.created_on }}<br>
-					Entry price: {{ call.entry_price }}<br>
-					Target: {{ call.target }}<br>
-					Stop loss: {{ call.stop_loss }}<br>
-					Call Achieved: {{call.achived}}
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date: </strong>{{ call.created_on }}<br>
+					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved: </strong>{{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
@@ -141,21 +146,25 @@
 				 {% if call.achived %}
 					 <div class="col-md-4" style= "background-color:#32CD32">
 					 
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
 					</div>
 					
 					{%else%}
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
 					
 					{%endif%}
 					</div>
 				
-				<div class="panel-body">
-					Date: {{ call.created_on }}<br>
-					Entry price: {{ call.entry_price }}<br>
-					Target: {{ call.target }}<br>
-					Stop loss: {{ call.stop_loss }}<br>
-					Call Achieved: {{call.achived}}
+				<div class="panel-body pan-body-custom">
+				
+				</br>
+					<strong class="pbody">Date: </strong>{{ call.created_on }}<br>
+					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved: </strong>{{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
@@ -177,21 +186,24 @@
 				 {% if call.achived %}
 					 <div class="col-md-4" style= "background-color:#32CD32">
 					 
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
 					</div>
 					
 					{%else%}
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
 					
 					{%endif%}
 					</div>
 				
-				<div class="panel-body">
-					Date: {{ call.created_on }}<br>
-					Entry price: {{ call.entry_price }}<br>
-					Target: {{ call.target }}<br>
-					Stop loss: {{ call.stop_loss }}<br>
-					Call Achieved: {{call.achived}}
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date: </strong>{{ call.created_on }}<br>
+					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved: </strong>{{call.achived}}
 				</div>
 				</div>
 			{% endfor %}
@@ -213,21 +225,24 @@
 				 {% if call.achived %}
 					 <div class="col-md-4" style= "background-color:#32CD32">
 					 
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<h3 class="panel-title"id="panel">Stock name: {{ call.stock_name }}</h3>
 					</div>
 					
 					{%else%}
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
 					
 					{%endif%}				
 				</div>
 				
-				<div class="panel-body">
-					Date: {{ call.created_on }}<br>
-					Entry price: {{ call.entry_price }}<br>
-					Target: {{ call.target }}<br>
-					Stop loss: {{ call.stop_loss }}<br>
-					Call Achieved: {{call.achived}}
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date: </strong>{{ call.created_on }}<br>
+					<strong class="pbody">Entry Price:</strong> {{ call.entry_price }}<br>
+					<strong class="pbody">Target: </strong>{{ call.target }}<br>
+					<strong class="pbody">Stop Loss:</strong> {{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved:</strong> {{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
@@ -249,21 +264,24 @@
 				 {% if call.achived %}
 					 <div class="col-md-4" style= "background-color:#32CD32">
 					 
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
 					</div>
 					
 					{%else%}
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
 					
 					{%endif%}			
 				</div>
 				
-				<div class="panel-body">
-					Date: {{ call.created_on }}<br>
-					Entry price: {{ call.entry_price }}<br>
-					Target: {{ call.target }}<br>
-					Stop loss: {{ call.stop_loss }}<br>
-					Call Achieved: {{call.achived}}
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date:</strong> {{ call.created_on }}<br>
+					<strong class="pbody">Entry Price:</strong> {{ call.entry_price }}<br>
+					<strong class="pbody">Target:</strong> {{ call.target }}<br>
+					<strong class="pbody">Stop Loss:</strong> {{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved:</strong> {{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
@@ -285,21 +303,24 @@
 				 {% if call.achived %}
 					 <div class="col-md-4" style= "background-color:#32CD32">
 					 
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
 					</div>
 					
 					{%else%}
-					<h3 class="panel-title">Stock name: {{ call.stock_name }}</h3>
+					<div class="col-md-4" style= "background-color:red">
+					<h3 class="panel-title" id="panel">Stock name: {{ call.stock_name }}</h3>
+					</div>
 					
 					{%endif%}				
 				</div>
 				
-				<div class="panel-body">
-					Date: {{ call.created_on }}<br>
-					Entry price: {{ call.entry_price }}<br>
-					Target: {{ call.target }}<br>
-					Stop loss: {{ call.stop_loss }}<br>
-					Call Achieved: {{call.achived}}
+				<div class="panel-body pan-body-custom">
+				</br>
+					<strong class="pbody">Date:</strong> {{ call.created_on }}<br>
+					<strong class="pbody">Entry Price:</strong> {{ call.entry_price }}<br>
+					<strong class="pbody">Target:</strong> {{ call.target }}<br>
+					<strong class="pbody">Stop Loss:</strong> {{ call.stop_loss }}<br>
+					<strong class="pbody">Call Achieved:</strong> {{call.achived}}
 				</div>
 			</div>
 			{% endfor %}
