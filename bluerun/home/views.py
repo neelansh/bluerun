@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from .models import Contact,ContactForm
+from .models import Contact
+from .forms import ContactForm
 from django import forms
+from django.contrib import messages 
 
 # Create your views here.
 
@@ -29,7 +31,11 @@ def contactus(request):
             subject = request.POST.get('subject')
             message = request.POST.get('message', '')
             forminstance = Contact(name = name,email = email,contact = contact,subject = subject,message = message)
-            forminstance.save()               
+            forminstance.save()
+            messages.success(request, 'Submitted successfully!') 
+        else:
+            raise forms.ValidationError('Invalid/Missing Fields')
+            messages.error(request, 'Submission failed! Please fill out the necessary details.')               
     else:
         form = ContactForm()
     
