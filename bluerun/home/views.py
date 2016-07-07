@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from .models import Contact,ContactForm
+from .models import Contact
+from .forms import ContactForm
 from django import forms
+from django.contrib import messages 
+from django.views.decorators.http import require_GET, require_POST,require_http_methods
 
 # Create your views here.
 
@@ -19,6 +22,7 @@ def portfolio(request):
 def pricing(request):
 	return render(request , 'home/pricing.html')
 
+@require_http_methods(['POST' , 'GET'])
 def contactus(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -26,10 +30,11 @@ def contactus(request):
             name = request.POST.get('name')
             email = request.POST.get('email')
             contact = request.POST.get('contact')
-            subject = request.POST.get('subject')
+            subject = request.POST.get('subject' , '')
             message = request.POST.get('message', '')
             forminstance = Contact(name = name,email = email,contact = contact,subject = subject,message = message)
-            forminstance.save()               
+            forminstance.save()
+            messages.success(request, 'Submitted successfully!')                
     else:
         form = ContactForm()
     

@@ -87,13 +87,19 @@
 
             <!-- Classic Heading -->
             <h4 class="classic-title"><span>Contact Us</span></h4>
+            <h4 style="color:red;">
+               {% if messages %}
+               {% for message in messages %}
+               {{ message }}
+               {% endfor %}
+               {% endif %}</h4>
 
             <!-- Start Contact Form -->
-            <form role="form" class="contact-form" id="contact-form" method="post">
-              {% csrf_token %}
+            <form role="form" action="{% url 'contactus' %}" class="contact-form" id="contact-form" method="post"> 
+               {% csrf_token %}
               <div class="form-group">
                 <div class="controls">
-                  <input type="text" placeholder="Name" name="name" required input:invalid { border: 1px solid red; }>
+                  <input type="text" placeholder="Name" name="name" required input:invalid { border: 1px solid red; } >
                 </div>
               </div>
               <div class="form-group">
@@ -120,7 +126,11 @@
                 </div>
               </div> 
               <button type="submit" id="submit" class="btn-system btn-large">Send</button>
+             
+             
+              
               <div id="success" style="color:#34495e;"></div>
+              
             </form>
             <!-- End Contact Form -->
 
