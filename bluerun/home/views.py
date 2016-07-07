@@ -25,12 +25,11 @@ def contactus(request):
         if form.is_valid():
             name = request.POST.get('name')
             email = request.POST.get('email')
+            contact = request.POST.get('contact')
             subject = request.POST.get('subject')
             message = request.POST.get('message', '')
-            forminstance = Contact(name = name,email = email,subject = subject,message = message)
-            forminstance.save()  
-        else:
-            raise forms.ValidationError('Invalid/Missing fields')             
+            forminstance = Contact(name = name,email = email,contact = contact,subject = subject,message = message)
+            forminstance.save()               
     else:
         form = ContactForm()
     
