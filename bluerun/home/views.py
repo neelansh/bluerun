@@ -3,6 +3,7 @@ from .models import Contact
 from .forms import ContactForm
 from django import forms
 from django.contrib import messages 
+from django.views.decorators.http import require_GET, require_POST,require_http_methods
 
 # Create your views here.
 
@@ -21,6 +22,7 @@ def portfolio(request):
 def pricing(request):
 	return render(request , 'home/pricing.html')
 
+@require_http_methods(['POST' , 'GET'])
 def contactus(request):
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -32,10 +34,7 @@ def contactus(request):
             message = request.POST.get('message', '')
             forminstance = Contact(name = name,email = email,contact = contact,subject = subject,message = message)
             forminstance.save()
-            messages.success(request, 'Submitted successfully!') 
-        else:
-            raise forms.ValidationError('Invalid/Missing Fields')
-            messages.error(request, 'Submission failed! Please fill out the necessary details.')               
+            messages.success(request, 'Submitted successfully!')                
     else:
         form = ContactForm()
     
