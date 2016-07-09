@@ -91,3 +91,4 @@ def reset_password(request , id):
 def logout(request , id):
     auth_logout(request)
     return redirect(reverse('login'))
+

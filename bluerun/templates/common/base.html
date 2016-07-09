@@ -166,7 +166,7 @@
                 <a href="#">{{ user.username }}&nbsp; <i class="fa fa-angle-down"></i></a>
                 <ul class = "dropdown">
                   <li><a href="{% url 'dashboard' id=user.id %}">Dashboard</a></li>
-                  <li><a href="#">Profile</a></li>
+                  <li><a href="{% url 'profile' id=user.id %}">Profile</a></li>
                   <li><a href="#">Subscription plan</a></li>
                   <li><a href="{% url 'logout' id=user.id %}">logout</a></li>
                   <li><a href="{% url 'reset_password' id=user.id %}">Reset password</a></li>
@@ -208,7 +208,7 @@
                 <a href="#">{{ user.username }}&nbsp;<i class="fa fa-angle-down"></i></a>
                 <ul class = "dropdown">
                   <li><a href="{% url 'dashboard' id=user.id %}">Dashboard</a></li>
-                  <li><a href="#">Profile</a></li>
+                  <li><a href="{% url 'profile' id=user.id %}">Profile</a></li>
                   <li><a href="#">Subscription plan</a></li>
                   <li><a href="#">account setting</a></li>
                   <li><a href="{% url 'logout' id=user.id %}">logout</a></li>

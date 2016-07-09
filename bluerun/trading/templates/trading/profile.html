@@ -1,0 +1,24 @@
+{% extends 'common/base.html' %}
+{% load staticfiles %}
+{% block content %}
+<h1>Welcome to your profile page, {{ user.username }}</h1>
+<ul>
+{% if data %}
+{% for d in data %}
+<li>Phone: {{ d.phone }} </li>
+<li>Cash intra: {{ d.cash_intra }} </li>
+<li>Cash positional: {{ d.cash_positional }} </li>
+<li>Stock future: {{ d.stock_future }}</li>
+<li>Nifty future: {{ d.nifty_future }}</li>
+<li>Option calls covered: {{ d.option_calls_covered }} </li>
+<li>Option calls uncovered: {{ d.option_calls_uncovered }}</li>
+<li>Multi bagger: {{ d.multi_bagger }}</li>
+<li>Subscription start-date: {{ subscription_startdate }}</li>
+<li>Subscription end-date: {{ subscription_enddate }}</li>
+{% endfor %}
+{% else %}
+<p>No data found.</p>
+{% endif %}
+</ul>
+{% endblock %}
+
