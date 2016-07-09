@@ -86,13 +86,8 @@ DATABASES = {
         'NAME': database_name,
         'HOST': 'localhost',
         'PORT': 3306,
-<<<<<<< HEAD
-        'PASSWORD': 'anshula',
-        'USER': 'root',
-=======
         'PASSWORD': database_password,
         'USER': database_user,
->>>>>>> 8addc9d5f42936d53044f96563fffc9a5437ebf2
     }
 }
 
