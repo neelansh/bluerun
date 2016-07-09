@@ -6,8 +6,3 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         exclude = ['datetime']
-<<<<<<< HEAD
-
-       
-=======
->>>>>>> 8addc9d5f42936d53044f96563fffc9a5437ebf2
