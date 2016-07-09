@@ -88,3 +88,11 @@ def dashboard(request , id):
 	# if a facility is false
 	# 	add a marker
 	# render the template 
+
+def profile(request , id):
+    context = {}
+    user = get_object_or_404(MyUser , id = request.user.id)
+    data = MyUser.objects.all()
+    context['user'] = user
+    context['data'] = data
+    return render(request, 'trading/profile.html' , context)
