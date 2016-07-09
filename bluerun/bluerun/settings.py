@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 
 import os
 
+from .credentials import *
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -20,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$76b+_t*j_%$15(_96v(r=1u4yelple=ds^!w-raio8^2qys7w'
+SECRET_KEY = secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -81,11 +83,11 @@ WSGI_APPLICATION = 'bluerun.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bluerun',
+        'NAME': database_name,
         'HOST': 'localhost',
         'PORT': 3306,
-        'PASSWORD': 'neelansh5',
-        'USER': 'root',
+        'PASSWORD': database_password,
+        'USER': database_user,
     }
 }
 
@@ -133,8 +135,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR , 'static/'),)
 AUTH_USER_MODEL = 'account.MyUser'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'email-smtp.eu-west-1.amazonaws.com'
-EMAIL_HOST_USER = ''
-EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST = email_host
+EMAIL_HOST_USER = email_host_user
+EMAIL_HOST_PASSWORD = email_host_password
 EMAIL_PORT = 25
 EMAIL_USE_TLS = True
