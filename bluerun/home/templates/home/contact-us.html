@@ -95,15 +95,15 @@
                {% endif %}</h4>
 
             <!-- Start Contact Form -->
-<<<<<<< HEAD
+
             <form role="form" action="{% url 'contactus' %}" class="contact-form" id="contact-form" method="post"> 
                {% csrf_token %}
               
-=======
-            <form role="form" class="contact-form" id="contact-form" method="post" action="{% url 'contactus' %}">
+           <form role="form" class="contact-form" id="contact-form" method="post" action="{% url 'contactus' %}">
               {% csrf_token %}
->>>>>>> dc9dd6923063cfbb075444aad60959bcf99025ae
-              <div class="form-group">
+
+  
+            <div class="form-group">
                 <div class="controls">
                   <input type="text" placeholder="Name" name="name" required input:invalid { border: 1px solid red; } >
                 </div>

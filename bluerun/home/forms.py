@@ -7,9 +7,4 @@ class ContactForm(forms.ModelForm):
         model = Contact
         exclude = ['datetime']
 
-        def __str__(self):
-            return '  '.join([
-            self.name,
-            self.email,
-            self.contact,
-        ])
+       
