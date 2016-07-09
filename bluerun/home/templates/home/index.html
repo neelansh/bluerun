@@ -2,9 +2,8 @@
 {% load staticfiles %}
 {% block content %}
 <!-- Start HomePage Slider -->
-
-<section id="home" class="container">
-<iframe frameborder="0" src="http://www.indianotes.com/widgets/indices-ticker/index.php?type=indices-ticker&w=1140" width="100%" height="100%" scrolling="no"></iframe>
+<section id="home" class="container-fluid">
+<iframe frameborder="0" src="http://www.indianotes.com/widgets/indices-ticker/index.php?type=indices-ticker&w=1326" width="100%" height="70px" scrolling="no" alt="ticker loading"></iframe>
   <!-- Carousel -->
   <div id="main-slide" class="carousel slide" data-ride="carousel" style="padding :0; margin:0 ;">
 
@@ -19,14 +18,14 @@
     <!-- Carousel inner -->
     <div class="carousel-inner">
       <div class="item active">
-      <img class="img-responsive" src="{% static 'margo/images/slider/bg1.jpg' %}" alt="slider">
+      <img class="img-responsive" src="{% static 'margo/images/slider/bg1.jpg' %}" alt="slider" style="height :70vh; opacity :0.8">
         <div class="slider-content">
           <div class="col-md-12 text-center">
             <h2 class="animated2">
-              <span>Welcome to <strong>Bluerun</strong></span>
+              <span style="color :black">Welcome to <strong>Bluerun</strong></span>
             </h2>
             <h3 class="animated3">
-             <span>The ultimate aim of your business</span>
+             <strong><span style="color : white">The ultimate aim of your business</span></strong>
            </h3>
            <p class="animated4"><a href="#" class="slider btn btn-system btn-large">Check Now</a></p>
          </div>
@@ -34,14 +33,14 @@
      </div>
      <!--/ Carousel item end -->
      <div class="item">
-     <img class="img-responsive" src="{% static 'margo/images/slider/bg2.jpg' %}" alt="slider">
+     <img class="img-responsive" src="{% static 'margo/images/slider/bg2.jpg' %}" alt="slider" style="height : 70vh; opacity :0.8">
       <div class="slider-content">
         <div class="col-md-12 text-center">
           <h2 class="animated4">
-            <span><strong>Bluerun</strong> for the highest</span>
+            <span><strong>Bluerun</strong><span style="color : white"> for the highest</span></span>
           </h2>
           <h3 class="animated5">
-           <span>The Key of your Success</span>
+           <span style="color: white ">The Key of your Success</span>
          </h3>
          <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Buy Now</a></p>
        </div>
@@ -49,16 +48,16 @@
    </div>
    <!--/ Carousel item end -->
    <div class="item">
-   <img class="img-responsive" src="{% static 'margo/images/slider/bg3.jpg' %}" alt="slider">
+   <img class="img-responsive" src="{% static 'margo/images/slider/bg3.jpg' %}" alt="slider" style="height : 70vh; opacity :1">
     <div class="slider-content">
       <div class="col-md-12 text-center">
         <h2 class="animated7 white">
           <span>The way of <strong>Success</strong></span>
         </h2>
         <h3 class="animated8 white">
-         <span>Why you are waiting</span>
+         <span style="color : black">Why you are waiting</span>
        </h3>
-       <div class="">
+       <div class="container">
         <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
       </div>
     </div>
@@ -242,7 +241,7 @@
           <!-- Testimonial 1 -->
           <div class="classic-testimonials item">
             <div class="testimonial-content">
-              <p style="overflow-y:scroll; height:100px;">Very rarely does one get a Financial Services company which operates as a family .... Which treats your money as their own....Which rejoices in your happiness and which splits the losses, if ever they happen ( which is rarer than a blue moon ). BlueRun Financial Services comprises an outstanding set of professionals with decades of experience. They excel in their analysis and , importantly, their exceptional capability to identify potential wealth creators. Not one to impose their views, they are always willing to listen to your viewpoints, 24*7, and work to achieve a mutual satisfaction level. They have an extraordinary set of clients from across the globe and industry who are actively engaged in exchanging information. In a short span of time, BlueRun has evolved into a highly participative, sensitive and immensely beneficial family.
+              <p style="overflow-y:scroll; height:300px;">Very rarely does one get a Financial Services company which operates as a family .... Which treats your money as their own....Which rejoices in your happiness and which splits the losses, if ever they happen ( which is rarer than a blue moon ). BlueRun Financial Services comprises an outstanding set of professionals with decades of experience. They excel in their analysis and , importantly, their exceptional capability to identify potential wealth creators. Not one to impose their views, they are always willing to listen to your viewpoints, 24*7, and work to achieve a mutual satisfaction level. They have an extraordinary set of clients from across the globe and industry who are actively engaged in exchanging information. In a short span of time, BlueRun has evolved into a highly participative, sensitive and immensely beneficial family.
 
                 While I acknowledge my heartfelt appreciation for the leadership and the immensely talented team, I extend my sincerest good wishes for their continued success !!</p>
             </div>
@@ -251,9 +250,10 @@
           <!-- Testimonial 2 -->
           <div class="classic-testimonials item">
             <div class="testimonial-content">
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+              <p style="overflow-y:scroll; height:300px;"> I would like to share my personal experience with bluerun and its fabulous team.Im a complete novice in this field and bluerun's team especially aditya who is meticulous with his work have helped people like me in many ways.Real time analysis of the stocks done by the team and calls provided are definitely like an icing on the cake for people who feel hindrance while trading.Im glad to have so many people helping me out in the group an feel blissful of the experience with the team.Thanks for making my trading so simple and accurate.
+                Bluerun-where the money runs behind you</p>
             </div>
-            <div class="testimonial-author"><span>John Doe</span> - Customer</div>
+            <div class="testimonial-author"><span>Nithin</span> - Customer</div>
           </div>
           <!-- Testimonial 3 -->
           <div class="classic-testimonials item">

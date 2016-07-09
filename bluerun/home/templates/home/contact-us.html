@@ -95,6 +95,7 @@
                {% endif %}</h4>
 
             <!-- Start Contact Form -->
+<<<<<<< HEAD
 
             <form role="form" action="{% url 'contactus' %}" class="contact-form" id="contact-form" method="post"> 
                {% csrf_token %}
@@ -104,6 +105,11 @@
 
   
             <div class="form-group">
+=======
+            <form role="form" action="{% url 'contactus' %}" class="contact-form" id="contact-form" method="post"> 
+               {% csrf_token %}
+              <div class="form-group">
+>>>>>>> 8addc9d5f42936d53044f96563fffc9a5437ebf2
                 <div class="controls">
                   <input type="text" placeholder="Name" name="name" required input:invalid { border: 1px solid red; } >
                 </div>

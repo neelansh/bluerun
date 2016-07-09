@@ -7,14 +7,15 @@ background-size: cover;
     width: 100%; 
 }
 
-h2.dash { 
+h4.dash { 
 position:absolute;
 
-color: #ee3733;
-font-size: 50px;
- top: 150px; 
-   left: 55px; 
-   width: 100%; 
+color: black;
+font-size: 30px;
+
+ top: 70px; 
+  width: 100%; 
+   text-align:left;
 }
 #panel
 {

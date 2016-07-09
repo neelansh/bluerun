@@ -83,3 +83,6 @@ sftp-config.json
 
 #media files
 media/
+
+#credential file
+credentials.py
