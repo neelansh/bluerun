@@ -12,8 +12,42 @@ from django.conf import settings
 from django.http import Http404, JsonResponse, HttpResponse
 # Create your views here.
 
+@require_http_methods(['GET', 'POST'])
 def signup(request):
-	pass
+	if request.user.is_authenticated():
+		return redirect(reverse('dashboard', kwargs={'id': request.user.id}))
+	if request.method == 'GET':
+		context = { 'f' : SignupForm()}
+		return render(request, 'account/signup.html', context)
+	else:
+		f = SignupForm(request.POST)
+		if not f.is_valid():
+			return render(request, 'account/signup.html', {'f' : f})
+		else:
+			user = f.save(commit = False)
+			user.set_password(f.cleaned_data['password'])
+			user.is_active = False
+			user.save()
+			otp = create_otp(user = user, purpose = 'AA')
+			email_body_context = { 'u' : user, 'otp' : otp}
+			body = loader.render_to_string('account/activate_account_email.txt', email_body_context)
+			message = EmailMultiAlternatives("Acitvate Acoount", body, "bluerunfinancial@gmail.com", [user.email])
+			message.send()
+			return render(request , 'account/activate_email_sent.html' , { 'user': user })
+
+def activate_account(request , id , otp):
+	if request.user.is_authenticated():
+		return redirect(reverse('dashboard', kwargs={'id': request.user.id}))
+	user = get_object_or_404(MyUser, id=id)
+	otp_object = get_valid_otp_object(user = user, purpose='AA', otp = otp)
+	if not otp_object:
+		raise Http404()
+	user.is_active = True
+	user.confirmed_email = True
+	user.save()
+	otp_object.delete()
+	return render(request , "account/account_active.html" , { 'user' : user })
+
 
 @require_http_methods(['GET', 'POST'])
 def login(request):
