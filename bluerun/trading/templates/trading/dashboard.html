@@ -33,15 +33,18 @@
 				<div class="panel-heading">
 				
 				 {% if call.achived %}
-					 <div class="col-md-4" style= "background-color:#32CD32">
+				 <div class="col-md-12 custom-panel">
+					 <div class="col-md-4 custom" style= "background-color: rgba(76, 165, 23, 0.8); color: rgb(30, 25, 25);">
 					 
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
 					</div>
-					
+					</div>
 					
 					{%else%}
-					<div class="col-md-4" style= "background-color:red">
+					<div class="col-md-12 custom-panel">
+					<div class="col-md-4 custom" style= "background-color:#ee3733;color:white;">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
+					</div>
 					</div>
 					{%endif%}
 					<!--{% if call.achived%}
@@ -51,15 +54,15 @@
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 ">
+			</br></br><div class="col-md-3 col-sm-3 card custom">
 					<strong class="pbody">Date:</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 card custom">
 					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target: </strong>{{ call.target }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
 					
 				</div>
@@ -81,29 +84,32 @@
 				<div class="panel-heading">
 				
 				 {% if call.achived %}
-					 <div class="col-md-4" style= "background-color:#32CD32">
+				 <div class="col-md-12 custom-panel">
+					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
 					 
-					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
+					</div>
 					</div>
 					
 					{%else%}
-					<div class="col-md-4" style= "background-color:red">
+					<div class="col-md-12 custom-panel">
+					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
-					
-					{%endif%}					
+					</div>
+					{%endif%}		
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 ">
+			</br></br><div class="col-md-3 col-sm-3 custom ">
 					<strong class="pbody">Date:</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target: </strong>{{ call.target }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
 					
 				</div>
@@ -125,29 +131,32 @@
 				<div class="panel-heading">
 				
 				 {% if call.achived %}
-					 <div class="col-md-4" style= "background-color:#32CD32">
+				 <div class="col-md-12 custom-panel">
+					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
 					 
-					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
+					</div>
 					</div>
 					
 					{%else%}
-					<div class="col-md-4" style= "background-color:red">
+					<div class="col-md-12 custom-panel">
+					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
-					
+					</div>
 					{%endif%}
 					</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 ">
+			</br></br><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target: </strong>{{ call.target }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
 					
 				</div>
@@ -169,29 +178,32 @@
 				<div class="panel-heading">
 				
 				 {% if call.achived %}
-					 <div class="col-md-4" style= "background-color:#32CD32">
+				 <div class="col-md-12 custom-panel">
+					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
 					 
-					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
+					</div>
 					</div>
 					
 					{%else%}
-					<div class="col-md-4" style= "background-color:red">
+					<div class="col-md-12 custom-panel">
+					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
-					
+					</div>
 					{%endif%}
 					</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 ">
+			</br></br><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target: </strong>{{ call.target }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
 					
 				</div>
@@ -213,29 +225,32 @@
 				<div class="panel-heading">
 				
 				 {% if call.achived %}
-					 <div class="col-md-4" style= "background-color:#32CD32">
+				 <div class="col-md-12 custom-panel">
+					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
 					 
-					<h3 class="panel-title"id="panel">{{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
+					</div>
 					</div>
 					
 					{%else%}
-					<div class="col-md-4" style= "background-color:red">
+					<div class="col-md-12 custom-panel">
+					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
-					
-					{%endif%}				
+					</div>
+					{%endif%}
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 ">
+			</br></br><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target: </strong>{{ call.target }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
 					
 				</div>
@@ -257,29 +272,32 @@
 				<div class="panel-heading">
 				
 				 {% if call.achived %}
-					 <div class="col-md-4" style= "background-color:#32CD32">
+				 <div class="col-md-12 custom-panel">
+					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
 					 
-					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
+					</div>
 					</div>
 					
 					{%else%}
-					<div class="col-md-4" style= "background-color:red">
+					<div class="col-md-12 custom-panel">
+					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
-					
-					{%endif%}			
+					</div>
+					{%endif%}	
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 ">
+			</br></br><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target: </strong>{{ call.target }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
 					
 				</div>
@@ -301,29 +319,32 @@
 				<div class="panel-heading">
 				
 				 {% if call.achived %}
-					 <div class="col-md-4" style= "background-color:#32CD32">
+				 <div class="col-md-12 custom-panel">
+					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
 					 
-					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
+					</div>
 					</div>
 					
 					{%else%}
-					<div class="col-md-4" style= "background-color:red">
+					<div class="col-md-12 custom-panel">
+					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
-					
-					{%endif%}				
+					</div>
+					{%endif%}
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 ">
+			</br></br><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Entry Price: </strong>{{ call.entry_price }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target: </strong>{{ call.target }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: </strong>{{ call.stop_loss }}</div>
-					<div class="col-md-2 col-sm-2">
+					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
 					
 				</div>
