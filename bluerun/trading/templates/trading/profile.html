@@ -1,24 +1,65 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
 {% block content %}
-<h1>Welcome to your profile page, {{ user.username }}</h1>
-<ul>
-{% if data %}
-{% for d in data %}
-<li>Phone: {{ d.phone }} </li>
-<li>Cash intra: {{ d.cash_intra }} </li>
-<li>Cash positional: {{ d.cash_positional }} </li>
-<li>Stock future: {{ d.stock_future }}</li>
-<li>Nifty future: {{ d.nifty_future }}</li>
-<li>Option calls covered: {{ d.option_calls_covered }} </li>
-<li>Option calls uncovered: {{ d.option_calls_uncovered }}</li>
-<li>Multi bagger: {{ d.multi_bagger }}</li>
-<li>Subscription start-date: {{ subscription_startdate }}</li>
-<li>Subscription end-date: {{ subscription_enddate }}</li>
-{% endfor %}
+<div class="page-banner" style="padding:40px 0;">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<h2>Profile</h2>
+				<p>Hello {{ user.username }}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+{%if user%}
+
+<div class="col-md-3 col-col-sm-3">
+<div class="panel-body personal-body-custom">
+</br></br><div class="col-md-12 col-sm-12 card">
+<h3 style="font-family:'Open Sans', sans-serif;">Personal Information: </h3></br>
+<strong class="ppbody">Name:</strong>&nbsp&nbsp {{ user.username }}</br>
+<strong class="ppbody">Phone Number:</strong> &nbsp&nbsp{{ user.phone }}</br>
+<strong class="ppbody">Email:</strong> &nbsp&nbsp{{ user.email }}</br>
+</div>
+</div>
+</div>
+
+
+<div class="col-md-9 col-sm-9">
+<div class="panel-body profile-body-custom">
+			</br></br><div class="col-md-4 col-sm-4 card custom">
+					<strong class="pbody">Cash Intra:</strong> &nbsp&nbsp{{user.cash_intra }}</div>
+					<div class="col-md-4 col-sm-4 card custom">
+					<strong class="pbody">Cash Positional:</strong> &nbsp&nbsp{{ user.cash_positional }}</div>
+					<div class="col-md-4 col-sm-4 custom">
+					<strong class="pbody">Stock Future:</strong> &nbsp&nbsp{{ user.stock_future }}</div>				
+</div>
+
+<div class="panel-body profile-body-custom">
+			</br></br><div class="col-md-4 col-sm-4 card custom">
+					<strong class="pbody">Nifty Future:</strong>&nbsp&nbsp {{ user.nifty_future }}</div>
+					<div class="col-md-4 col-sm-4 card custom">
+					<strong class="pbody">Option Calls Covered:</strong> &nbsp&nbsp{{ user.option_calls_covered }}</div>
+					<div class="col-md-4 col-sm-4 custom">
+					<strong class="pbody">Option Calls Uncovered:</strong> &nbsp&nbsp{{ user.option_calls_uncovered }}</div>				
+</div>
+
+<div class="panel-body profile-body-custom">
+			</br></br><div class="col-md-4 col-sm-4 card custom">
+					<strong class="pbody">Multi Bagger:</strong>&nbsp&nbsp {{ user.multi_bagger }}</div>
+					<div class="col-md-4 col-sm-4 card custom">
+					<strong class="pbody">Subscription Start-Date:</strong>&nbsp&nbsp {{ user.subscription_startdate }}</div>
+					<div class="col-md-4 col-sm-4 custom">
+					<strong class="pbody">Subscription End-Date:</strong>&nbsp&nbsp {{ user.subscription_enddate }}</div>				
+</div>
+</div>
+
+
+
 {% else %}
 <p>No data found.</p>
-{% endif %}
-</ul>
+{%endif%}
+</div>
 {% endblock %}
 
