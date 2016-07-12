@@ -92,7 +92,14 @@ def dashboard(request , id):
 def profile(request , id):
     context = {}
     user = get_object_or_404(MyUser , id = request.user.id)
-   #data = MyUser.objects.all()
     context['user'] = user
-	# context['data'] = data
+    calls_obj = calls.objects.all()
+    #if(user):
+       # context['comment'] = None
+        #try:
+         #   context['comment'] = calls_obj.filter()
+        #except ObjectDoesNotExist:
+         #   print(ObjectDoesNotExist)
+        #else:
+         #   context['comment'] = "No Comments"
     return render(request, 'trading/profile.html' , context)

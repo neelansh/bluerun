@@ -19,15 +19,18 @@ font-size: 30px;
 }
 #panel
 {
-	font-size: 18px;
+	padding-top:6px;
+	font-size: 20px;
+	padding-bottom:6px;
 }
 .pan-body-custom
 {
 	line-height: 200%;
-	font-size:12px;
+	font-size:15px;
 	color:#ee3733;
-	font-family:Helvetica;
-	padding-bottom:35px
+	font-family:'Open Sans', sans-serif;
+	padding-bottom:35px;
+	font-weight:500;
 }
 .pbody
 {
@@ -38,12 +41,18 @@ font-size: 30px;
 	font-weight: 675;
 
 }
-
+.commentDescription {
+	padding-top:20px;
+    margin-top:10px 0;
+	font-family:'Open Sans', sans-serif;
+	font-size:15px;
+}
 div.custom {
  
   box-shadow:-7px 0px 5px 0 rgba(0, 0, 0, 0.02), 0 0px 20px 0px rgba(0, 0, 0, 0.05);
   text-align: center;
   border-radius:3px;
+  font-family:'Open Sans', sans-serif;
 }
 div.custom-panel{
 	
@@ -51,4 +60,11 @@ div.custom-panel{
   text-align: left;
   
 }
-
+.comment-custom
+{
+	line-height: 200%;
+	font-size:15px;
+	color:#555;
+	font-family:'Open Sans', sans-serif;
+	padding-bottom:35px
+}
