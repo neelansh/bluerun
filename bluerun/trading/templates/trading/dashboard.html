@@ -1,5 +1,8 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
+{% block extra_head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/dashboard.css' %}">
+{% endblock %}
 {% block content %}
 
 <div class="page-banner" style="padding:40px 0;">
@@ -30,7 +33,7 @@
 			{% if cash_intra != 'not_subscribed' %}
 			{% for call in cash_intra %}
 			<div class="panel panel-default">
-				<div class="panel-heading" style="padding-top:30px">
+				<div class="panel-heading">
 				
 				 {% if call.achived %}
 				 <div class="col-md-12 custom-panel">
@@ -65,9 +68,9 @@
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
 					{%if call.achived%}
-					<i class="fa fa-check" style="font-size:35px;color:rgba(76, 165, 23, 0.8);float:right;padding-top:7px;"></i>
+					<i class="fa fa-check" style="font-size:15px;color:rgba(76, 165, 23, 0.8);"></i>
 					{%else%}
-					<i class="fa fa-times" style="font-size:35px;color:#ee3733;float:right;padding-top:7px;"></i>
+					<i class="fa fa-times" style="font-size:15px;color:#ee3733;"></i>
 					{%endif%}
 					</div> 
 					
