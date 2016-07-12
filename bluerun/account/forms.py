@@ -70,3 +70,28 @@ class SetPasswordForm(forms.Form):
                 and data_new_password != data_confirm_password):
             raise forms.ValidationError("The two passwords field didn't match")
         return data_confirm_password
+
+
+class SignupForm(forms.ModelForm):
+    password = forms.CharField(max_length=20, widget=forms.PasswordInput)
+    confirm_password = forms.CharField(max_length=20, widget=forms.PasswordInput)
+
+    def clean_email(self):
+        data_email = self.cleaned_data.get('email', '')
+        if not data_email:
+            raise forms.ValidationError('This field is required')
+        if MyUser.objects.filter(email = data_email).exists():
+            raise forms.ValidationError('User with this email already exist')
+        return data_email
+
+    def clean_confirm_password(self):
+        data_password = self.cleaned_data.get('password')
+        data_confirm_password = self.cleaned_data.get('confirm_password')
+        if (data_password and data_confirm_password 
+                and data_password != data_confirm_password):
+            raise forms.ValidationError("The two passwords field didn't match")
+        return data_confirm_password
+
+    class Meta:
+        model = MyUser
+        fields = ['username', 'email', 'phone', 'first_name', 'last_name']
