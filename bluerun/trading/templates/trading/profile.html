@@ -26,7 +26,83 @@
 </div>
 
 
+<div class="col-md-6 col-sm-6">
+<ul class="list-group">
+  <li class="list-group-item"><strong class="pbody">Cash Intra:</strong>
+		{% if user.cash_intra %}
+		<i class="fa fa-check-square-o" aria-hidden="true" style="font-size:40px;color:rgba(76, 165, 23, 0.8);float:right;"></i>
+		 </li>
+		{%endif%}
+  
+   
+   <li class="list-group-item"><strong class="pbody">Cash Positional:</strong>
+		{% if user.cash_positional %}
+		<i class="fa fa-check-square-o" aria-hidden="true" style="font-size:40px;color:rgba(76, 165, 23, 0.8);float:right;"></i> 
+		</li>
+		{%endif%}
+
+	<li class="list-group-item"><strong class="pbody">Stock Future:</strong>
+		{% if user.stock_future  %}
+		<i class="fa fa-check-square-o" aria-hidden="true" style="font-size:40px;color:rgba(76, 165, 23, 0.8);float:right;"></i>	
+		 </li>
+		{%endif%}
+
+  <li class="list-group-item"><strong class="pbody">Nifty Future:</strong>
+		{% if user.nifty_future %}
+		<i class="fa fa-check-square-o" aria-hidden="true" style="font-size:40px;color:rgba(76, 165, 23, 0.8);float:right;"></i>
+		 </li>
+		{%endif%}
+
+   	<li class="list-group-item"><strong class="pbody">Multi Bagger:</strong>
+		{% if user.multi_bagger %}
+		<i class="fa fa-check-square-o" aria-hidden="true" style="font-size:40px;color:rgba(76, 165, 23, 0.8);float:right;"></i>
+		 </li>
+		{%endif%}
+  
+   
+
+		<li class="list-group-item"><strong class="pbody">Option Calls Covered:</strong>
+			{% if user.option_calls_covered %}
+			<i class="fa fa-check-square-o" style="font-size:40px;color:rgba(76, 165, 23, 0.8);float:right;"></i>
+					</li>
+			{%endif%}
+			
+
+		<li class="list-group-item"><strong class="pbody">Option Calls Uncovered:</strong>
+			{% if user.option_calls_uncovered %}
+			<i class="fa fa-check-square-o" aria-hidden="true" style="font-size:40px;color:rgba(76, 165, 23, 0.8);float:right;"></i>
+			</li>
+			{%endif%}
+		
+
+     </ul>
+</div>
+
+
+<div class="col-md-3 col-sm-3">
+<ul class="list-group profile-body-custom">
+  
+   <li class="list-group-item"><strong class="pbody">Subscription Start-Date:</strong></br>{{ user.subscription_startdate }}
+
+   <li class="list-group-item"><strong class="pbody">Subscription End-Date:</strong> </br> {{ user.subscription_enddate }}
+   </li>
+ </ul>
+ <ul class="list-group">
+ <li class="list-group-item comment"><div class="detailBox">
+   <div class="col-md-12 col-sm-12 card custom">
+					<strong class="pbody">Comments</strong></div>
+
+    <div class="commentBox">
+        
+        <p class="taskDescription">gggg</p>
+    </div>
+	</div>
+</li>
+</ul>
+</div>
+<!--
 <div class="col-md-9 col-sm-9">
+
 <div class="panel-body profile-body-custom">
 			</br></br><div class="col-md-4 col-sm-4 card custom">
 					<strong class="pbody">Cash Intra:</strong> &nbsp&nbsp{{user.cash_intra }}</div>
@@ -55,7 +131,7 @@
 </div>
 </div>
 
-
+-->
 
 {% else %}
 <p>No data found.</p>
