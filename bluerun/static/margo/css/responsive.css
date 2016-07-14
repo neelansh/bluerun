@@ -415,14 +415,14 @@
     
 }
 
-
+/*
 @media (max-width : 479px) {
     
     #main-slide .item .slider-content{
 		display: none;
 	}
     
-}
+}*/
 
 @media screen and (max-width: 767px) {
 	.navbar-toggle{
