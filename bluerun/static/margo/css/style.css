@@ -2718,9 +2718,11 @@ ul.icons-list li i {
     -o-border-radius: 2px;
 }
 
-.team-member .member-info {
-	padding: 15px 6px 12px 6px;
+.team-member .member-info{ 
+
+	padding: 15px 6px 12px 6px;	
 }
+
 
 .team-member .member-socail {
 	//text-align: center;

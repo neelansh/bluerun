@@ -1,5 +1,8 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'common/css/about-us.css' %}">
+{% endblock %}
 {% block content %}
     <!-- Start Page Banner -->
     <div class="page-banner" style="padding:40px 0;">
@@ -18,97 +21,33 @@
     <!-- Start Content -->
     <div id="content">
       <div class="container">
-        <div class="page-content">
+        <div class="page-content custom-padding">
 
 
           <div class="row">
 
-            <div class="col-md-7">
+            <div class="col-md-8">
 
               <!-- Classic Heading -->
-              <h4 class="classic-title"><span>Welcome To Our Agency</span></h4>
+              <h4 class="classic-title"><span>Blue Run: Overview</span></h4>
 
               <!-- Some Text -->
-              <p>
-                Blue Run Financial Services is an integrated firm involved in financial markets and providing diverse financial products and services. . We at blue run believe in commitment to the markets and strive towards achieving the goals of our clients by following disciplined investing and informed trading. We have a strong distribution and support network which aims to ensure the best returns possible in stock markets for our clients.
+              <p class="text-custom">
+                Blue Run Financial Services is an integrated firm involved in financial markets and providing diverse financial products and services. We, at Bluerun, believe in commitment to the markets and strive towards achieving the goals of our clients by following disciplined investing and informed trading. We have a strong distribution and support network which aims to ensure the best returns possible in stock markets for our clients.
               </p>
               <p>Blue Run is a leading stock advisory company that has been rated as a top performer by many renowned independent researchers and investors. Blue Run provides multitude of product to suit all kind of players in Indian Stock Market namely Stock Futures, Stock Options, Nifty Bank, Nifty and Positional and intraday cash calls . Privilege calls are Blue Run’ trademark which aids traders to trade in specified stocks.</p>
               <p>We have an unbeaten track record of giving accurate calls. More and more traders are getting attracted to Intraday and Short term delivery-trading to make quick money but often make huge losses in absence of any knowledge, strategy or discipline required for Day or Short Term trading. Only handful smart traders are able to make money in both Rising as well as Falling Market. We, at Blue Run are committed in helping our traders to benefit from Indian Stock Market by adopting a reasonably correct strategy with discipline.</p>
 
             </div>
 
-            <div class="col-md-5">
-
-              <!-- Start Touch Slider -->
-              <div class="touch-slider" data-slider-navigation="true" data-slider-pagination="true">
-                <div class="item"><img alt="" src="images/about-01.jpg"></div>
-                <div class="item"><img alt="" src="images/about-02.jpg"></div>
-                <div class="item"><img alt="" src="images/about-03.jpg"></div>
-              </div>
-              <!-- End Touch Slider -->
-
-            </div>
-
-          </div>
-
-          <!-- Divider -->
-          <div class="hr1" style="margin-bottom:50px;"></div>
-
-          <div class="row">
-
-            <div class="col-md-6">
-
-              <!-- Classic Heading -->
-              <h4 class="classic-title"><span>Our Services</span></h4>
-
-              <div class="skill-shortcode">
-                <div class="skill">
-                  <p>Portfolio Management</p>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" data-percentage="60">
-                      <span class="progress-bar-span">60%</span>
-                      <span class="sr-only">60% Complete</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <p>Multi-Bagger Stocks</p>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" data-percentage="80">
-                      <span class="progress-bar-span">80%</span>
-                      <span class="sr-only">60% Complete</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <p>Broker</p>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" data-percentage="90">
-                      <span class="progress-bar-span">90%</span>
-                      <span class="sr-only">60% Complete</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skill">
-                  <p>Advisory</p>
-                  <div class="progress">
-                    <div class="progress-bar" role="progressbar" data-percentage="100">
-                      <span class="progress-bar-span">100%</span>
-                      <span class="sr-only">60% Complete</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <div class="col-md-6">
+					          
+            <div class="col-md-4">
 
               <!-- Classic Heading -->
               <h4 class="classic-title"><span>Our Aim</span></h4>
-
+				
               <!-- Accordion -->
-              <div class="panel-group" id="accordion">
+              <div class="panel-group custom-padding" id="accordion">
 
                 <!-- Start Accordion 1 -->
                 <div class="panel panel-default">
@@ -117,13 +56,13 @@
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapse-1">
                         <i class="fa fa-angle-up control-icon"></i>
-                        <i class="fa fa-desktop"></i> Vision
+                        <i class="fa fa-eye"></i> Vision
                       </a>
                     </h4>
                   </div>
                   <!-- Toggle Content -->
                   <div id="collapse-1" class="panel-collapse collapse in">
-                    <div class="panel-body"><img class="img-thumbnail image-text" style="float:left; width:150px;" alt="" src="images/bussniss-pic.jpg" /> <strong class="accent-color">Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown <strong>printer</strong> took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</div>
+                    <div class="panel-body">Blue Run was an Idea to make something that holds deep ground in the Indian market. What started as a small scale attempt to grow and learn has now turned to one of the best providers of Financial Advisory services. We are committed in helping our traders to benefit from Indian Stock Market by adopting a reasonably correct strategy with discipline. We aim to equip people with the capability to trade and earn with confidence.
                   </div>
                 </div>
                 <!-- End Accordion 1 -->
@@ -135,13 +74,13 @@
                     <h4 class="panel-title">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapse-2" class="collapsed">
                         <i class="fa fa-angle-up control-icon"></i>
-                        <i class="fa fa-gift"></i> Business Philosophy
+                        <i class="fa fa-suitcase"></i> Business Philosophy
                       </a>
                     </h4>
                   </div>
                   <!-- Toggle Content -->
                   <div id="collapse-2" class="panel-collapse collapse">
-                    <div class="panel-body">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. The point of using Lorem Ipsum is that it has a <strong>more-or-less</strong> normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                    <div class="panel-body">At Blue Run, we don't aim to work excessively, when efficiency can give far better results. Our Financial Analysts are top quality minds selected from only the best universities. Our Portfolio Management Scheme is only the best in the market giving huge returns while keeping tabs with our clients all throughout. Clients have loved our services and the clientele is continously growing. Our accuracy remains unchallenged, still giving us the upper hand over all others.  Our Motto 'Your returns, Our Priority' holds true in all our heads to provide only the best services.</div>
                   </div>
                 </div>
                 <!-- End Accordion 2 -->
@@ -149,7 +88,12 @@
               </div>
             </div>
 
+          </div>     
+            </div>
+
           </div>
+
+
 
           <!-- Divider -->
           <div class="hr1" style="margin-bottom:50px;"></div>
@@ -157,8 +101,8 @@
           <!-- Classic Heading -->
           <h4 class="classic-title"><span>Our Team</span></h4>
 
-          <!-- Start Team Members -->
-          <div class="row">
+		   <!-- Start Team Members 1 -->
+          <div class="row row-custom">
 
             <!-- Start Memebr 1 -->
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -166,12 +110,14 @@
                 <!-- Memebr Photo, Name & Position -->
                 <div class="member-photo">
                   <img alt="" src="images/team/face_1.png" />
-                  <div class="member-name">John Doe <span>Developer</span></div>
+                  <div class="member-name member-name-custom">Aditya Sahai<span>Founder & CEO</span></div>
                 </div>
                 <!-- Memebr Words -->
                 <div class="member-info">
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+				<div class="member-custom">
+                  <p>BlueRun has always been a vision for me. An idea of building something that is so powerful that exposes all it's clients to a vast space of continuous growth, Innovation, Scalability &  Financial Sustainability.</p>
                 </div>
+				</div>
                 <!-- Memebr Social Links -->
                 <div class="member-socail">
                   <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
@@ -183,19 +129,22 @@
               </div>
             </div>
             <!-- End Memebr 1 -->
-
+			
+			
             <!-- Start Memebr 2 -->
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="team-member">
                 <!-- Memebr Photo, Name & Position -->
                 <div class="member-photo">
-                  <img alt="" src="images/team/face_2.png" />
-                  <div class="member-name">Silly Sally <span>Developer</span></div>
+                  <img alt="" src="images/team/face_4.png" />
+                  <div class="member-name member-name-custom">Yashwardhan Sahai <span>Co-Founder</span></div>
                 </div>
                 <!-- Memebr Words -->
                 <div class="member-info">
+				<div class="member-custom">
                   <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
                 </div>
+				</div>
                 <!-- Memebr Social Links -->
                 <div class="member-socail">
                   <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
@@ -207,19 +156,22 @@
               </div>
             </div>
             <!-- End Memebr 2 -->
-
+			
+			
             <!-- Start Memebr 3 -->
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="team-member">
                 <!-- Memebr Photo, Name & Position -->
                 <div class="member-photo">
-                  <img alt="" src="images/team/face_3.png" />
-                  <div class="member-name">Chris John <span>Developer</span></div>
+                  <img alt="" src="images/team/face_2.png" />
+                  <div class="member-name member-name-custom">Anmol Khanna<span>Vice-President (CTO)</span></div>
                 </div>
                 <!-- Memebr Words -->
                 <div class="member-info">
-                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+				<div class="member-custom">
+                  <p>I was originally attracted to BlueRun because I loved the idea of working in a young, fast-paced  environment  with seemingly endless growth potential. Blue Run has equipped me with skill sets that will transcend my current roles.</p>
                 </div>
+				</div>
                 <!-- Memebr Social Links -->
                 <div class="member-socail">
                   <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
@@ -237,14 +189,16 @@
               <div class="team-member">
                 <!-- Memebr Photo, Name & Position -->
                 <div class="member-photo">
-                  <img alt="" src="images/team/face_4.png" />
-                  <div class="member-name">Sara John <span>Developer</span></div>
+                  <img alt="" src="images/team/face_3.png" />
+                  <div class="member-name member-name-custom">Arya Dinesh<span>Vice-President (PR)</span></div>
                 </div>
                 <!-- Memebr Words -->
                 <div class="member-info">
+				<div class="member-custom">
                   <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
                 </div>
-                <!-- Memebr Social Links -->
+				</div>
+				<!-- Memebr Social Links -->
                 <div class="member-socail">
                   <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
                   <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
@@ -256,67 +210,129 @@
             </div>
             <!-- End Memebr 4 -->
 
+
           </div>
+		  
+		  
+          <!-- Start Team Members -->
+          <div class="row row-custom">
+
+            <!-- Start Memebr 1 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="team-member">
+                <!-- Memebr Photo, Name & Position -->
+                <div class="member-photo">
+                  <img alt="" src="images/team/face_1.png" />
+                  <div class="member-name member-name-custom">Sharad Mundra<span>HOD Analysis</span></div>
+                </div>
+                <!-- Memebr Words -->
+                <div class="member-info">
+				<div class="member-custom">
+                  <p>I kick started my career with BlueRun. I wasn't sure of the work environment I will have to work in. But after being a core member of this organization and having such enthusiastic talents with you, you always feel good and at the top. The emerging giants have started their journey and soon we will be at the top. Our clients are our priority. We aim at giving them joy and happiness.</p>
+                </div>
+				</div>
+                <!-- Memebr Social Links -->
+                <div class="member-socail">
+                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                  <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                  <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                  <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- End Memebr 1 -->
+			
+			
+            <!-- Start Memebr 2 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="team-member">
+                <!-- Memebr Photo, Name & Position -->
+                <div class="member-photo">
+                  <img alt="" src="images/team/face_4.png" />
+                  <div class="member-name member-name-custom" id="sp">Shivank Chauhan <span>HOD Portfolio Management</span></div>
+                </div>
+                <!-- Memebr Words -->
+                <div class="member-info">
+				<div class="member-custom">
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+                </div>
+				</div>
+                <!-- Memebr Social Links -->
+                <div class="member-socail">
+                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                  <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                  <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                  <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- End Memebr 2 -->
+			
+			
+            <!-- Start Memebr 3 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="team-member">
+                <!-- Memebr Photo, Name & Position -->
+                <div class="member-photo">
+                  <img alt="" src="images/team/face_2.png" />
+                  <div class="member-name member-name-custom">Sarthak Goel<span>HOD Technical</span></div>
+                </div>
+                <!-- Memebr Words -->
+                <div class="member-info">
+				<div class="member-custom">
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+                </div>
+				</div>
+                <!-- Memebr Social Links -->
+                <div class="member-socail">
+                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                  <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                  <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                  <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- End Memebr 3 -->
+
+            <!-- Start Memebr 4 -->
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="team-member">
+                <!-- Memebr Photo, Name & Position -->
+                <div class="member-photo">
+                  <img alt="" src="images/team/face_3.png" />
+                  <div class="member-name member-name-custom">Neelansh Garg<span>HOD Technical</span></div>
+                </div>
+                <!-- Memebr Words -->
+                <div class="member-info">
+				<div class="member-custom">
+                  <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore fugiat.</p>
+                </div>
+				</div>
+				<!-- Memebr Social Links -->
+                <div class="member-socail">
+                  <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                  <a class="gplus" href="#"><i class="fa fa-google-plus"></i></a>
+                  <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                  <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                  <a class="mail" href="#"><i class="fa fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- End Memebr 4 -->
+
+
+          </div>
+		     
           <!-- End Team Members -->
 
-          <!-- Divider -->
-          <div class="hr1" style="margin-bottom:50px;"></div>
-
-          <!-- Start Clients Carousel -->
-          <div class="our-clients">
-
-            <!-- Classic Heading -->
-            <h4 class="classic-title"><span>Our Happy Clients</span></h4>
-
-            <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="5">
-
-              <!-- Client 1 -->
-              <div class="client-item item">
-                <a href="#"><img src="images/c1.png" alt="" /></a>
-              </div>
-
-              <!-- Client 2 -->
-              <div class="client-item item">
-                <a href="#"><img src="images/c2.png" alt="" /></a>
-              </div>
-
-              <!-- Client 3 -->
-              <div class="client-item item">
-                <a href="#"><img src="images/c3.png" alt="" /></a>
-              </div>
-
-              <!-- Client 4 -->
-              <div class="client-item item">
-                <a href="#"><img src="images/c4.png" alt="" /></a>
-              </div>
-
-              <!-- Client 5 -->
-              <div class="client-item item">
-                <a href="#"><img src="images/c5.png" alt="" /></a>
-              </div>
-
-              <!-- Client 6 -->
-              <div class="client-item item">
-                <a href="#"><img src="images/c6.png" alt="" /></a>
-              </div>
-
-              <!-- Client 7 -->
-              <div class="client-item item">
-                <a href="#"><img src="images/c7.png" alt="" /></a>
-              </div>
-
-              <!-- Client 8 -->
-              <div class="client-item item">
-                <a href="#"><img src="images/c8.png" alt="" /></a>
-              </div>
-
-            </div>
-          </div>
-          <!-- End Clients Carousel -->
+          
 
 
         </div>
       </div>
-    </div>
+
     <!-- End content -->
 {% endblock %}

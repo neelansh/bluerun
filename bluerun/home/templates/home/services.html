@@ -1,5 +1,8 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'common/css/services.css' %}">
+{% endblock %}
 {% block content %}
     <!-- Start Page Banner -->
     <div class="page-banner" style="padding:40px 0;">
@@ -20,34 +23,57 @@
       <div class="container">
         <div class="page-content">
 
+			<h4 class="classic-title"><span>Services Offered</span></h4>
 
+            
           <div class="row">
 
             <!-- Start Image Service Box 1 -->
-            <div class="col-md-4 image-service-box">
-              <img class="img-thumbnail" src="images/service-01.jpg" alt="" />
-              <h4>Clean Modern Code</h4>
-              <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quasi architect.</p>
-            </div>
-            <!-- End Image Service Box 1 -->
-
-            <!-- Start Image Service Box 2 -->
-            <div class="col-md-4 image-service-box">
-              <img class="img-thumbnail" src="images/service-02.jpg" alt="" />
-              <h4>Great Support</h4>
-              <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quasi architect.</p>
-            </div>
-            <!-- End Image Service Box 2 -->
-
-            <!-- Start Image Service Box 3 -->
-            <div class="col-md-4 image-service-box">
-              <img class="img-thumbnail" src="images/service-03.jpg" alt="" />
-              <h4>High Quality Theme</h4>
-              <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis quasi architect.</p>
-            </div>
-            <!-- End Image Service Box 3 -->
-
-          </div>
+			<div class="custom-services">
+			
+			  <div class="col-md-4">
+			    <button type = "button" class = "btn btn-default btn-lg btn-block custom-button">
+					Equity Advisory
+				</button>
+			  </div>
+			  
+			  <div class="col-md-4">
+				<button type = "button" class = "btn btn-default btn-lg btn-block custom-button">
+					Portfolio Managemnet
+				</button>
+			  </div>
+			  
+			<div class="col-md-4">
+		      <button type = "button" class = "btn btn-default btn-lg btn-block custom-button">
+				Wealth Managemnt
+			  </button>
+			</div>
+			
+			</div>
+			
+			<!-- Start Image Service Box 2 -->
+   			<div class="custom-services">
+			
+			 <div class="col-md-4">
+				<button type = "button" class = "btn btn-default btn-lg btn-block custom-button">
+					Futures/Options Trading
+				</button>
+			 </div>
+			 
+			 <div class="col-md-4">
+				<button type = "button" class = "btn btn-default btn-lg btn-block custom-button">
+					Multi-Bagger Recommendations
+				</button>
+			 </div>
+			 
+			 <div class="col-md-4">
+				<button type = "button" class = "btn btn-default btn-lg btn-block custom-button">
+					Risk Reward Management
+				</button>
+			 </div>
+			 
+			</div>
+		</div>
 
           <!-- Divider -->
           <div class="hr1" style="margin-bottom:45px;"></div>
@@ -57,7 +83,7 @@
             <div class="col-md-4">
 
               <!-- Classic Heading -->
-              <h4 class="classic-title"><span>We Aare Awesome</span></h4>
+              <h4 class="classic-title"><span>Your Returns, Our Priority</span></h4>
 
               <!-- Accordion -->
               <div class="panel-group" id="accordion">
@@ -68,7 +94,7 @@
                     <h4 class="panel-title">
                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse-one">
                                                 <i class="fa fa-angle-up control-icon"></i>
-                                                <i class="fa fa-desktop"></i> Fully Responsive Theme
+                                                <i class="fa fa-link"></i> Integrity
                                             </a>
                                         </h4>
                   </div>
@@ -84,7 +110,7 @@
                     <h4 class="panel-title">
                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse-tow" class="collapsed">
                                                 <i class="fa fa-angle-up control-icon"></i>
-                                                <i class="fa fa-gift"></i> Touchable Slider
+                                                <i class="fa fa-user-plus"></i> Team Work
                                             </a>
                                         </h4>
                   </div>
@@ -100,7 +126,7 @@
                     <h4 class="panel-title">
                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapse-three" class="collapsed">
                                                 <i class="fa fa-angle-up control-icon"></i>
-                                                <i class="fa fa-tint"></i> Retina Ready
+                                                <i class="fa fa-line-chart"></i> Attitude
                                             </a>
                                         </h4>
                   </div>
@@ -118,78 +144,78 @@
             <div class="col-md-8">
 
               <!-- Classic Heading -->
-              <h4 class="classic-title"><span>Our Features</span></h4>
+              <h4 class="classic-title"><span>Our Expertise</span></h4>
 
               <div class="row">
 
                 <!-- Start Service Icon 1 -->
-                <div class="col-md-6 service-box service-icon-left-more">
+                <div class="col-md-6 service-box service-icon-left-more custom-expertise">
                   <div class="service-icon">
-                    <i class="fa fa-magic icon-medium"></i>
+                    <i class="fa fa-briefcase icon-medium"></i>
                   </div>
                   <div class="service-content">
-                    <h4>Photoshop</h4>
-                    <p>It is a long <strong class="accent-color">established</strong> fact that a reader will be distracted by the readable content of a page.</p>
+                    <h4>PMS(Portfolio Management)</h4>
+                    <p>Portfolio managed and analysed by professionls having deep insides about the market.Accuracy is of the highest priority and return of 3-4% is ensured.</p>
                   </div>
                 </div>
                 <!-- End Service Icon 1 -->
 
                 <!-- Start Service Icon 2 -->
-                <div class="col-md-6 service-box service-icon-left-more">
+                <div class="col-md-6 service-box service-icon-left-more custom-expertise">
                   <div class="service-icon">
                     <i class="fa fa-users icon-medium"></i>
                   </div>
                   <div class="service-content">
-                    <h4>Web Marketing</h4>
-                    <p>It is a long <strong class="accent-color">established</strong> fact that a reader will be distracted by the readable content of a page.</p>
+                    <h4>DEMAT Account</h4>
+                    <p>Only few easy steps to open DEMAT A/C. Brokerage is engineered to be very affordable getting reduced depending on volumes. Depository will be NSDL.</p>
                   </div>
                 </div>
                 <!-- End Service Icon 2 -->
 
                 <!-- Start Service Icon 3 -->
-                <div class="col-md-6 service-box service-icon-left-more">
+                <div class="col-md-6 service-box service-icon-left-more custom-expertise">
                   <div class="service-icon">
-                    <i class="fa fa-globe icon-medium"></i>
+                    <i class="fa fa-phone icon-medium"></i>
                   </div>
                   <div class="service-content">
-                    <h4>Web Hosting</h4>
-                    <p>It is a long <strong class="accent-color">established</strong> fact that a reader will be distracted by the readable content of a page.</p>
+                    <h4>Trading Calls</h4>
+                    <p>Provide calls in the following -<ul><li>Cash Intraday</li><li> Cash Postional</li><li>Futures</li><li>Naked and Covered Options</li><li>Multi-Bagger Recommendations</p>
                   </div>
                 </div>
                 <!-- End Service Icon 3 -->
 
                 <!-- Start Service Icon 4 -->
-                <div class="col-md-6 service-box service-icon-left-more">
+                <div class="col-md-6 service-box service-icon-left-more custom-expertise">
                   <div class="service-icon">
-                    <i class="fa fa-picture-o icon-medium"></i>
+                    <i class="fa fa-usd icon-medium"></i>
                   </div>
                   <div class="service-content">
-                    <h4>Phtography</h4>
-                    <p>It is a long <strong class="accent-color">established</strong> fact that a reader will be distracted by the readable content of a page.</p>
+                    <h4>Mutual Fund</h4>
+                    <p>We are involved in the distribution of Mutual Funds. Top mutual funds under our folio are-<ul><li>ICICI prudential discovery fund</li><li>HDFC top 200 fund</li><li>Birla Sun life fund</li><li>Franklin Templeton</li></ul></p>
                   </div>
                 </div>
                 <!-- End Service Icon 4 -->
 
                 <!-- Start Service Icon 5 -->
-                <div class="col-md-6 service-box service-icon-left-more">
+                <div class="col-md-6 service-box service-icon-left-more custom-expertise">
                   <div class="service-icon">
-                    <i class="fa fa-leaf icon-medium"></i>
+                    <i class="fa fa-sort-amount-asc icon-medium"></i>
                   </div>
                   <div class="service-content">
-                    <h4>Product Design</h4>
-                    <p>It is a long <strong class="accent-color">established</strong> fact that a reader will be distracted by the readable content of a page.</p>
+                    <h4>SIP (Systematic Investment Plan)</h4>
+                    <p>SIP is an investment vehicle offered to investors, allowing them to invest using small periodically amounts instead of lump sums. Frequency of investment is usually weekly, monthly or quarterly ensures returns in the long run.</p>
                   </div>
                 </div>
                 <!-- End Service Icon 5 -->
 
                 <!-- Start Service Icon 6 -->
-                <div class="col-md-6 service-box service-icon-left-more">
+                <div class="col-md-6 service-box service-icon-left-more custom-expertise">
                   <div class="service-icon">
-                    <i class="fa fa-umbrella icon-medium"></i>
+                    <i class="fa fa-exchange icon-medium"></i>
                   </div>
                   <div class="service-content">
-                    <h4>Supporting</h4>
-                    <p>It is a long <strong class="accent-color">established</strong> fact that a reader will be distracted by the readable content of a page.</p>
+                    <h4>IPO (Initial Public Offering)</h4>
+                    <p>An IPO is the first sale of stock by a private company to the public. The issuer obtains the assistance of an underwriting firm, which helps it determine what type of security to issue, the best offering price and the time to bring it to market.</p>
                   </div>
                 </div>
                 <!-- End Service Icon 6 -->
@@ -199,100 +225,11 @@
 
           </div>
 
-          <!-- Divider -->
-          <div class="hr1" style="margin-bottom:25px;"></div>
-
-          <div class="row">
-
-            <div class="col-md-8">
-
-              <!-- Start Clients Carousel -->
-              <div class="our-clients">
-
-                <!-- Classic Heading -->
-                <h4 class="classic-title"><span>Our Clients</span></h4>
-
-                <div class="clients-carousel custom-carousel touch-carousel" data-appeared-items="4">
-
-                  <!-- Client 1 -->
-                  <div class="client-item item">
-                    <a href="#"><img src="images/c1.png" alt="" /></a>
-                  </div>
-
-                  <!-- Client 2 -->
-                  <div class="client-item item">
-                    <a href="#"><img src="images/c2.png" alt="" /></a>
-                  </div>
-
-                  <!-- Client 3 -->
-                  <div class="client-item item">
-                    <a href="#"><img src="images/c3.png" alt="" /></a>
-                  </div>
-
-                  <!-- Client 4 -->
-                  <div class="client-item item">
-                    <a href="#"><img src="images/c4.png" alt="" /></a>
-                  </div>
-
-                  <!-- Client 5 -->
-                  <div class="client-item item">
-                    <a href="#"><img src="images/c5.png" alt="" /></a>
-                  </div>
-
-                  <!-- Client 6 -->
-                  <div class="client-item item">
-                    <a href="#"><img src="images/c6.png" alt="" /></a>
-                  </div>
-
-                  <!-- Client 7 -->
-                  <div class="client-item item">
-                    <a href="#"><img src="images/c7.png" alt="" /></a>
-                  </div>
-
-                  <!-- Client 8 -->
-                  <div class="client-item item">
-                    <a href="#"><img src="images/c8.png" alt="" /></a>
-                  </div>
-
-                </div>
-              </div>
-              <!-- End Clients Carousel -->
+         
 
             </div>
 
-            <div class="col-md-4">
-
-              <!-- Classic Heading -->
-              <h4 class="classic-title"><span>Client Testimonials</span></h4>
-
-              <!-- Start Testimonials Carousel -->
-              <div class="custom-carousel show-one-slide touch-carousel" data-appeared-items="1">
-                <!-- Testimonial 1 -->
-                <div class="classic-testimonials item">
-                  <div class="testimonial-content">
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum.</p>
-                  </div>
-                  <div class="testimonial-author"><span>John Doe</span> - Customer</div>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="classic-testimonials item">
-                  <div class="testimonial-content">
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum.</p>
-                  </div>
-                  <div class="testimonial-author"><span>John Doe</span> - Customer</div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="classic-testimonials item">
-                  <div class="testimonial-content">
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim laborum.</p>
-                  </div>
-                  <div class="testimonial-author"><span>John Doe</span> - Customer</div>
-                </div>
-              </div>
-              <!-- End Testimonials Carousel -->
-
-            </div>
-
+          
           </div>
 
 
