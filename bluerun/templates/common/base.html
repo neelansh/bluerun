@@ -153,12 +153,13 @@
                 <a href="{% url 'pricing' %}">Pricing</a>
               </li>
               <li>
-                <a href="{% url 'contactus' %}">Contact Us</a>
+                <a href="#">More&nbsp; <i class="fa fa-angle-down"></i></a>
+                <ul class = "dropdown">
+                  <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+                  <li><a href="{% url 'careers' %}">Careers</a></li>
+                </ul>
               </li>
-              <li>
-                <a href="{% url 'careers' %}">Careers</a>
-              </li>
-
+              
               {% if user.is_authenticated %}
               <li>
                 <a href="#">{{ user.username }}&nbsp; <i class="fa fa-angle-down"></i></a>
@@ -171,7 +172,7 @@
                 </ul>
               </li>
               {% else %}
-              <li><a href="{% url 'login' %}">Login</a></li>
+              <li><a href="{% url 'login' %}">Login&nbsp; &nbsp; <i class="fa fa-lock"></i></a></li>
               {% endif %}
             </ul>
             <!-- End Navigation List -->
@@ -214,7 +215,7 @@
                 </ul>
               </li>
               {% else %}
-              <li><a href="{% url 'login' %}">Login</a></li>
+              <li><a href="{% url 'login' %}">Login&nbsp; &nbsp; <i class="fa fa-lock"></i></a></li>
               {% endif %}
         </ul>
         <!-- Mobile Menu End -->

@@ -1,4 +1,5 @@
 {% extends 'common/base.html' %}
+{% load staticfiles %}
 {% block content %}
 
     <!-- Start Page Banner -->
@@ -7,22 +8,19 @@
         <div class="row">
           <div class="col-md-6">
             <h2>Portfolio</h2>
-            <p>Portfolio Subtitle</p>
-          </div>
-          <div class="col-md-6">
-            <ul class="breadcrumbs">
-              <li><a href="#">Home</a></li>
-              <li>Portfolio</li>
-            </ul>
+            <p>Our Portfolio</p>
           </div>
         </div>
       </div>
+    </div>
+    <div style = "padding: 0 auto;" class="container">
+      <img src="{% static 'common/images/comingsoon_banner.jpg' %}">
     </div>
     <!-- End Page Banner -->
 
 
     <!-- Start Content -->
-    <div id="content">
+    <!-- <div id="content">
       <div class="container">
         <div class="portfolio-page portfolio-2column">
 
@@ -139,10 +137,9 @@
 
 
         </div>
-        <!-- End Portfolio Items -->
 
       </div>
-    </div>
+    </div> -->
     <!-- End Content -->
 
 {% endblock %}
