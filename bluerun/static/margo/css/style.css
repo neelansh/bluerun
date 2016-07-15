@@ -46,7 +46,6 @@ body {
     line-height: 21px;
 	font-weight: 300;
 	color: #666;
-	background: url(../images/patterns/1.png) fixed repeat;
 }
 strong, b {
 	font-weight: 600;
@@ -4108,6 +4107,7 @@ footer {
     padding-top: 60px;
 	border-top: 4px solid #555;
 	color: #ccc;
+	margin-top: 10px;
 }
 
 footer p {
