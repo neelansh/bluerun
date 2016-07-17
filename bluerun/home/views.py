@@ -4,11 +4,14 @@ from .forms import ContactForm
 from django import forms
 from django.contrib import messages 
 from django.views.decorators.http import require_GET, require_POST,require_http_methods
+from trading.models import calls
 
 # Create your views here.
 
 def index(request):
-	return render(request , 'home/index.html')
+	context = {}
+	context['call_obj'] = calls.objects.filter(achived = True).order_by('-created_on')[:5]
+	return render(request , 'home/index.html', context)
 
 def aboutus(request):
 	return render(request , 'home/about-us.html')
