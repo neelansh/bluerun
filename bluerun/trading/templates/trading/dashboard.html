@@ -1,6 +1,7 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
 {% block extrahead %}
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/dashboard.css' %}">
 
 {% endblock %}
 {% block content %}
@@ -28,8 +29,10 @@
 	</ul>
 </div>
     <div class = "col-md-10" >
+	
     <h4 class="classic-title"><span>CALLS</span></h4>
-	<ul class="nav nav-tabs nav-justified" role="tablist">
+	<a href="#" class="nav-tabs-dropdown btn btn-block btn-default">Call Tabs</a>
+	<ul class="nav nav-tabs nav-justified nav-tabs-horizontal " role="tablist" id="nav-tabs-wrapper">
 		<li role="presentation" class="active"><a href="#cashintra" aria-controls="cashintra" role="tab" data-toggle="tab">Cash intra</a></li>
 		<li role="presentation"><a href="#cashpositional" aria-controls="cashpositional" role="tab" data-toggle="tab">Cash positional</a></li>
 		<li role="presentation"><a href="#stockfuture" aria-controls="stcokfuture" role="tab" data-toggle="tab">Stock future</a></li>
@@ -37,6 +40,7 @@
 		<li role="presentation"><a href="#optioncallscovered" aria-controls="optioncallscovered" role="tab" data-toggle="tab">Option calls covered</a></li>
 		<li role="presentation"><a href="#optioncallsuncovered" aria-controls="optioncallsuncovered" role="tab" data-toggle="tab">Option calls uncovered</a></li>
 		<li role="presentation"><a href="#multibagger" aria-controls="multibagger" role="tab" data-toggle="tab">Multi bagger</a></li>
+		
 	</ul>
 
 	<div class="tab-content">
@@ -451,6 +455,36 @@
 </div>
 </div>
 </div>
+
+<!--Mobile Tabs Dropdown Menu Script-->
+<script>
+
+$('.nav-tabs-dropdown').each(function(i, elm) {
+    
+    $(elm).text($(elm).next('ul').find('li.active a').text());
+    
+});
+  
+$('.nav-tabs-dropdown').on('click', function(e) {
+
+    e.preventDefault();
+    
+    $(e.target).toggleClass('open').next('ul').slideToggle();
+    
+});
+
+$('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
+
+    e.preventDefault();
+    
+    $(e.target).closest('ul').hide().prev('a').removeClass('open').text($(this).text());
+      
+});
+
+</script>
+
+<!--End of mobile tab dropdown script-->
+
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
