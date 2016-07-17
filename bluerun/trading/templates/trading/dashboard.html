@@ -16,7 +16,19 @@
 	</div>
 </div>
 <div class="container">
-       <div class = "container-fluid" >
+<div class="row">
+<div class="col-md-2">
+	<h4 class="classic-title"><span>MENU</span></h4>
+	<ul>
+		<li><a href="{% url 'dashboard' id=user.id %}">View calls</a></li>
+		<li><a href="#">Chat with agent</a></li>
+		<li><a href="http://www.smctradeonline.com/">Pms account</a></li>
+		<li><a href="#">Subscription plan</a></li>
+		<li><a href="{% url 'profile' id=user.id %}">Your Profile</a></li>
+	</ul>
+</div>
+    <div class = "col-md-10" >
+    <h4 class="classic-title"><span>CALLS</span></h4>
 	<ul class="nav nav-tabs nav-justified" role="tablist">
 		<li role="presentation" class="active"><a href="#cashintra" aria-controls="cashintra" role="tab" data-toggle="tab">Cash intra</a></li>
 		<li role="presentation"><a href="#cashpositional" aria-controls="cashpositional" role="tab" data-toggle="tab">Cash positional</a></li>
@@ -436,6 +448,7 @@
 			{% endif %}
 		</div>
 	</div>
+</div>
 </div>
 </div>
 
