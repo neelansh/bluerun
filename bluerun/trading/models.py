@@ -2,12 +2,17 @@ from django.db import models
 
 # Create your models here.
 class calls(models.Model):
+	trade_option = (
+		('BUY' , 'BUY'),
+		('SELL' , 'SELL'),
+	)
 	created_on = models.DateTimeField(auto_now_add = True)
 	stock_name = models.CharField(max_length = 100)
-	entry_price = models.IntegerField()
+	trade = models.CharField(max_length = 3 , choices = trade_option , default = 'BUY')
+	entry_price_range = models.CharField(max_length = 50)
 	target = models.IntegerField()
 	stop_loss = models.IntegerField()
-	time_frame = models.CharField(max_length = 100)
+	time_frame = models.CharField(max_length = 100 , blank = True , default = '1 Day')
 	comment = models.CharField(max_length = 500 , blank = True , null = True)
 	cash_intra = models.BooleanField(default = False)
 	cash_positional = models.BooleanField(default = False)
