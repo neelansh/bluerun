@@ -1,0 +1,28 @@
+.link-button
+{
+	padding-left:150px;
+	padding-right:70px;
+	padding-top:20px;
+	padding-bottom:30px;
+	
+
+
+}
+.btn-block
+{
+	color:#444;
+	font-weight:500;
+	border-color:#ee3733;
+	border-width:3px;
+	border-radius:10px;
+
+}
+.btn-block:hover
+{
+
+	background-color:#ee3733;
+	color:white;
+	font-weight:700;
+	border-color:white;
+
+}

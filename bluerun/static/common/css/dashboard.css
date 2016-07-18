@@ -68,3 +68,18 @@
 	font-weight:600;
 	color:white;
 }
+.call-no
+{
+	background-color:#0aa7c6;
+	color:white;
+}
+.call-yes
+{
+	background-color: rgba(76, 165, 23, 0.8); 
+	color: rgb(30, 25, 25);
+}
+.call-yes-icon
+{
+	font-size:15px;
+	color:rgba(76, 165, 23, 0.8);
+}
