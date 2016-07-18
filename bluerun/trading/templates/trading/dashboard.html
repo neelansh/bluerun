@@ -53,7 +53,7 @@
 				
 				 {% if call.achived %}
 				 <div class="col-md-12 custom-panel">
-					 <div class="col-md-4 custom" style= "background-color: rgba(76, 165, 23, 0.8); color: rgb(30, 25, 25);">
+					 <div class="col-md-4 custom call-yes">
 					 
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
 					</div>
@@ -61,7 +61,7 @@
 					
 					{%else%}
 					<div class="col-md-12 custom-panel">
-					<div class="col-md-4 custom" style= "background-color:#ee3733;color:white;">
+					<div class="col-md-4 custom call-no">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
 					</div>
@@ -86,7 +86,7 @@
 					{%if call.achived%}
 					<i class="fa fa-check" style="font-size:15px;color:rgba(76, 165, 23, 0.8);"></i>
 					{%else%}
-					<i class="fa fa-times" style="font-size:15px;color:#ee3733;"></i>
+					Pending
 					{%endif%}
 					</div> 
 					
@@ -124,7 +124,7 @@
 				
 				 {% if call.achived %}
 				 <div class="col-md-12 custom-panel">
-					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
+					 <div class="col-md-4 custom call-yes">
 					 
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
 					</div>
@@ -132,7 +132,7 @@
 					
 					{%else%}
 					<div class="col-md-12 custom-panel">
-					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
+					<div class="col-md-4 custom call-no">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
 					</div>
@@ -149,7 +149,12 @@
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
+					<strong class="pbody">Call Achieved:</strong>
+					{%if call.achived%}
+					<i class="fa fa-check" style="font-size:15px;color:rgba(76, 165, 23, 0.8);"></i>
+					{%else%}
+					Pending
+					{%endif%}</div>
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -180,7 +185,7 @@
 				
 				 {% if call.achived %}
 				 <div class="col-md-12 custom-panel">
-					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
+					 <div class="col-md-4 custom call-yes">
 					 
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
 					</div>
@@ -188,7 +193,7 @@
 					
 					{%else%}
 					<div class="col-md-12 custom-panel">
-					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
+					<div class="col-md-4 custom call-no">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
 					</div>
@@ -205,7 +210,12 @@
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
+					<strong class="pbody">Call Achieved:</strong>
+					{%if call.achived%}
+					<i class="fa fa-check" style="font-size:15px;color:rgba(76, 165, 23, 0.8);"></i>
+					{%else%}
+					Pending
+					{%endif%}</div>
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -236,7 +246,7 @@
 				
 				 {% if call.achived %}
 				 <div class="col-md-12 custom-panel">
-					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
+					 <div class="col-md-4 custom call-yes">
 					 
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
 					</div>
@@ -244,7 +254,7 @@
 					
 					{%else%}
 					<div class="col-md-12 custom-panel">
-					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
+					<div class="col-md-4 custom call-no">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
 					</div>
@@ -261,7 +271,12 @@
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: &nbsp</strong>{{ call.stop_loss }}</div>
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Call Achieved:</strong>{{call.achived}}</div> </strong>
+					<strong class="pbody">Call Achieved:</strong>
+					{%if call.achived%}
+					<i class="fa fa-check" style="font-size:15px;color:rgba(76, 165, 23, 0.8);"></i>
+					{%else%}
+					Pending
+					{%endif%}</div>
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -292,7 +307,7 @@
 				
 				 {% if call.achived %}
 				 <div class="col-md-12 custom-panel">
-					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
+					 <div class="col-md-4 custom call-yes">
 					 
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
 					</div>
@@ -300,7 +315,7 @@
 					
 					{%else%}
 					<div class="col-md-12 custom-panel">
-					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
+					<div class="col-md-4 custom call-no">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
 					</div>
@@ -317,7 +332,12 @@
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: &nbsp</strong>{{ call.stop_loss }}</div>
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Call Achieved:</strong>{{call.achived}}</div> </strong>
+					<strong class="pbody">Call Achieved:</strong>
+					{%if call.achived%}
+					<i class="fa fa-check" style="font-size:15px;color:rgba(76, 165, 23, 0.8);"></i>
+					{%else%}
+					Pending
+					{%endif%}</div>
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -348,7 +368,7 @@
 				
 				 {% if call.achived %}
 				 <div class="col-md-12 custom-panel">
-					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
+					 <div class="col-md-4 custom call-yes">
 					 
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
 					</div>
@@ -356,7 +376,7 @@
 					
 					{%else%}
 					<div class="col-md-12 custom-panel">
-					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
+					<div class="col-md-4 custom call-no">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
 					</div>
@@ -373,7 +393,12 @@
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: &nbsp</strong>{{ call.stop_loss }}</div>
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Call Achieved:</strong>{{call.achived}}</div> </strong>
+					<strong class="pbody">Call Achieved:</strong>
+					{%if call.achived%}
+					<i class="fa fa-check" style="font-size:15px;color:rgba(76, 165, 23, 0.8);"></i>
+					{%else%}
+					Pending
+					{%endif%}</div>
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -404,7 +429,7 @@
 				
 				 {% if call.achived %}
 				 <div class="col-md-12 custom-panel">
-					 <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
+					 <div class="col-md-4 custom call-yes">
 					 
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
 					</div>
@@ -412,7 +437,7 @@
 					
 					{%else%}
 					<div class="col-md-12 custom-panel">
-					<div class="col-md-4" style= "background-color:#ee3733;color:white;">
+					<div class="col-md-4 custom call-no">
 					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
 					</div>
 					</div>
@@ -429,7 +454,12 @@
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Stop Loss: &nbsp</strong>{{ call.stop_loss }}</div>
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Call Achieved: </strong>{{call.achived}}</div> </strong>
+					<strong class="pbody">Call Achieved:</strong>
+					{%if call.achived%}
+					<i class="fa fa-check" style="font-size:15px;color:rgba(76, 165, 23, 0.8);"></i>
+					{%else%}
+					Pending
+					{%endif%}</div>
 					
 				</div>
 				<div class="panel-body comment-custom">
