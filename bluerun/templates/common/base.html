@@ -162,7 +162,7 @@
               
               {% if user.is_authenticated %}
               <li>
-                <a href="#">{{ user.username }}&nbsp; <i class="fa fa-angle-down"></i></a>
+                <a href="#">{{ user.first_name }}&nbsp; <i class="fa fa-angle-down"></i></a>
                 <ul class = "dropdown">
                   <li><a href="{% url 'dashboard' id=user.id %}">Dashboard</a></li>
                   <li><a href="{% url 'profile' id=user.id %}">Profile</a></li>
@@ -204,7 +204,7 @@
               </li>
               {% if user.is_authenticated %}
               <li>
-                <a href="#">{{ user.username }}&nbsp;<i class="fa fa-angle-down"></i></a>
+                <a href="#">{{ user.first_name }}&nbsp;<i class="fa fa-angle-down"></i></a>
                 <ul class = "dropdown">
                   <li><a href="{% url 'dashboard' id=user.id %}">Dashboard</a></li>
                   <li><a href="{% url 'profile' id=user.id %}">Profile</a></li>

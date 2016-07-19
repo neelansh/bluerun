@@ -3,24 +3,24 @@ from .models import MyUser
 from django.contrib.auth import authenticate
 
 class LoginForm(forms.Form):
-    username = forms.CharField(max_length = 25);
+    email = forms.EmailField(max_length=254)
     password = forms.CharField(widget = forms.PasswordInput)
 
     def __init__(self, *args, **kwargs):
         self.authenticated_user = None;
         super(LoginForm, self).__init__(*args, **kwargs)
     
-    def clean_username(self):
-        data_username = self.cleaned_data['username']
-        if MyUser.objects.filter(username = data_username).count() != 1:
-            raise forms.ValidationError('Invalid Username')
-        return data_username
+    def clean_email(self):
+        data_email = self.cleaned_data['email']
+        if MyUser.objects.filter(email = data_email).count() != 1:
+            raise forms.ValidationError('Invalid Email ID')
+        return data_email
 
     def clean(self):
-        data_username = self.cleaned_data.get('username', '')
+        data_email = self.cleaned_data.get('email', '')
         data_passwd = self.cleaned_data.get('password', '')
-        user = authenticate(username=data_username, password = data_passwd)
-        if data_username and data_passwd and user is None:
+        user = authenticate(email=data_email, password = data_passwd)
+        if data_email and data_passwd and user is None:
             raise forms.ValidationError('Username/Password doesnot match')
         if user and user.is_active == False:
             raise forms.ValidationError('Inactive User')
@@ -51,13 +51,13 @@ class ResetPasswordForm(forms.Form):
         return self.cleaned_data
 
 class ForgotPassword(forms.Form):
-    username = forms.CharField(max_length = 100)
+    email = forms.EmailField(max_length=254)
 
-    def clean_username(self):
-        data_username = self.cleaned_data.get('username', '')
-        if data_username and not MyUser.objects.filter(username = data_username).exists():
+    def clean_email(self):
+        data_email = self.cleaned_data.get('email', '')
+        if data_email and not MyUser.objects.filter(email = data_email).exists():
             raise forms.ValidationError('Invalid Username')
-        return data_username
+        return data_email
 
 class SetPasswordForm(forms.Form):
     new_password = forms.CharField(widget=forms.PasswordInput)
@@ -94,4 +94,4 @@ class SignupForm(forms.ModelForm):
 
     class Meta:
         model = MyUser
-        fields = ['username', 'email', 'phone', 'first_name', 'last_name']
+        fields = ['email', 'phone', 'first_name', 'last_name']

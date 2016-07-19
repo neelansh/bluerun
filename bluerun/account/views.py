@@ -77,7 +77,7 @@ def forgot_password(request):
 		if not f.is_valid():
 			return render(request, 'account/forgot_password.html', {'f' : f})
 		else:
-			user = MyUser.objects.get(username = f.cleaned_data['username'])
+			user = MyUser.objects.get(email = f.cleaned_data['email'])
 			otp = create_otp(user = user, purpose = 'FP')
 			email_body_context = { 'u' : user, 'otp' : otp}
 			body = loader.render_to_string('account/forgot_password_email.txt', email_body_context)
