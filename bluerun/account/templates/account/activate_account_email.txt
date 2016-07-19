@@ -1,4 +1,4 @@
-Hi {{ u.username }}, 
+Hi {{ u.first_name }}, 
 
 Thank you for registering with bluerun financial 
 
