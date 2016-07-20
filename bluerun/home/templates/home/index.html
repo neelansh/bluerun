@@ -1,5 +1,9 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
+{% block extrahead %}
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/index.css' %}">
+
+{% endblock %}
 {% block content %}
 <!-- Start HomePage Slider -->
 <section id="home" class="container-fluid">
@@ -166,9 +170,22 @@
             <div class="panel panel-default">
                    <div class="panel-heading">
 			<div class="col-md-12 custom-panel">
-			    <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
-				<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
-			    </div>
+			 {% if call.trade|stringformat:"s" == "SELL" %}
+				 <div class="col-md-12 custom-panel">
+					 <div class="col-md-12 custom call-yes">
+					 
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
+					</div>
+					</div>
+					
+					{%else%}
+					<div class="col-md-12 custom-panel">
+					<div class="col-md-12 custom call-no">
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
+					</div>
+					</div>
+					{%endif%}
+			    
 			</div>  
 		   </div>
 		   <div class="panel-body pan-body-custom">
