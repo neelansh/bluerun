@@ -161,7 +161,7 @@
        
       <div class="col-md-6">
         <div class="latest-posts">
-          <h4 class="classic-title"><span>OUR PREDICTIONS THAT CAME TRUE</span></h4>
+          <h4 class="classic-title"><span>CALLS ACHIEVED</span></h4>
            {% for call in call_obj %}
             <div class="panel panel-default">
                    <div class="panel-heading">
@@ -172,14 +172,22 @@
 			</div>  
 		   </div>
 		   <div class="panel-body pan-body-custom">
-			                <div class="col-md-6 col-sm-3 custom ">
+		 
+			                </br></br><div class="col-md-6 col-sm-6 custom ">
 					<strong class="pbody">Date:&nbsp</strong> {{ call.created_on }}</div>
-					<div class="col-md-3 col-sm-2 custom">
-					<strong class="pbody">Entry Price:&nbsp </strong>{{ call.entry_price }}</div>
-					<div class="col-md-3 col-sm-2 custom">
+					<div class="col-md-6 col-sm-6 custom">
+					<strong class="pbody">Entry Price Range:&nbsp </strong>{{ call.entry_price_range }}</div>
+					<div class="col-md-6 col-sm-6 custom">
+					<strong class="pbody">Time Frame:&nbsp </strong>{{ call.time_frame }}</div>
+					<div class="col-md-6 col-sm-6 custom">
+					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					<div class="col-md-6 col-sm-6 custom">
 					<strong class="pbody">Target:&nbsp </strong>{{ call.target }}</div>
+					<div class="col-md-6 col-sm-6 custom">
+					<strong class="pbody">Call Achieved:&nbsp </strong><i class="fa fa-check call-yes-icon"></i></div>
 		  </div>    
             </div>
+			
           {% endfor %}
        
         </div>
