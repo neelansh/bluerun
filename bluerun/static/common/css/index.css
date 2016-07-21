@@ -36,3 +36,22 @@
 	background-color: rgba(76, 165, 23, 0.8);
 	color: rgb(30, 25, 25);
 }
+.call-yes-icon
+{
+	padding-left:10px;
+	font-size:15px;
+	color:rgba(76, 165, 23, 0.8);
+}
+#sell
+{
+	font-family:'Open Sans', sans-serif;
+	color:rgba(236, 32, 32, 0.76);
+	font-weight:700;
+	
+}
+#buy
+{
+	font-family:'Open Sans', sans-serif;
+	color:rgba(76, 165, 23, 0.8);
+	font-weight:700;
+}

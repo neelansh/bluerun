@@ -21,7 +21,7 @@ urlpatterns = [
     url(r'^aboutus/$', aboutus , name  = 'aboutus'),
     url(r'^careers/$', careers , name  = 'careers'),
     url(r'^services/$', services , name  = 'services'),
-    url(r'^portfolio/$', portfolio , name  = 'portfolio'),
+    url(r'^marketoutlook/$', marketoutlook , name  = 'marketoutlook'),
     url(r'^pricing/$', pricing , name  = 'pricing'),
     url(r'^contactus/$', contactus , name  = 'contactus'),
 ]

@@ -1,5 +1,8 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
+{% block extrahead %}
+<link rel="stylesheet" type="text/css" href="{% static 'common/css/marketoutlook.css' %}">
+{% endblock %}
 {% block content %}
 
     <!-- Start Page Banner -->
@@ -7,14 +10,22 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h2>Portfolio</h2>
-            <p>Our Portfolio</p>
+            <h2>Market Outlook</h2>
+            <p></p>
           </div>
         </div>
       </div>
     </div>
     <div style = "padding: 0 auto;" class="container">
-      <img src="{% static 'common/images/comingsoon_banner.jpg' %}">
+	 <div class="col-md-12 col-sm-12 col-xs-12"><iframe frameborder="0" src="http://www.indianotes.com/widgets/indices-ticker/index.php?type=indices-ticker&w=1200" width="100%" height="180" scrolling="no"></iframe></div>
+      <div class="col-md-6 col-sm-12 col-xs-12"><iframe frameborder="0" src="http://www.indianotes.com/widgets/Top-Gainers-Losers/index.php?type=gainers-losers&w=500&h=432" width="100%" height="432"></iframe></div>
+ <div class="col-md-6 col-sm-12 col-xs-12" style="margin-top:-14px;"><iframe frameborder="0" src="http://www.indianotes.com/widgets/sensex-nifty-charts/index.php?type=charts&w=500&h=470" width="100%" height="470"></iframe></div>
+ <div class="col-md-6 col-sm-12 col-xs-12"><iframe frameborder="0" src="http://www.indianotes.com/widgets/company-reports/index.php?w=500&h=200" width="500" height="200"></iframe></div>
+ 
+ <div class="col-md-6 col-sm-12 col-xs-12"><iframe frameborder="0" src="http://www.indianotes.com/widgets/industry-reports/index.php?w=500&h=200" width="500" height="200"></iframe></div>
+ 
+ <div class="col-md-12"><iframe frameborder="0" src="http://www.indianotes.com/widgets/news-reports/index.php?w=1200&h=250" width="1200" height="250"></iframe></div>
+
     </div>
     <!-- End Page Banner -->
 
