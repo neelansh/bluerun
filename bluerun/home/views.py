@@ -19,8 +19,8 @@ def aboutus(request):
 def services(request):
 	return render(request , 'home/services.html')
 
-def portfolio(request):
-	return render(request , 'home/portfolio.html')
+def marketoutlook(request):
+	return render(request , 'home/marketoutlook.html')
 
 def pricing(request):
 	return render(request , 'home/pricing.html')
