@@ -1,5 +1,9 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
+{% block extrahead %}
+  <link rel="stylesheet" type="text/css" href="{% static 'common/css/index.css' %}">
+
+{% endblock %}
 {% block content %}
 <!-- Start HomePage Slider -->
 <section id="home" class="container-fluid">
@@ -11,6 +15,7 @@
       <li data-target="#main-slide" data-slide-to="0" class="active"></li>
       <li data-target="#main-slide" data-slide-to="1"></li>
       <li data-target="#main-slide" data-slide-to="2"></li>
+	  <li data-target="#main-slide" data-slide-to="3"></li>
     </ol>
     <!--/ Indicators end-->
 
@@ -24,9 +29,9 @@
               <span style="color :black">Welcome to <strong>Bluerun</strong></span>
             </h2>
             <h3 class="animated3">
-             <strong><span style="color : white">The ultimate aim of your business</span></strong>
+             <strong><span style="color : white">Check out Pricing</span></strong>
            </h3>
-           <p class="animated4"><a href="#" class="slider btn btn-system btn-large">Check Now</a></p>
+           <p class="animated4"><a href="pricing/" class="slider btn btn-system btn-large">Buy Now</a></p>
        </div>
      </div>
      <!--/ Carousel item end -->
@@ -35,12 +40,12 @@
        <div class="slider-content">
         <div class="col-md-12 col-xs-12 text-center">
           <h2 class="animated4">
-            <span><strong>Bluerun</strong><span style="color : white"> for the highest</span></span>
+            <span><strong>Bluerun</strong><span style="color : white">For the highest</span></span>
           </h2>
           <h3 class="animated5">
-           <span style="color: white ">The Key of your Success</span>
+           <span style="color: white ">Check out our free live demo</span>
          </h3>
-         <p class="animated6"><a href="#" class="slider btn btn-system btn-large">Buy Now</a></p>
+         <p class="animated6"><a target="_blank" href="https://vt.smcindiaonline.org/" class="slider btn btn-system btn-large">Demo</a></p>
        </div>
      </div>
    </div>
@@ -53,10 +58,27 @@
           <span>The way of <strong>Success</strong></span>
         </h2>
         <h3 class="animated8 white">
-         <span style="color : black">Why you are waiting</span>
+         <span style="color : black">Join Us</span>
        </h3>
        <div class="container">
-        <a class="animated4 slider btn btn-system btn-large btn-min-block" href="#">Get Now</a><a class="animated4 slider btn btn-default btn-min-block" href="#">Live Demo</a>
+        <a class="animated4 slider btn btn-system btn-large btn-min-block" target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270QTBrNFVEMFBKRTA/view">Open Demat Account</a><a class="animated4 slider btn btn-default btn-min-block" target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270WHdGT1p2eGFJUVk/view">Terms and conditions</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/ Carousel item end -->
+<div class="item">
+     <img class="img-responsive" src="{% static 'margo/images/slider/bg4.jpg' %}" alt="slider" style="height : 70vh; opacity :1">
+     <div class="slider-content row">
+      <div class="col-md-12 text-center">
+        <h2 class="animated7 white">
+          <span>Your Returns,<strong> Our Priority </strong></span>
+        </h2>
+        <h3 class="animated8 white">
+         <span style="color : white">Manage your Demat Account</span>
+       </h3>
+       <div class="container">
+        <a class="animated4 slider btn btn-system btn-large btn-min-block" target="_blank" href="https://trade.smcindiaonline.com/easytrade/">Manage Account</a>
       </div>
     </div>
   </div>
@@ -81,7 +103,7 @@
 <!-- Start Content -->
 <div id="content">
   <div class="container">
-
+<div class="col-md-10">
     <!-- Start Services Icons -->
     <h4 class="classic-title"><span>SERVICES</span></h4>
     <div class="row">
@@ -141,23 +163,25 @@
         </a>
       </div>
       <!-- End Service Icon 4 -->
-
+	</div>
     </div>
     <!-- End Services Icons -->
-
+	
+	
+	<div class="col-md-2">
+      <h4 class="classic-title"><span>IMPORTANT LINKS</span></h4>
+      <ul>
+        </br><li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270QTBrNFVEMFBKRTA/view"><i class="fa fa-angle-right"></i>&nbsp; Open Demat account</a></li></br>
+        <li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270WHdGT1p2eGFJUVk/view"><i class="fa fa-angle-right"></i>&nbsp; Terms and conditions</a></li></br>
+        <li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270ZllnQWFRaHJTajA/view?usp=sharing"><i class="fa fa-angle-right"></i>&nbsp; Presentation for clients</a></li>
+      </ul>
+    </div>
     <!-- Divider -->
     <div class="hr1 margin-top"></div>
 <iframe frameborder="0" src="http://www.indianotes.com/widgets/indices-ticker/index.php?type=indices-ticker&w=1326" width="100%" height="170px" scrolling="no" alt="ticker loading"></iframe>
 
     <div class="row">
-    <div class="col-md-2">
-      <h4 class="classic-title"><span>IMPORTANT LINKS</span></h4>
-      <ul>
-        <li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270QTBrNFVEMFBKRTA/view"><i class="fa fa-angle-right"></i>&nbsp; Demat account opening form</a></li>
-        <li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270WHdGT1p2eGFJUVk/view"><i class="fa fa-angle-right"></i>&nbsp; Terms and conditions</a></li>
-        <li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270ZllnQWFRaHJTajA/view?usp=sharing"><i class="fa fa-angle-right"></i>&nbsp; Presentation for clients</a></li>
-      </ul>
-    </div>
+    
        
       <div class="col-md-6">
         <div class="latest-posts">
@@ -166,9 +190,22 @@
             <div class="panel panel-default">
                    <div class="panel-heading">
 			<div class="col-md-12 custom-panel">
-			    <div class="col-md-4" style= "background-color: rgba(76, 165, 23, 0.8); color: black;">
-				<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
-			    </div>
+			 {% if call.trade|stringformat:"s" == "SELL" %}
+				 <div class="col-md-12 custom-panel">
+					 <div class="col-md-12 custom call-yes">
+					 
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</br></h3>
+					</div>
+					</div>
+					
+					{%else%}
+					<div class="col-md-12 custom-panel">
+					<div class="col-md-12 custom call-no">
+					<h3 class="panel-title" id="panel">{{ call.stock_name }}</h3>
+					</div>
+					</div>
+					{%endif%}
+			    
 			</div>  
 		   </div>
 		   <div class="panel-body pan-body-custom">
@@ -180,7 +217,10 @@
 					<div class="col-md-6 col-sm-6 custom">
 					<strong class="pbody">Time Frame:&nbsp </strong>{{ call.time_frame }}</div>
 					<div class="col-md-6 col-sm-6 custom">
-					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					<strong class="pbody trade-body">Trade:&nbsp </strong>
+					{% if call.trade|stringformat:"s" == "SELL" %}<span id="sell">{{ call.trade }}</span>
+					{%else%}<span id="buy">{{ call.trade}}</span>
+					{%endif%}</div>
 					<div class="col-md-6 col-sm-6 custom">
 					<strong class="pbody">Target:&nbsp </strong>{{ call.target }}</div>
 					<div class="col-md-6 col-sm-6 custom">
