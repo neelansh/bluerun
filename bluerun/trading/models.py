@@ -8,7 +8,7 @@ class calls(models.Model):
 	)
 	created_on = models.DateTimeField(auto_now_add = True)
 	stock_name = models.CharField(max_length = 100)
-	trade = models.CharField(max_length = 3 , choices = trade_option , default = 'BUY')
+	trade = models.CharField(max_length =4 , choices = trade_option , default = 'BUY')
 	entry_price_range = models.CharField(max_length = 50)
 	target = models.IntegerField()
 	stop_loss = models.IntegerField()

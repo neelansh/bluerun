@@ -51,7 +51,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				
-				 {% if call.achived %}
+				 {% if call.trade|stringformat:"s" == "SELL" %}
 				 <div class="col-md-12 custom-panel">
 					 <div class="col-md-4 custom call-yes">
 					 
@@ -66,29 +66,37 @@
 					</div>
 					</div>
 					{%endif%}
-					<!--{% if call.achived%}
-					<i class="fa fa-dollar "></i>
-					{%endif%} -->
+					
 					
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 card custom">
+				
+			</br></br>
+			<div class="row-custom"><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:&nbsp</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2 card custom">
+					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Entry Price Range:&nbsp </strong>{{ call.entry_price_range }}</div>
+					<div class="col-md-2 col-sm-2 custom">
+					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target:&nbsp </strong>{{ call.target }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
+					<strong class="pbody">Time Frame: </strong>{{ call.time_frame }}</div>
+					</div>
+					<div class="row-custom">
+					<div class="col-md-3 col-sm-3 custom">
+					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
 					{%if call.achived%}
 					<i class="fa fa-check call-yes-icon"></i>
 					{%else%}
-					Pending
+					<i class="fa fa-minus call-no-icon"></i>
 					{%endif%}
 					</div> 
+					</div>
 					
 					
 				</div>
@@ -110,7 +118,7 @@
 			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>You are not subscribed to this feature.</h1>
+				<h1 class="unsubscribed">You are not subscribed to this feature.</h1>
 			</div>
 			{% endif %}
 			
@@ -122,7 +130,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				
-				 {% if call.achived %}
+				 {% if call.trade|stringformat:"s" == "SELL" %}
 				 <div class="col-md-12 custom-panel">
 					 <div class="col-md-4 custom call-yes">
 					 
@@ -140,21 +148,31 @@
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 custom ">
+			</br></br><div class="row-custom"><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:&nbsp</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2 custom">
+					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Entry Price Range:&nbsp </strong>{{ call.entry_price_range }}</div>
+					<div class="col-md-2 col-sm-2 custom">
+					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target:&nbsp </strong>{{ call.target }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
+					<strong class="pbody">Time Frame: </strong>{{ call.time_frame }}</div>
+					</div>
+					<div class="row-custom">
+					<div class="col-md-3 col-sm-3 custom">
+					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
 					{%if call.achived%}
 					<i class="fa fa-check call-yes-icon"></i>
 					{%else%}
-					Pending
-					{%endif%}</div>
+					<i class="fa fa-minus call-no-icon"></i>
+					{%endif%}
+					</div> 
+					</div>
+					
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -172,7 +190,7 @@
 			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>You are not subscribed to this feature</h1>
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -183,7 +201,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				
-				 {% if call.achived %}
+				 {% if call.trade|stringformat:"s" == "SELL" %}
 				 <div class="col-md-12 custom-panel">
 					 <div class="col-md-4 custom call-yes">
 					 
@@ -201,21 +219,31 @@
 					</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 custom">
+			</br></br><div class="row-custom"><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:&nbsp</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2 custom">
+					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Entry Price Range:&nbsp </strong>{{ call.entry_price_range }}</div>
+					<div class="col-md-2 col-sm-2 custom">
+					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target:&nbsp </strong>{{ call.target }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
+					<strong class="pbody">Time Frame: </strong>{{ call.time_frame }}</div>
+					</div>
+					<div class="row-custom">
+					<div class="col-md-3 col-sm-3 custom">
+					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
 					{%if call.achived%}
 					<i class="fa fa-check call-yes-icon"></i>
 					{%else%}
-					Pending
-					{%endif%}</div>
+					<i class="fa fa-minus call-no-icon"></i>
+					{%endif%}
+					</div> 
+					</div>
+					
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -233,7 +261,7 @@
 			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>You are not subscribed to this feature.</h1>
+				<h1 class="unsubscribed">You are not subscribed to this feature.</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -244,7 +272,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				
-				 {% if call.achived %}
+				 {% if call.trade|stringformat:"s" == "SELL" %}
 				 <div class="col-md-12 custom-panel">
 					 <div class="col-md-4 custom call-yes">
 					 
@@ -262,21 +290,31 @@
 					</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 custom">
+			</br></br><div class="row-custom"><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:&nbsp</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2 custom">
+					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Entry Price Range:&nbsp </strong>{{ call.entry_price_range }}</div>
+					<div class="col-md-2 col-sm-2 custom">
+					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target:&nbsp </strong>{{ call.target }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Stop Loss: &nbsp</strong>{{ call.stop_loss }}</div>
+					<strong class="pbody">Time Frame: </strong>{{ call.time_frame }}</div>
+					</div>
+					<div class="row-custom">
+					<div class="col-md-3 col-sm-3 custom">
+					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
 					{%if call.achived%}
 					<i class="fa fa-check call-yes-icon"></i>
 					{%else%}
-					Pending
-					{%endif%}</div>
+					<i class="fa fa-minus call-no-icon"></i>
+					{%endif%}
+					</div> 
+					</div>
+					
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -294,7 +332,7 @@
 			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>You are not subscribed to this feature.</h1>
+				<h1 class="unsubscribed">You are not subscribed to this feature.</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -305,7 +343,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				
-				 {% if call.achived %}
+				 {% if call.trade|stringformat:"s" == "SELL" %}
 				 <div class="col-md-12 custom-panel">
 					 <div class="col-md-4 custom call-yes">
 					 
@@ -323,21 +361,31 @@
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 custom">
+			</br></br><div class="row-custom"><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:&nbsp</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2 custom">
+					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Entry Price Range:&nbsp </strong>{{ call.entry_price_range }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Target: &nbsp</strong>{{ call.target }}</div>
+					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Stop Loss: &nbsp</strong>{{ call.stop_loss }}</div>
+					<strong class="pbody">Target:&nbsp </strong>{{ call.target }}</div>
+					<div class="col-md-2 col-sm-2 custom">
+					<strong class="pbody">Time Frame: </strong>{{ call.time_frame }}</div>
+					</div>
+					<div class="row-custom">
+					<div class="col-md-3 col-sm-3 custom">
+					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
 					{%if call.achived%}
 					<i class="fa fa-check call-yes-icon"></i>
 					{%else%}
-					Pending
-					{%endif%}</div>
+					<i class="fa fa-minus call-no-icon"></i>
+					{%endif%}
+					</div> 
+					</div>
+					
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -355,7 +403,7 @@
 			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>You are not subscribed to this feature</h1>
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -366,7 +414,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				
-				 {% if call.achived %}
+				 {% if call.trade|stringformat:"s" == "SELL" %}
 				 <div class="col-md-12 custom-panel">
 					 <div class="col-md-4 custom call-yes">
 					 
@@ -384,21 +432,31 @@
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 custom">
+			</br></br><div class="row-custom"><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:&nbsp</strong> {{ call.created_on }}</div>
+					<div class="col-md-3 col-sm-3 custom">
+					<strong class="pbody">Entry Price Range:&nbsp </strong>{{ call.entry_price_range }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Entry Price Range: &nbsp</strong>{{ call.entry_price_range }}</div>
+					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Target: &nbsp</strong>{{ call.target }}</div>
+					<strong class="pbody">Target:&nbsp </strong>{{ call.target }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Stop Loss: &nbsp</strong>{{ call.stop_loss }}</div>
+					<strong class="pbody">Time Frame: </strong>{{ call.time_frame }}</div>
+					</div>
+					<div class="row-custom">
+					<div class="col-md-3 col-sm-3 custom">
+					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
 					{%if call.achived%}
 					<i class="fa fa-check call-yes-icon"></i>
 					{%else%}
-					Pending
-					{%endif%}</div>
+					<i class="fa fa-minus call-no-icon"></i>
+					{%endif%}
+					</div> 
+					</div>
+					
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -416,7 +474,7 @@
 			<h1>No calls in this section</h1>
 			{% else %}
 			<div>
-				<h1>You are not subscribed to this feature</h1>
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1>
 			</div>
 			{% endif %}
 		</div>
@@ -427,7 +485,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading">
 				
-				 {% if call.achived %}
+				 {% if call.trade|stringformat:"s" == "SELL" %}
 				 <div class="col-md-12 custom-panel">
 					 <div class="col-md-4 custom call-yes">
 					 
@@ -445,21 +503,31 @@
 				</div>
 				
 				<div class="panel-body pan-body-custom">
-			</br></br><div class="col-md-3 col-sm-3 custom">
+			</br></br><div class="row-custom"><div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Date:&nbsp</strong> {{ call.created_on }}</div>
-					<div class="col-md-2 col-sm-2 custom">
+					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Entry Price Range:&nbsp </strong>{{ call.entry_price_range }}</div>
+					<div class="col-md-2 col-sm-2 custom">
+					<strong class="pbody">Stop Loss:&nbsp </strong>{{ call.stop_loss }}</div>
 					<div class="col-md-2 col-sm-2 custom">
 					<strong class="pbody">Target:&nbsp </strong>{{ call.target }}</div>
 					<div class="col-md-2 col-sm-2 custom">
-					<strong class="pbody">Stop Loss: &nbsp</strong>{{ call.stop_loss }}</div>
+					<strong class="pbody">Time Frame: </strong>{{ call.time_frame }}</div>
+					</div>
+					<div class="row-custom">
+					<div class="col-md-3 col-sm-3 custom">
+					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
 					{%if call.achived%}
 					<i class="fa fa-check call-yes-icon"></i>
 					{%else%}
-					Pending
-					{%endif%}</div>
+					<i class="fa fa-minus call-no-icon"></i>
+					{%endif%}
+					</div> 
+					</div>
+					
 					
 				</div>
 				<div class="panel-body comment-custom">
@@ -477,7 +545,7 @@
 			<h1>No calls in this Section.</h1>
 			{% else %}
 			<div>
-				<h1>You are not subscribed to this feature.</h1>
+				<h1 class="unsubscribed">You are not subscribed to this feature.</h1>
 			</div>
 			{% endif %}
 		</div>
