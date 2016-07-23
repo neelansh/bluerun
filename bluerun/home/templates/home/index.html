@@ -58,7 +58,7 @@
           <span>The way of <strong>Success</strong></span>
         </h2>
         <h3 class="animated8 white">
-         <span style="color : black">Join Us</span>
+         <span style="color : black">JOIN US</span>
        </h3>
        <div class="container">
         <a class="animated4 slider btn btn-system btn-large btn-min-block" target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270QTBrNFVEMFBKRTA/view">Open Demat Account</a><a class="animated4 slider btn btn-default btn-min-block" target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270WHdGT1p2eGFJUVk/view">Terms and conditions</a>
@@ -171,9 +171,11 @@
 	<div class="col-md-2">
       <h4 class="classic-title"><span>IMPORTANT LINKS</span></h4>
       <ul>
-        </br><li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270QTBrNFVEMFBKRTA/view"><i class="fa fa-angle-right"></i>&nbsp; Open Demat account</a></li></br>
+        <li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270QTBrNFVEMFBKRTA/view"><i class="fa fa-angle-right"></i>&nbsp; Open Demat account</a></li></br>
         <li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270WHdGT1p2eGFJUVk/view"><i class="fa fa-angle-right"></i>&nbsp; Terms and conditions</a></li></br>
-        <li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270ZllnQWFRaHJTajA/view?usp=sharing"><i class="fa fa-angle-right"></i>&nbsp; Presentation for clients</a></li>
+        <li><a target="_blank" href="https://drive.google.com/file/d/0B8H3PYsB2270ZllnQWFRaHJTajA/view?usp=sharing"><i class="fa fa-angle-right"></i>&nbsp; Presentation for clients</a></li></br>
+		<li><a target="_blank" href="https://vt.smcindiaonline.org/"><i class="fa fa-angle-right"></i>&nbsp; Live free Demo</a></li></br>
+		<li><a target="_blank" href="https://trade.smcindiaonline.com/easytrade/"><i class="fa fa-angle-right"></i>&nbsp; Manage Demat Account</a></li></br>
       </ul>
     </div>
     <!-- Divider -->
@@ -183,7 +185,7 @@
     <div class="row">
     
        
-      <div class="col-md-6">
+      <div class="col-md-8">
         <div class="latest-posts">
           <h4 class="classic-title"><span>CALLS ACHIEVED</span></h4>
            {% for call in call_obj %}
@@ -217,7 +219,7 @@
 					<div class="col-md-6 col-sm-6 custom">
 					<strong class="pbody">Time Frame:&nbsp </strong>{{ call.time_frame }}</div>
 					<div class="col-md-6 col-sm-6 custom">
-					<strong class="pbody trade-body">Trade:&nbsp </strong>
+					<strong class="pbody">Trade:&nbsp </strong>
 					{% if call.trade|stringformat:"s" == "SELL" %}<span id="sell">{{ call.trade }}</span>
 					{%else%}<span id="buy">{{ call.trade}}</span>
 					{%endif%}</div>

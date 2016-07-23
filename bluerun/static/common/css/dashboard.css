@@ -106,3 +106,16 @@ h1.unsubscribed
 	color:#666;
 	
 }
+#sell
+{
+	font-family:'Open Sans', sans-serif;
+	color:rgba(236, 32, 32, 0.76);
+	font-weight:700;
+	
+}
+#buy
+{
+	font-family:'Open Sans', sans-serif;
+	color:rgba(76, 165, 23, 0.8);
+	font-weight:700;
+}
