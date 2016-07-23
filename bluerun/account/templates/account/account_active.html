@@ -11,8 +11,16 @@
         </div>
       </div>
     </div>
-<h1>{{ user.first_name  }}</h1>
-<h1>your account has been activated </h1>
-<h2><a href="{% url 'login' %}">login</a> to continue</h2>
+<div class="container" style="padding-top:50px;padding-bottom:35px;">
+<div class="col-md-6 col-sm-12 col-xs-12">
+<h4 class="classic-title"><span>ACCOUNT SET</span></h4>
+<h3>Hey, {{ user.first_name }}. You have successfully activated your account. 
+</div>
 
+<div class="col-md-4 col-md-push-1">
+<h4 class="classic-title"><span>LOGIN TO CONTINUE</span></h4>
+	    <a class="button btn btn-primary btn-lg" href="{% url 'login' %}">Log in</a></h3>
+</div>
+
+</div>
 {% endblock %}
