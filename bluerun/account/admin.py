@@ -5,5 +5,3 @@ from .models import MyUser, UserOTP
 @admin.register(MyUser)
 class MyUserAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'email']
-
-admin.site.register(UserOTP)

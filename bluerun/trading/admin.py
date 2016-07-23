@@ -28,12 +28,14 @@ class CallsAdmin(admin.ModelAdmin):
 					query = query + " multi_bagger = b'1' OR"
 				query = query[:-2]
 				query =query + ";"
-				for q in MyUser.objects.raw(query):
-					email_field = q.email
-					subject, from_email = 'Subscription Update', 'bluerunfinancial@gmail.com'
-					body = loader.render_to_string('trading/text.txt')
-					msg = EmailMultiAlternatives(subject, body, from_email, [email_field])
-					msg.send()
+				result = MyUser.objects.raw(query)
+				to_emails = []
+				for q in result:
+					to_emails.append(q.email)
+				subject, from_email = 'Subscription Update', 'bluerunfinancial@gmail.com'
+				body = loader.render_to_string('trading/text.txt')
+				msg = EmailMultiAlternatives(subject, body, from_email, to_emails)
+				msg.send()	
 		except ex:
 			print(ex)
 		obj.save()
