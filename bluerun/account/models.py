@@ -70,6 +70,9 @@ class MyUser(AbstractBaseUser , PermissionsMixin):
     subscription_startdate = models.DateTimeField(null = True)
     subscription_enddate = models.DateTimeField(null = True)
 
+    class Meta:
+        verbose_name_plural = "users"
+
 
 
 

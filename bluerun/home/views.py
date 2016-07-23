@@ -43,8 +43,11 @@ def contactus(request):
             subject, from_email = 'New Contact Request', 'bluerunfinancial@gmail.com'
             email_body_context = {'name':name, 'contact':contact, 'email':email}
             body = loader.render_to_string('home/contactadmin.txt', email_body_context)
-            msg = EmailMultiAlternatives(subject, body, from_email, ['bluerunfinancial@gmail.com'])
-            msg.send()
+            try:
+                msg = EmailMultiAlternatives(subject, body, from_email, ['bluerunfinancial@gmail.com'])
+                msg.send()
+            except ex:
+                print(ex)
             forminstance.save()               
     else:
         form = ContactForm()
