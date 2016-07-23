@@ -31,7 +31,7 @@ def signup(request):
 			otp = create_otp(user = user, purpose = 'AA')
 			email_body_context = { 'u' : user, 'otp' : otp}
 			body = loader.render_to_string('account/activate_account_email.txt', email_body_context)
-			message = EmailMultiAlternatives("Acitvate Acoount", body, "bluerunfinancial@gmail.com", [user.email])
+			message = EmailMultiAlternatives("Activate Account", body, "bluerunfinancial@gmail.com", [user.email])
 			message.send()
 			return render(request , 'account/activate_email_sent.html' , { 'user': user })
 
