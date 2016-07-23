@@ -86,7 +86,11 @@
 					</div>
 					<div class="row-custom">
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					<strong class="pbody">Trade:&nbsp </strong>
+					{% if call.trade|stringformat:"s" == "SELL" %}<span id="sell">{{ call.trade }}</span>
+					{%else%}<span id="buy">{{ call.trade}}</span>
+					{%endif%}
+					</div>
 					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
@@ -161,7 +165,11 @@
 					</div>
 					<div class="row-custom">
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					<strong class="pbody">Trade:&nbsp </strong>
+					{% if call.trade|stringformat:"s" == "SELL" %}<span id="sell">{{ call.trade }}</span>
+					{%else%}<span id="buy">{{ call.trade}}</span>
+					{%endif%}
+					</div>
 					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
@@ -232,7 +240,11 @@
 					</div>
 					<div class="row-custom">
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					<strong class="pbody">Trade:&nbsp </strong>
+					{% if call.trade|stringformat:"s" == "SELL" %}<span id="sell">{{ call.trade }}</span>
+					{%else%}<span id="buy">{{ call.trade}}</span>
+					{%endif%}
+					</div>
 					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
@@ -303,7 +315,11 @@
 					</div>
 					<div class="row-custom">
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					<strong class="pbody">Trade:&nbsp </strong>
+					{% if call.trade|stringformat:"s" == "SELL" %}<span id="sell">{{ call.trade }}</span>
+					{%else%}<span id="buy">{{ call.trade}}</span>
+					{%endif%}
+					</div>
 					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
@@ -374,7 +390,11 @@
 					</div>
 					<div class="row-custom">
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					<strong class="pbody">Trade:&nbsp </strong>
+					{% if call.trade|stringformat:"s" == "SELL" %}<span id="sell">{{ call.trade }}</span>
+					{%else%}<span id="buy">{{ call.trade}}</span>
+					{%endif%}
+					</div>
 					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
@@ -445,7 +465,11 @@
 					</div>
 					<div class="row-custom">
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					<strong class="pbody">Trade:&nbsp </strong>
+					{% if call.trade|stringformat:"s" == "SELL" %}<span id="sell">{{ call.trade }}</span>
+					{%else%}<span id="buy">{{ call.trade}}</span>
+					{%endif%}
+					</div>
 					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>
@@ -516,7 +540,11 @@
 					</div>
 					<div class="row-custom">
 					<div class="col-md-3 col-sm-3 custom">
-					<strong class="pbody">Trade:&nbsp </strong>{{ call.trade }}</div>
+					<strong class="pbody">Trade:&nbsp </strong>
+					{% if call.trade|stringformat:"s" == "SELL" %}<span id="sell">{{ call.trade }}</span>
+					{%else%}<span id="buy">{{ call.trade}}</span>
+					{%endif%}
+					</div>
 					
 					<div class="col-md-3 col-sm-3 custom">
 					<strong class="pbody">Call Achieved:</strong>

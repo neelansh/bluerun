@@ -5,6 +5,9 @@ from django import forms
 from django.contrib import messages 
 from django.views.decorators.http import require_GET, require_POST,require_http_methods
 from trading.models import calls
+from django.template import loader
+from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
 
 # Create your views here.
 
@@ -36,8 +39,16 @@ def contactus(request):
             subject = request.POST.get('subject' , '')
             message = request.POST.get('message', '')
             forminstance = Contact(name = name,email = email,contact = contact,subject = subject,message = message)
-            forminstance.save()
-            messages.success(request, 'Submitted successfully!')                
+            messages.success(request, 'Submitted successfully!') 
+            subject, from_email = 'New Contact Request', 'bluerunfinancial@gmail.com'
+            email_body_context = {'name':name, 'contact':contact, 'email':email}
+            body = loader.render_to_string('home/contactadmin.txt', email_body_context)
+            try:
+                msg = EmailMultiAlternatives(subject, body, from_email, ['bluerunfinancial@gmail.com'])
+                msg.send()
+            except ex:
+                print(ex)
+            forminstance.save()               
     else:
         form = ContactForm()
     

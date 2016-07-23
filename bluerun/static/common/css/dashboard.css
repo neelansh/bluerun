@@ -94,7 +94,7 @@
 {	
 	padding-left:10px;
 	font-size:15px;
-	color:#00afd1;
+	color:#f8ba01;
 }
 h1.unsubscribed
 {
@@ -105,4 +105,17 @@ h1.unsubscribed
 	font-weight:600;
 	color:#666;
 	
+}
+#sell
+{
+	font-family:'Open Sans', sans-serif;
+	color:rgba(236, 32, 32, 0.76);
+	font-weight:700;
+	
+}
+#buy
+{
+	font-family:'Open Sans', sans-serif;
+	color:rgba(76, 165, 23, 0.8);
+	font-weight:700;
 }
