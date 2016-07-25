@@ -14,8 +14,11 @@
     </div>
   </div>
 </div>
-<div class = "container">
+
+<div class = "container" style="padding-top:50px;">
   <div class="col-md-6 col-sm-12 col-xs-12">
+  <h4 class="classic-title"><span>SIGN UP</span></h4>
+
     <form action = "{% url 'signup' %}" method = "post" class = "form">
       {% csrf_token %}
       {% bootstrap_form f %}
@@ -27,8 +30,9 @@
     </form>
   </div>
   
-  <div class="col-md-4" style="padding-top:100px;">
-    <h3>Already have an account? Login Here.</h3></br></br>
+  <div class="col-md-5 col-md-push-1">
+  <h4 class="classic-title"><span> ALREADY HAVE AN ACCOUNT? LOGIN HERE</span></h4>
+    
     <a class="button btn btn-primary btn-lg" href="{% url 'login' %}">Log in</a>
   </div>
 </div>
