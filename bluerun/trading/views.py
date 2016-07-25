@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from .models import calls
 from account.models import *
+from django import forms
 from django.core.exceptions import ObjectDoesNotExist
 from trading.forms import *
 from django.template import loader
@@ -106,11 +107,12 @@ def editprofile(request , id):
 	context ={}
 	user = get_object_or_404(MyUser, id = request.user.id)
 	context['user'] = user
+	data = {'first_name':user.first_name, 'last_name':user.last_name, 'phone':user.phone}
 	if request.method == 'GET':
-		context = { 'f' : EditProfileForm()}
+		context = { 'f' : EditProfileForm(data)}
 		return render(request, 'trading/editprofile.html', context)
 	else:
-		f = EditProfileForm(request.POST, initial={'first_name':user.first_name, 'last_name':user.last_name, 'email':user.email, 'phone':user.phone})
+		f = EditProfileForm(request.POST)
 		if not f.is_valid():
 			return render(request, 'trading/editprofile.html', {'f' : f})
 		else:
@@ -130,14 +132,18 @@ def editprofile(request , id):
 			user.phone = request.POST.get('phone')
 			if not user.phone:
 				user.phone = phone_def
-			user.save(update_fields=['first_name','last_name','phone'])
+			user.save()
 			if (user.email != email_def):
-				otp = create_otp(user = user, purpose = 'AA')
-				email_body_context = { 'u' : user, 'otp' : otp}
-				body = loader.render_to_string('account/activate_account_email.txt', email_body_context)
-				message = EmailMultiAlternatives("Activate Account", body, "bluerunfinancial@gmail.com", [user.email])
-				message.send()
-				user.save(update_fields=['email'])
-				return render(request , 'account/activate_email_sent.html' , { 'user': user })
+				try:
+					otp = create_otp(user = user, purpose = 'AA')
+					email_body_context = { 'u' : user, 'otp' : otp}
+					body = loader.render_to_string('account/activate_account_email.txt', email_body_context)
+					message = EmailMultiAlternatives("Activate Account", body, "bluerunfinancial@gmail.com", [user.email])
+					message.send()
+					return render(request , 'account/activate_email_sent.html' , { 'user': user })	
+				except ex:
+					print(ex)
+			
+				
 		return render(request, 'trading/profile.html', {'user': user})
 

@@ -81,7 +81,7 @@ class SignupForm(forms.ModelForm):
         if not data_email:
             raise forms.ValidationError('This field is required')
         if MyUser.objects.filter(email = data_email).exists():
-            raise forms.ValidationError('User with this email already exist')
+            raise forms.ValidationError('User with this email already exists')
         return data_email
 
     def clean_confirm_password(self):
