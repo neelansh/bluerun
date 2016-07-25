@@ -11,7 +11,3 @@ class EditProfileForm(forms.Form):
 		if self.cleaned_data['first_name'] is None:
 			raise forms.ValidationError('enter valid first name')
 		return self.cleaned_data['first_name']
-
-	class Meta:
-		model = MyUser
-		fields = ['phone', 'first_name', 'last_name']
