@@ -1,19 +1,17 @@
 from django import forms
 from account.models import MyUser
 
-class EditProfileForm(forms.ModelForm):
-	email = forms.CharField(max_length=254, required = False)
-	phone = forms.CharField(max_length = 10, required = False)
-	first_name = forms.CharField(max_length = 30, required = False)
+class EditProfileForm(forms.Form):
+	email = forms.EmailField(max_length=254 , min_length = 5)
+	phone = forms.CharField(max_length = 13 , min_length = 10)
+	first_name = forms.CharField(max_length = 30)
 	last_name = forms.CharField(max_length = 30, required = False)
 
-
-	def clean_email(self):
-		data_email = self.cleaned_data['email']
-		if (MyUser.objects.filter(email = data_email).exists()):
-			raise forms.ValidationError('User with this email already exists.')
-		return data_email
+	def clean_first_name(self):
+		if self.cleaned_data['first_name'] is None:
+			raise forms.ValidationError('enter valid first name')
+		return self.cleaned_data['first_name']
 
 	class Meta:
 		model = MyUser
-		fields = ['email','phone', 'first_name', 'last_name']
+		fields = ['phone', 'first_name', 'last_name']

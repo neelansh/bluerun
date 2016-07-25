@@ -18,7 +18,6 @@
   <div class="col-md-7 col-sm-12 col-xs-12">
     <form action = "{% url 'editprofile' user.id %}" method = "post" class = "form">
       {% csrf_token %}
-      <br>
       {% bootstrap_form f %}
       {% buttons %}
       <button type="submit" class="btn btn-primary">
@@ -27,4 +26,5 @@
       {% endbuttons %}
     </form>
   </div>
+</div>
 {% endblock %}
