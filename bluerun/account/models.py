@@ -117,6 +117,7 @@ class UserOTP(models.Model):
     OTP_PURPOSE_CHOICES = (
         ('FP', 'Forgot Password'),
         ('AA', 'Activate Account'),
+        ('CE', 'Confirm Email'),
     );
     user = models.ForeignKey(MyUser)
     otp = models.CharField(max_length = 4)
