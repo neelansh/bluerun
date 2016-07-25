@@ -19,4 +19,5 @@ from .views import *
 urlpatterns = [
     url(r'(?P<id>\d+)/dashboard/$' , dashboard , name = 'dashboard'),
     url(r'(?P<id>\d+)/profile/$' , profile , name = 'profile' ),
+    url(r'(?P<id>\d+)/editprofile/$' , editprofile, name = 'editprofile'),
 ]

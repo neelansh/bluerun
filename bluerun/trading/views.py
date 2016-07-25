@@ -4,8 +4,12 @@ from django.views.decorators.http import require_GET, require_POST,require_http_
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from .models import calls
-from account.models import MyUser
+from account.models import *
 from django.core.exceptions import ObjectDoesNotExist
+from trading.forms import *
+from django.template import loader
+from django.core.mail import EmailMultiAlternatives
+from django.conf import settings
 
 # Create your views here.
 @login_required(login_url = 'login')
@@ -94,12 +98,46 @@ def profile(request , id):
     user = get_object_or_404(MyUser , id = request.user.id)
     context['user'] = user
     calls_obj = calls.objects.all()
-    #if(user):
-       # context['comment'] = None
-        #try:
-         #   context['comment'] = calls_obj.filter()
-        #except ObjectDoesNotExist:
-         #   print(ObjectDoesNotExist)
-        #else:
-         #   context['comment'] = "No Comments"
+   
     return render(request, 'trading/profile.html' , context)
+
+
+def editprofile(request , id):
+	context ={}
+	user = get_object_or_404(MyUser, id = request.user.id)
+	context['user'] = user
+	if request.method == 'GET':
+		context = { 'f' : EditProfileForm()}
+		return render(request, 'trading/editprofile.html', context)
+	else:
+		f = EditProfileForm(request.POST, initial={'first_name':user.first_name, 'last_name':user.last_name, 'email':user.email, 'phone':user.phone})
+		if not f.is_valid():
+			return render(request, 'trading/editprofile.html', {'f' : f})
+		else:
+			first_name_def = user.first_name
+			last_name_def = user.last_name
+			email_def = user.email
+			phone_def = user.phone
+			user.first_name = request.POST.get('first_name')
+			if not user.first_name:
+				user.first_name = first_name_def
+			user.last_name = request.POST.get('last_name')
+			if not user.last_name:
+				user.last_name = last_name_def
+			user.email = request.POST.get('email')
+			if not user.email:
+				user.email = email_def
+			user.phone = request.POST.get('phone')
+			if not user.phone:
+				user.phone = phone_def
+			user.save(update_fields=['first_name','last_name','phone'])
+			if (user.email != email_def):
+				otp = create_otp(user = user, purpose = 'AA')
+				email_body_context = { 'u' : user, 'otp' : otp}
+				body = loader.render_to_string('account/activate_account_email.txt', email_body_context)
+				message = EmailMultiAlternatives("Activate Account", body, "bluerunfinancial@gmail.com", [user.email])
+				message.send()
+				user.save(update_fields=['email'])
+				return render(request , 'account/activate_email_sent.html' , { 'user': user })
+		return render(request, 'trading/profile.html', {'user': user})
+
