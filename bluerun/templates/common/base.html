@@ -153,11 +153,7 @@
                 <a href="{% url 'pricing' %}">Pricing</a>
               </li>
               <li>
-                <a href="#">More&nbsp; <i class="fa fa-angle-down"></i></a>
-                <ul class = "dropdown">
-                  <li><a href="{% url 'contactus' %}">Contact Us</a></li>
-                  <li><a href="{% url 'careers' %}">Careers</a></li>
-                </ul>
+                  <a href="{% url 'contactus' %}">Contact Us</a>
               </li>
               
               {% if user.is_authenticated %}
@@ -198,9 +194,6 @@
               </li>
               <li>
                 <a href="{% url 'contactus' %}">Contact Us</a>
-              </li>
-              <li>
-                <a href="{% url 'careers' %}">Careers</a>
               </li>
               {% if user.is_authenticated %}
               <li>
@@ -291,11 +284,11 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-4 text-white" >
+          <!-- <div class="col-md-4 text-white" >
             <h4 style = "color: white">LINKS</h4><br>
             <a href="#"><h6 style = "color: white">Meet our technical team</h6></a><br>
             <a href="#"><h6 style = "color: white">careers with us</h6></a><br>
-          </div>
+          </div> -->
           <!-- .col-md-3 -->
           <!-- End Contact Widget -->
 
