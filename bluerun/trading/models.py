@@ -27,3 +27,5 @@ class calls(models.Model):
 	def __str__(self):
 		return self.stock_name
 
+	class Meta:
+		verbose_name_plural = "calls"

@@ -8,32 +8,23 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <h2>SignUp</h2>
+        <h2>Edit Profile</h2>
         <p></p>
       </div>
     </div>
   </div>
 </div>
-
-<div class = "container" style="padding-top:50px;">
-  <div class="col-md-6 col-sm-12 col-xs-12">
-  <h4 class="classic-title"><span>SIGN UP</span></h4>
-
-    <form action = "{% url 'signup' %}" method = "post" class = "form">
+<div class = "container">
+  <div class="col-md-7 col-sm-12 col-xs-12">
+    <form action = "{% url 'editprofile' user.id %}" method = "post" class = "form">
       {% csrf_token %}
       {% bootstrap_form f %}
       {% buttons %}
       <button type="submit" class="btn btn-primary">
-        Submit
+        Save
       </button>
       {% endbuttons %}
     </form>
-  </div>
-  
-  <div class="col-md-5 col-md-push-1">
-  <h4 class="classic-title"><span> ALREADY HAVE AN ACCOUNT? LOGIN HERE</span></h4>
-    
-    <a class="button btn btn-primary btn-lg" href="{% url 'login' %}">Log in</a>
   </div>
 </div>
 {% endblock %}

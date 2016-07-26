@@ -70,6 +70,9 @@ class MyUser(AbstractBaseUser , PermissionsMixin):
     subscription_startdate = models.DateTimeField(null = True)
     subscription_enddate = models.DateTimeField(null = True)
 
+    class Meta:
+        verbose_name_plural = "users"
+
 
 
 
@@ -114,6 +117,7 @@ class UserOTP(models.Model):
     OTP_PURPOSE_CHOICES = (
         ('FP', 'Forgot Password'),
         ('AA', 'Activate Account'),
+        ('CE', 'Confirm Email'),
     );
     user = models.ForeignKey(MyUser)
     otp = models.CharField(max_length = 4)
