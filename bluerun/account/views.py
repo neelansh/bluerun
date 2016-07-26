@@ -151,7 +151,7 @@ def subscription_change(request):
 	txnid=hash_object.hexdigest()[0:20]
 	hashh = ''
 	posted['txnid']=txnid
-	hashSequence = "key|txnid|amount|productinfo|firstname|email|udf1|udf2|udf3|udf4|udf5|udf6|udf7|udf8|udf9|udf10"
+	hashSequence = "key|txnid|amount|productinfo|firstname|email||||||||||"
 	posted['key']=key
 	hash_string=''
 	hashVarsSeq=hashSequence.split('|')
@@ -175,7 +175,7 @@ def subscription_change(request):
 @require_http_methods(['GET' , 'POST'])
 def success(request):
 	c = {}
-    	c.update(csrf(request))
+	c.update(csrf(request))
 	status=request.POST["status"]
 	firstname=request.POST["firstname"]
 	amount=request.POST["amount"]
@@ -192,11 +192,11 @@ def success(request):
 		retHashSeq = salt+'|'+status+'|||||||||||'+email+'|'+firstname+'|'+productinfo+'|'+amount+'|'+txnid+'|'+key
 	hashh=hashlib.sha512(retHashSeq).hexdigest().lower()
 	if(hashh !=posted_hash):
-		print "Invalid Transaction. Please try again"
+		print("Invalid Transaction. Please try again")
 	else:
-		print "Thank You. Your order status is ", status
-		print "Your Transaction ID for this transaction is ",txnid
-		print "We have received a payment of Rs. ", amount ,". Your order will soon be shipped."
+		print ("Thank You. Your order status is ", status)
+		print ("Your Transaction ID for this transaction is ",txnid)
+		print ("We have received a payment of Rs. ", amount ,". Your order will soon be shipped.")
 	return render_to_response('sucess.html',RequestContext(request,{"txnid":txnid,"status":status,"amount":amount}))
 
 
@@ -206,7 +206,7 @@ def success(request):
 @require_http_methods(['GET' , 'POST'])
 def failure(request):
 	c = {}
-    	c.update(csrf(request))
+	c.update(csrf(request))
 	status=request.POST["status"]
 	firstname=request.POST["firstname"]
 	amount=request.POST["amount"]
@@ -223,9 +223,9 @@ def failure(request):
 		retHashSeq = salt+'|'+status+'|||||||||||'+email+'|'+firstname+'|'+productinfo+'|'+amount+'|'+txnid+'|'+key
 	hashh=hashlib.sha512(retHashSeq).hexdigest().lower()
 	if(hashh !=posted_hash):
-		print "Invalid Transaction. Please try again"
+		print ("Invalid Transaction. Please try again")
 	else:
-		print "Thank You. Your order status is ", status
-		print "Your Transaction ID for this transaction is ",txnid
-		print "We have received a payment of Rs. ", amount ,". Your order will soon be shipped."
- 	return render_to_response("Failure.html",RequestContext(request,c))
+		print ("Thank You. Your order status is ", status)
+		print ("Your Transaction ID for this transaction is ",txnid)
+		print ("We have received a payment of Rs. ", amount ,". Your order will soon be shipped.")
+	return render_to_response("Failure.html",RequestContext(request,c))
