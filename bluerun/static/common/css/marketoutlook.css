@@ -14,3 +14,6 @@
   padding-bottom: 75%;
 }
  
+iframe {
+    max-width: 100%;
+}
