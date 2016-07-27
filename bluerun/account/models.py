@@ -39,6 +39,7 @@ class MyUser(AbstractBaseUser , PermissionsMixin):
     last_name = models.CharField(max_length=30, blank=True)
     is_staff = models.BooleanField(default=True, help_text='Designates whether the user can log into this admin site.')
     is_active = models.BooleanField(default=True, help_text='Designates whether this user should be treated as active. Unselect this instead of deleting accounts.')
+    is_privileged =models.BooleanField(default=False, help_text='Designates whether this user is privileged')
     date_joined = models.DateTimeField(auto_now_add = True)
 
     objects = CustomUserManager()
