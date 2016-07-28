@@ -611,7 +611,7 @@ $('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
 
 <!--End of mobile tab dropdown script-->
 
-
+{% if user.is_privileged %}
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -629,4 +629,5 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
+{% endif %}
 {% endblock %}
