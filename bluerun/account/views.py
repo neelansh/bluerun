@@ -14,8 +14,8 @@ from django.http import Http404, JsonResponse, HttpResponse
 import datetime
 import hashlib
 from random import randint
-from django.views.decorators.csrf import csrf_protect, csrf_exempt
-from django.core.context_processors import csrf
+# from django.views.decorators.csrf import csrf_protect, csrf_exempt
+# from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template.loader import get_template
@@ -169,8 +169,6 @@ def subscription_change(request):
 	else:
 		return render_to_response('account/subscription.html',RequestContext(request,{"posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,"txnid":txnid,"hash_string":hash_string,"action":"." }))
 
-@csrf_protect
-@csrf_exempt
 @login_required(login_url = 'login')
 @require_http_methods(['GET' , 'POST'])
 def success(request):
@@ -200,8 +198,6 @@ def success(request):
 	return render_to_response('account/subscription_success.html',RequestContext(request,{"txnid":txnid,"status":status,"amount":amount}))
 
 
-@csrf_protect
-@csrf_exempt
 @login_required(login_url = 'login')
 @require_http_methods(['GET' , 'POST'])
 def failure(request):
