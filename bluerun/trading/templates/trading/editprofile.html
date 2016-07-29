@@ -14,8 +14,10 @@
     </div>
   </div>
 </div>
-<div class = "container">
+<div class = "container" style="padding-top:50px;">
+<div>
   <div class="col-md-7 col-sm-12 col-xs-12">
+  <h4 class="classic-title"><span>PROFILE DETAILS</span></h4>
     <form action = "{% url 'editprofile' user.id %}" method = "post" class = "form">
       {% csrf_token %}
       {% bootstrap_form f %}
@@ -26,5 +28,6 @@
       {% endbuttons %}
     </form>
   </div>
+</div>
 </div>
 {% endblock %}
