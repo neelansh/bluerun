@@ -28,28 +28,23 @@
     <input type="hidden" name="posted" value="{{ posted }}"/>
     <input type="hidden" name="txnid" value="{{ txnid }}" />
 
-    <b>Mandatory Parameters</b>
-
     Amount: 
-    <input name="amount" value="{{ posted.amount|default:'' }}" />
-    First Name: 
-    <input name="firstname" id="firstname" value="{{ posted.firstname|default:'' }}" />
+    <input name="amount" value="{{ posted.amount|default:'' }}" /><br>
+    
+    <input type="hidden" name="firstname" id="firstname" value="{{ posted.firstname|default:'' }}" />
 
-    Email: 
-    <input name="email" id="email" value="{{ posted.email|default:'' }}" />
-    Phone: 
-    <input name="phone" value="{{ posted.phone|default:'' }}" />
+     
+    <input type="hidden" name="email" id="email" value="{{ posted.email|default:'' }}" />
+     
+    <input type="hidden" name="phone" value="{{ posted.phone|default:'' }}" />
 
     Product Info: 
-    <textarea name="productinfo">{{ posted.productinfo|default:'' }}</textarea>
+    <textarea name="productinfo">{{ posted.productinfo|default:'' }}</textarea><br>
 
 
-    Success URI: 
-    <input name="surl" value="{{ posted.surl }}" size="64" />
-
-
-    Failure URI: 
-    <input name="furl" value="{{ posted.furl }}" size="64" />
+   
+    <input type="hidden" name="surl" value="{{ posted.surl }}" size="64" />
+    <input type="hidden" name="furl" value="{{ posted.furl }}" size="64" />
 
 
 

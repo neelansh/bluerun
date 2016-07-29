@@ -25,4 +25,7 @@ urlpatterns = [
     url(r'^(?P<id>\d+)/logout/' , logout , name = "logout"),
     url(r'^(?P<id>\d+)/reset_password/' , reset_password , name = "reset_password"),
     url(r'^activate_account/(?P<id>\d+)/(?P<otp>\d{4})/$' , activate_account , name = "activate_account"),
+    url(r'^subscription/$' , subscription_change , name = "subscription_change"),
+    url(r'^subscription_success/$' , subscription_success , name = "subscription_success"),
+    url(r'^subscription_fail/$' , subscription_change , name = "subscription_failure"),
 ]

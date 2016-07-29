@@ -23,8 +23,8 @@
 	<ul>
 		<li><a href="{% url 'dashboard' id=user.id %}">View calls</a></li>
 		<li><a href="#">Chat with agent</a></li>
-		<li><a href="http://www.smctradeonline.com/">Pms account</a></li>
-		<li><a href="#">Subscription plan</a></li>
+		<li><a target = "_blank" href="https://trade.smcindiaonline.com/easytrade/">Pms account</a></li>
+		<li><a href="{% url 'subscription_change' %}">Subscription plan</a></li>
 		<li><a href="{% url 'profile' id=user.id %}">Your Profile</a></li>
 	</ul>
 </div>
