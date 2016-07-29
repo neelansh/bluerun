@@ -14,8 +14,8 @@ from django.http import Http404, JsonResponse, HttpResponse
 import datetime
 import hashlib
 from random import randint
-from django.views.decorators.csrf import csrf_protect, csrf_exempt
-from django.core.context_processors import csrf
+# from django.views.decorators.csrf import csrf_protect, csrf_exempt
+# from django.core.context_processors import csrf
 from django.shortcuts import render_to_response
 from django.http import HttpResponseRedirect
 from django.template.loader import get_template
@@ -165,12 +165,10 @@ def subscription_change(request):
 	hashh=hashlib.sha512(hash_string).hexdigest().lower()
 	action =PAYU_BASE_URL
 	if(posted.get("key")!=None and posted.get("txnid")!=None and posted.get("productinfo")!=None and posted.get("firstname")!=None and posted.get("email")!=None):
-		return render_to_response('current_datetime.html',RequestContext(request,{"posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,"txnid":txnid,"hash_string":hash_string,"action":"https://test.payu.in/_payment" }))
+		return render_to_response('account/subscription.html',RequestContext(request,{"posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,"txnid":txnid,"hash_string":hash_string,"action":"https://test.payu.in/_payment" }))
 	else:
-		return render_to_response('current_datetime.html',RequestContext(request,{"posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,"txnid":txnid,"hash_string":hash_string,"action":"." }))
+		return render_to_response('account/subscription.html',RequestContext(request,{"posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,"txnid":txnid,"hash_string":hash_string,"action":"." }))
 
-@csrf_protect
-@csrf_exempt
 @login_required(login_url = 'login')
 @require_http_methods(['GET' , 'POST'])
 def success(request):
@@ -197,11 +195,9 @@ def success(request):
 		print ("Thank You. Your order status is ", status)
 		print ("Your Transaction ID for this transaction is ",txnid)
 		print ("We have received a payment of Rs. ", amount ,". Your order will soon be shipped.")
-	return render_to_response('sucess.html',RequestContext(request,{"txnid":txnid,"status":status,"amount":amount}))
+	return render_to_response('account/subscription_success.html',RequestContext(request,{"txnid":txnid,"status":status,"amount":amount}))
 
 
-@csrf_protect
-@csrf_exempt
 @login_required(login_url = 'login')
 @require_http_methods(['GET' , 'POST'])
 def failure(request):
@@ -228,4 +224,4 @@ def failure(request):
 		print ("Thank You. Your order status is ", status)
 		print ("Your Transaction ID for this transaction is ",txnid)
 		print ("We have received a payment of Rs. ", amount ,". Your order will soon be shipped.")
-	return render_to_response("Failure.html",RequestContext(request,c))
+	return render_to_response("account/subscription_failure.html",RequestContext(request,c))

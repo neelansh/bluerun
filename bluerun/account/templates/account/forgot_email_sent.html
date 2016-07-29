@@ -12,9 +12,13 @@
       </div>
     </div>
 	<div class="container" style="padding-top:50px;padding-bottom:20px;">
-	<div class="col-md-11 col-md-push-1">
-	<h4 class="classic-title"><span>EMAIL SENT</span></h4>
- <h2>Hey, {{ u.first_name }}. We have sent you instructions to reset password on {{ u.email }}. </h2>
+	<div class="col-md-8 col-md-push-2">
+	 <h4 class="classic-title"><span>EMAIL SENT</span></h4>
+	<div class="alert alert-success fade in" style="font-size:17px; line-height:30px; font-family:'Open Sans', sans-serif;">
+
+    <a href="{% url 'index' %}" class="close" data-dismiss="alert">&times;</a>
+  Hey, <strong>{{ u.first_name }}.</strong>We have sent you instructions to reset password on <strong>{{ u.email }}</strong>.
+</div>
  </div>
  </div>
  {% endblock %}

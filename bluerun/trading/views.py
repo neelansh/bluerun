@@ -26,7 +26,7 @@ def dashboard(request , id):
 	if(user.cash_intra):
 		context['cash_intra'] = None
 		try:
-			context['cash_intra'] = calls_obj.filter(cash_intra = True).order_by('-created_on')
+			context['cash_intra'] = calls_obj.filter(cash_intra = True).order_by('-created_on')[:10]
 		except ObjectDoesNotExist:
 			print(ObjectDoesNotExist)
 	else:
@@ -35,7 +35,7 @@ def dashboard(request , id):
 	if(user.cash_positional):
 		context['cash_positional'] = None
 		try:
-			context['cash_positional'] = calls_obj.filter(cash_positional = True).order_by('-created_on')
+			context['cash_positional'] = calls_obj.filter(cash_positional = True).order_by('-created_on')[:10]
 		except ObjectDoesNotExist:
 			print(ObjectDoesNotExist)
 	else:
@@ -44,7 +44,7 @@ def dashboard(request , id):
 	if(user.stock_future):
 		context['stock_future'] = None
 		try:
-			context['stock_future'] = calls_obj.filter(stock_future = True).order_by('-created_on')
+			context['stock_future'] = calls_obj.filter(stock_future = True).order_by('-created_on')[:10]
 		except ObjectDoesNotExist:
 			print(ObjectDoesNotExist)
 	else:
@@ -53,7 +53,7 @@ def dashboard(request , id):
 	if(user.nifty_future):
 		context['nifty_future'] = None
 		try:
-			context['nifty_future'] = calls_obj.filter(nifty_future = True).order_by('-created_on')
+			context['nifty_future'] = calls_obj.filter(nifty_future = True).order_by('-created_on')[:10]
 		except ObjectDoesNotExist:
 			print(ObjectDoesNotExist)
 	else:
@@ -62,7 +62,7 @@ def dashboard(request , id):
 	if(user.option_calls_covered):
 		context['option_calls_covered'] = None
 		try:
-			context['option_calls_covered'] = calls_obj.filter(option_calls_covered = True).order_by('-created_on')
+			context['option_calls_covered'] = calls_obj.filter(option_calls_covered = True).order_by('-created_on')[:10]
 		except ObjectDoesNotExist:
 			print(ObjectDoesNotExist)
 	else:
@@ -71,7 +71,7 @@ def dashboard(request , id):
 	if(user.option_calls_uncovered):
 		context['option_calls_uncovered'] = None
 		try:
-			context['option_calls_uncovered'] = calls_obj.filter(option_calls_uncovered = True).order_by('-created_on')
+			context['option_calls_uncovered'] = calls_obj.filter(option_calls_uncovered = True).order_by('-created_on')[:10]
 		except ObjectDoesNotExist:
 			print(ObjectDoesNotExist)
 	else:
@@ -80,7 +80,7 @@ def dashboard(request , id):
 	if(user.multi_bagger):
 		context['multi_bagger'] = None
 		try:
-			context['multi_bagger'] = calls_obj.filter(multi_bagger = True).order_by('-created_on').order_by('-created_on')
+			context['multi_bagger'] = calls_obj.filter(multi_bagger = True).order_by('-created_on').order_by('-created_on')[:10]
 		except ObjectDoesNotExist:
 			print(ObjectDoesNotExist)
 	else:
