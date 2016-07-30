@@ -136,34 +136,46 @@ def logout(request , id):
     auth_logout(request)
     return redirect(reverse('login'))
 
+
+@login_required(login_url = 'login')
+@require_http_methods(['GET' , 'POST'])
+def subscription(request):
+	pass
+
+
 @login_required(login_url = 'login')
 @require_http_methods(['GET' , 'POST'])
 def subscription_change(request):
 	MERCHANT_KEY = "JBZaLc"
-	key="JBZaLc"
+	key ="JBZaLc"
 	SALT = "GQs7yium"
 	PAYU_BASE_URL = "https://test.payu.in/_payment"
 	action = ''
-	posted={}
+	posted = { "surl":reverse('subscription_success'),
+	"furl":reverse('subscription_failure'),
+	"firstname": request.user.first_name,
+	"email": request.user.email,
+	"phone": request.user.phone, }
 	for i in request.POST:
-		posted[i]=request.POST[i]
+		posted[i] = request.POST[i]
 	hash_object = hashlib.sha256(b'randint(0,20)')
-	txnid=hash_object.hexdigest()[0:20]
+	txnid = hash_object.hexdigest()[0:20]
 	hashh = ''
-	posted['txnid']=txnid
+	posted['txnid'] = txnid
 	hashSequence = "key|txnid|amount|productinfo|firstname|email||||||||||"
-	posted['key']=key
-	hash_string=''
-	hashVarsSeq=hashSequence.split('|')
+	posted['key'] = key
+	hash_string = ''
+	hashVarsSeq = hashSequence.split('|')
 	for i in hashVarsSeq:
 		try:
-			hash_string+=str(posted[i])
+			hash_string += str(posted[i])
 		except Exception:
-			hash_string+=''
-		hash_string+='|'
-	hash_string+=SALT
-	hashh=hashlib.sha512(hash_string).hexdigest().lower()
-	action =PAYU_BASE_URL
+			hash_string += ''
+		hash_string += '|'
+	hash_string += SALT
+	hash_string = hash_string.encode('utf-8')
+	hashh = hashlib.sha512(hash_string).hexdigest().lower()
+	action = PAYU_BASE_URL
 	if(posted.get("key")!=None and posted.get("txnid")!=None and posted.get("productinfo")!=None and posted.get("firstname")!=None and posted.get("email")!=None):
 		return render_to_response('account/subscription.html',RequestContext(request,{"posted":posted,"hashh":hashh,"MERCHANT_KEY":MERCHANT_KEY,"txnid":txnid,"hash_string":hash_string,"action":"https://test.payu.in/_payment" }))
 	else:
@@ -171,7 +183,7 @@ def subscription_change(request):
 
 @login_required(login_url = 'login')
 @require_http_methods(['GET' , 'POST'])
-def success(request):
+def subscription_success(request):
 	c = {}
 	c.update(csrf(request))
 	status=request.POST["status"]
@@ -200,7 +212,7 @@ def success(request):
 
 @login_required(login_url = 'login')
 @require_http_methods(['GET' , 'POST'])
-def failure(request):
+def subscription_failure(request):
 	c = {}
 	c.update(csrf(request))
 	status=request.POST["status"]

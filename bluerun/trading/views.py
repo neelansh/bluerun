@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect
 from django.views.decorators.http import require_GET, require_POST,require_http_methods
@@ -11,6 +12,7 @@ from trading.forms import *
 from django.template import loader
 from django.core.mail import EmailMultiAlternatives
 from django.conf import settings
+from django.core import serializers
 
 # Create your views here.
 @require_GET
@@ -147,3 +149,22 @@ def confirm_email(request , id , otp):
 	user.save()
 	otp_object.delete()
 	return redirect(reverse('profile' , kwargs={'id': request.user.id}))
+
+@login_required(login_url = 'login')
+def load_more(request, id, request_tab):
+	user = get_object_or_404(MyUser, id = request.user.id)
+	TOTAL = 10
+	OFFSET = request.GET.get('offset', 0)
+	END = offset + TOTAL
+	request_tab = request.GET.get('request_tab')
+	call = calls.objects.filter(request_tab = True)[OFFSET:END] #assuming request_tab is the requesting tab e.g. cash_intra
+	json_list = []
+	for c in call:
+		json_list.append({
+			'created_on': calls.created_on, 'stock_name': calls.stock_name, 'trade': calls.trade, 'entry_price_range': calls.entry_price_range, 'target': calls.target, 'stop_loss': calls.stop_loss, 'time_frame': calls.time_frame, 'achived': calls.achived, 'comment': calls.comment
+			})
+	data = json.dumps(json_list)
+
+	return HttpResponse(data, content_type='application/json')
+
+

@@ -1,7 +1,7 @@
 {% extends 'common/base.html' %}
 {% load staticfiles %}
 {% block extrahead %}
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyDpjN7TCYNi_RE-ge3o7zS7iox5qeX4vJM" type="text/javascript"></script>
+<script src="http://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyDpjN7TCYNi_RE-ge3o7zS7iox5qeX4vJM" type="text/javascript"></script>
 
 {% endblock %}
 {% block content %}
@@ -19,7 +19,7 @@
               latitude: posLatitude,
               longitude: posLongitude
             },
-            text: '<div class="map-popup"><h4>Web Development | ZoOm-Arts</h4><p>A web development blog for all your HTML5 and WordPress needs.</p></div>',
+            text: '<div class="map-popup"><h4>BlueRun Financials</h4><p>Your Returns, Our Priority</p></div>',
             icon_url: $('#map').data('marker-img'),
             zoom: 15
           }, options);
@@ -54,9 +54,11 @@
             var marker = new google.maps.Marker({
               position: coords,
               map: map,
-              icon: icon,
+              icon:'',
               draggable: false
             });
+			
+			
 
             var info = new google.maps.InfoWindow({
               content: settings.text
