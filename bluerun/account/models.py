@@ -78,12 +78,32 @@ class MyUser(AbstractBaseUser , PermissionsMixin):
 
 
 class order(models.Model):
-	created_on = models.DateTimeField(auto_now_add = True)
-	ammount = models.IntegerField()
-	user = models.ForeignKey(MyUser , on_delete = models.CASCADE)
+    status_choices = (
+        ('PENDING' , 'PENDING'),
+        ('SUCCESSFUL' , 'SUCCESSFUL'),
+        ('FAILED' , 'FAILED'),
+    );
+    duration_choices = (
+        ('MONTHLY' , 'MONTHLY'),
+        ('QUATERLY' , 'QUATERLY'),
+        ('HALF-YEARLY' , 'HALF-YEARLY'),
+        ('YEARLY' , 'YEARLY'),
+    );
+    created_on = models.DateTimeField(auto_now_add = True)
+    ammount = models.IntegerField()
+    user = models.ForeignKey(MyUser , on_delete = models.CASCADE)
+    duration = models.CharField(max_length = 15 , choices = duration_choices , default = 'MONTHLY')
+    status = models.CharField(max_length = 15 , choices = status_choices , default = 'PENDING')
 
-	def __str__(self):
-		return self.ammount
+    cash_intra = models.BooleanField(default = False)
+    cash_positional = models.BooleanField(default = False)
+    stock_future = models.BooleanField(default = False)
+    nifty_future = models.BooleanField(default = False)
+    option_calls_covered = models.BooleanField(default = False)
+    option_calls_uncovered = models.BooleanField(default = False)
+    multi_bagger = models.BooleanField(default = False)
+    def __str__(self):
+        return self.user.first_name
 
 def create_otp(user = None, purpose = None):
     if not user:

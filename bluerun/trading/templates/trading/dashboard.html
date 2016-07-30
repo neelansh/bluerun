@@ -22,9 +22,9 @@
 	<h4 class="classic-title"><span>MENU</span></h4>
 	<ul>
 		<li><a href="{% url 'dashboard' id=user.id %}">View calls</a></li>
-		<li><a href="#">Chat with agent</a></li>
+		<li><a href="#" data-toggle="tooltip" data-placement="right" title="click on green chat box at bottom right corner">Chat with agent</a></li>
 		<li><a target = "_blank" href="https://trade.smcindiaonline.com/easytrade/">Pms account</a></li>
-		<li><a href="{% url 'subscription_change' %}">Subscription plan</a></li>
+		<!-- <li><a href="{% url 'subscription_change' %}">Subscription plan</a></li> -->
 		<li><a href="{% url 'profile' id=user.id %}">Your Profile</a></li>
 	</ul>
 </div>
@@ -121,12 +121,14 @@
 			{% elif cash_intra == None %}
 			<h1>No calls in this section</h1>
 			{% else %}
-			<div>
-				<h1 class="unsubscribed">You are not subscribed to this feature.</h1>
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe <a target= "_blank" href="https://www.payumoney.com/paybypayumoney/#/DF84BF04380253472E39569E628AC1AE">click here</a></h2>
+				<h3>If already paid, give us 48 hours to process or <a href="{% url 'contactus' %}">contact us</a></h3>
 			</div>
 			{% endif %}
 
-			<a href="#"><button type = "button" class="btn btn-default">Load more...</button></a></br></br>
+			</br></br>
 			
 		</div>
 		
@@ -199,11 +201,13 @@
 			{% elif not cash_positional %}
 			<h1>No calls in this section</h1>
 			{% else %}
-			<div>
-				<h1 class="unsubscribed">You are not subscribed to this feature</h1>
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe <a target= "_blank" href="https://www.payumoney.com/paybypayumoney/#/DF84BF04380253472E39569E628AC1AE">click here</a></h2>
+				<h3>If already paid, give us 48 hours to process or <a href="{% url 'contactus' %}">contact us</a></h3>
 			</div>
 			{% endif %}
-			<a href="#"><button type = "button" class="btn btn-default">Load more...</button></a></br></br>
+			</br></br>
 		</div>
 
 		<div role="tabpanel" class="tab-pane" id="stockfuture">
@@ -275,11 +279,13 @@
 			{% elif stock_future == None %}
 			<h1>No calls in this section</h1>
 			{% else %}
-			<div>
-				<h1 class="unsubscribed">You are not subscribed to this feature.</h1>
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe <a target= "_blank" href="https://www.payumoney.com/paybypayumoney/#/DF84BF04380253472E39569E628AC1AE">click here</a></h2>
+				<h3>If already paid, give us 48 hours to process or <a href="{% url 'contactus' %}">contact us</a></h3>
 			</div>
 			{% endif %}
-			<a href="#"><button type = "button" class="btn btn-default">Load more...</button></a></br></br>
+			</br></br>
 		</div>
 
 		<div role="tabpanel" class="tab-pane" id="niftyfuture">
@@ -351,11 +357,13 @@
 			{% elif nifty_future == None %}
 			<h1>No calls in this section</h1>
 			{% else %}
-			<div>
-				<h1 class="unsubscribed">You are not subscribed to this feature.</h1>
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe <a target= "_blank" href="https://www.payumoney.com/paybypayumoney/#/DF84BF04380253472E39569E628AC1AE">click here</a></h2>
+				<h3>If already paid, give us 48 hours to process or <a href="{% url 'contactus' %}">contact us</a></h3>
 			</div>
 			{% endif %}
-			<a href="#"><button type = "button" class="btn btn-default">Load more...</button></a></br></br>
+			</br></br>
 		</div>
 
 		<div role="tabpanel" class="tab-pane" id="optioncallscovered">
@@ -427,11 +435,13 @@
 			{% elif option_calls_covered == None %}
 			<h1>No calls in this section</h1>
 			{% else %}
-			<div>
-				<h1 class="unsubscribed">You are not subscribed to this feature</h1>
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe <a target= "_blank" href="https://www.payumoney.com/paybypayumoney/#/DF84BF04380253472E39569E628AC1AE">click here</a></h2>
+				<h3>If already paid, give us 48 hours to process or <a href="{% url 'contactus' %}">contact us</a></h3>
 			</div>
 			{% endif %}
-			<a href="#"><button type = "button" class="btn btn-default">Load more...</button></a></br></br>
+			</br></br>
 		</div>
 
 		<div role="tabpanel" class="tab-pane" id="optioncallsuncovered">
@@ -503,11 +513,13 @@
 			{% elif option_calls_uncovered == None %}
 			<h1>No calls in this section</h1>
 			{% else %}
-			<div>
-				<h1 class="unsubscribed">You are not subscribed to this feature</h1>
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe <a target= "_blank" href="https://www.payumoney.com/paybypayumoney/#/DF84BF04380253472E39569E628AC1AE">click here</a></h2>
+				<h3>If already paid, give us 48 hours to process or <a href="{% url 'contactus' %}">contact us</a></h3>
 			</div>
 			{% endif %}
-			<a href="#"><button type = "button" class="btn btn-default">Load more...</button></a></br></br>
+			</br></br>
 		</div>
 
 		<div role="tabpanel" class="tab-pane" id="multibagger">
@@ -579,11 +591,13 @@
 			{% elif multi_bagger == None %}
 			<h1>No calls in this Section.</h1>
 			{% else %}
-			<div>
-				<h1 class="unsubscribed">You are not subscribed to this feature.</h1>
+			<div style = "text-align: center;">
+				<h1 class="unsubscribed">You are not subscribed to this feature</h1><br>
+				<h2>To subscribe <a target= "_blank" href="https://www.payumoney.com/paybypayumoney/#/DF84BF04380253472E39569E628AC1AE">click here</a></h2>
+				<h3>If already paid, give us 48 hours to process or <a href="{% url 'contactus' %}">contact us</a></h3>
 			</div>
 			{% endif %}
-			<a href="#"><button type = "button" class="btn btn-default">Load more...</button></a></br></br>
+			</br></br>
 		</div>
 	</div>
 </div>
@@ -619,7 +633,6 @@ $('#nav-tabs-wrapper a[data-toggle="tab"]').on('click', function(e) {
 
 <!--End of mobile tab dropdown script-->
 
-{% if user.is_privileged %}
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -637,5 +650,5 @@ s0.parentNode.insertBefore(s1,s0);
 })();
 </script>
 <!--End of Tawk.to Script-->
-{% endif %}
+
 {% endblock %}
