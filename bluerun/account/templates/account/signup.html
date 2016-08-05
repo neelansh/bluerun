@@ -16,7 +16,7 @@
 </div>
 
 <div class = "container" style="padding-top:50px;">
-  <div class="col-md-6 col-sm-12 col-xs-12">
+  
   <h4 class="classic-title"><span>SIGN UP</span></h4>
 
     <form action = "{% url 'signup' %}" method = "post" class = "form">
@@ -28,12 +28,12 @@
       </button>
       {% endbuttons %}
     </form>
-  </div>
+  
   
   <div class="col-md-5 col-md-push-1">
-  <h4 class="classic-title"><span> ALREADY HAVE AN ACCOUNT? LOGIN HERE</span></h4>
+  <h4 class="classic-title">ALREADY HAVE AN ACCOUNT? LOGIN HERE</h4>
     
-    <a class="button btn btn-primary btn-lg" href="{% url 'login' %}">Log in</a>
+    <a class="button btn btn-primary" href="{% url 'login' %}">Log in</a>
   </div>
 </div>
 {% endblock %}
