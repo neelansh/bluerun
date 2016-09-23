@@ -1,4 +1,4 @@
-#!/home/neelansh/new-website/venv/bin/python
+#!/home/neelansh/blueruninvest/venv/bin/python
 
 import sys
 import getopt
