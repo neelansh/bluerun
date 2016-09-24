@@ -85,4 +85,8 @@ sftp-config.json
 media/
 
 #credential file
-credentials.py
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
