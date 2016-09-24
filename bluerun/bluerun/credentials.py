@@ -1,5 +1,10 @@
 #RDS db config
-
+import os
+os.environ["RDS_DB_NAME"] = "ebdb"
+os.environ["RDS_USERNAME"] = "bluerunfinancial"
+os.environ["RDS_PASSWORD"] = "bluerunfinancial2016"
+os.environ["RDS_HOSTNAME"] = "aa1fvzabkk5ab4l.c5vhrmcpei3n.ap-south-1.rds.amazonaws.com"
+os.environ["RDS_PORT"] = "3306"
 
 #test db(localhost) config
 database_name = 'bluerun'
