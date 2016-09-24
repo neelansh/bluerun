@@ -10,7 +10,7 @@ class calls(models.Model):
 	stock_name = models.CharField(max_length = 100)
 	trade = models.CharField(max_length =4 , choices = trade_option , default = 'BUY')
 	entry_price_range = models.CharField(max_length = 50)
-	target = models.IntegerField()
+	target = models.CharField(max_length = 50)
 	stop_loss = models.IntegerField()
 	time_frame = models.CharField(max_length = 100 , blank = True , default = '1 Day')
 	comment = models.CharField(max_length = 500 , blank = True , null = True)
