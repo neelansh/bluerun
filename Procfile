@@ -1,1 +1,1 @@
-web: gunicorn bluerun.wsgi --log-file -
+web: gunicorn bluerun.wsgi:application --log-file -
