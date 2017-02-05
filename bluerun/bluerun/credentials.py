@@ -14,7 +14,7 @@ email_host_user = 'AKIAIE7NL252XBZVAUOA'
 email_host_password = 'AoFvYRAvkC4e6oSVJBq0Dlu9hur0zAX4k4X0UWtCEfeS'
 
 #degug state
-debug_state = True
+debug_state = False
 
 
-allowed_host = []
+allowed_host = ['bluerun.heroku.com']
