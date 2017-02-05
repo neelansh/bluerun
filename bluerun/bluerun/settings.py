@@ -80,30 +80,33 @@ WSGI_APPLICATION = 'bluerun.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ["RDS_DB_NAME"],
-            'USER': os.environ["RDS_USERNAME"],
-            'PASSWORD': os.environ["RDS_PASSWORD"],
-            'HOST': os.environ["RDS_HOSTNAME"],
-            'PORT': os.environ["RDS_PORT"],
-        }
-    }
-else:
-    DATABASES = {
-	    'default': {
-	        'ENGINE': 'django.db.backends.mysql',
-	        'NAME': database_name,
-	        'HOST': 'localhost',
-	        'PORT': 3306,
-	        'PASSWORD': database_password,
-	        'USER': database_user,
-	    }
-	}
+# if 'RDS_DB_NAME' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': os.environ["RDS_DB_NAME"],
+#             'USER': os.environ["RDS_USERNAME"],
+#             'PASSWORD': os.environ["RDS_PASSWORD"],
+#             'HOST': os.environ["RDS_HOSTNAME"],
+#             'PORT': os.environ["RDS_PORT"],
+#         }
+#     }
+# else:
+#     DATABASES = {
+# 	    'default': {
+# 	        'ENGINE': 'django.db.backends.mysql',
+# 	        'NAME': database_name,
+# 	        'HOST': 'localhost',
+# 	        'PORT': 3306,
+# 	        'PASSWORD': database_password,
+# 	        'USER': database_user,
+# 	    }
+# 	}
 
-
+# Update database configuration with $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
