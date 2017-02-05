@@ -11,7 +11,7 @@ class calls(models.Model):
 	trade = models.CharField(max_length =4 , choices = trade_option , default = 'BUY')
 	entry_price_range = models.CharField(max_length = 50)
 	target = models.CharField(max_length = 50)
-	stop_loss = models.IntegerField()
+	stop_loss = models.FloatField()
 	time_frame = models.CharField(max_length = 100 , blank = True , default = '1 Day')
 	comment = models.CharField(max_length = 500 , blank = True , null = True)
 	cash_intra = models.BooleanField(default = False)
