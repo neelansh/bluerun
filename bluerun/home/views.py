@@ -13,7 +13,7 @@ from django.conf import settings
 
 def index(request):
 	context = {}
-	context['call_obj'] = calls.objects.filter(achived = True).order_by('-created_on')[:5]
+	# context['call_obj'] = calls.objects.filter(achived = True).order_by('-created_on')[:5]
 	return render(request , 'home/index.html', context)
 
 def aboutus(request):
