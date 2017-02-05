@@ -80,30 +80,44 @@ WSGI_APPLICATION = 'bluerun.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-if 'RDS_DB_NAME' in os.environ:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ["RDS_DB_NAME"],
-            'USER': os.environ["RDS_USERNAME"],
-            'PASSWORD': os.environ["RDS_PASSWORD"],
-            'HOST': os.environ["RDS_HOSTNAME"],
-            'PORT': os.environ["RDS_PORT"],
-        }
-    }
-else:
-    DATABASES = {
-	    'default': {
-	        'ENGINE': 'django.db.backends.mysql',
-	        'NAME': database_name,
-	        'HOST': 'localhost',
-	        'PORT': 3306,
-	        'PASSWORD': database_password,
-	        'USER': database_user,
-	    }
+# if 'RDS_DB_NAME' in os.environ:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.mysql',
+#             'NAME': os.environ["RDS_DB_NAME"],
+#             'USER': os.environ["RDS_USERNAME"],
+#             'PASSWORD': os.environ["RDS_PASSWORD"],
+#             'HOST': os.environ["RDS_HOSTNAME"],
+#             'PORT': os.environ["RDS_PORT"],
+#         }
+#     }
+# else:
+#     DATABASES = {
+# 	    'default': {
+# 	        'ENGINE': 'django.db.backends.mysql',
+# 	        'NAME': database_name,
+# 	        'HOST': 'localhost',
+# 	        'PORT': 3306,
+# 	        'PASSWORD': database_password,
+# 	        'USER': database_user,
+# 	    }
+# 	}
+
+# Update database configuration with $DATABASE_URL.
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
+
+DATABASES = {
+	'default': {
+		'ENGINE': 'django.db.backends.postgresql',
+		'NAME': 'dcg2r64cdpq67t',
+		'HOST': 'ec2-54-228-255-234.eu-west-1.compute.amazonaws.com',
+		'PORT': 5432,
+		'PASSWORD': '65e0dde201e4a9544265f2df0ebb475907ec3654921281bfbb582c58cd941ea7',
+		'USER': 'nhykgaczmjvmbi',
 	}
-
-
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
