@@ -104,9 +104,20 @@ WSGI_APPLICATION = 'bluerun.wsgi.application'
 # 	}
 
 # Update database configuration with $DATABASE_URL.
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
+# import dj_database_url
+# db_from_env = dj_database_url.config(conn_max_age=500)
+# DATABASES['default'].update(db_from_env)
+
+DATABASES = {
+	'default': {
+		'ENGINE': 'django.db.backends.postgresql',
+		'NAME': 'dcg2r64cdpq67t',
+		'HOST': 'ec2-54-228-255-234.eu-west-1.compute.amazonaws.com',
+		'PORT': 5432,
+		'PASSWORD': '65e0dde201e4a9544265f2df0ebb475907ec3654921281bfbb582c58cd941ea7',
+		'USER': 'nhykgaczmjvmbi',
+	}
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
